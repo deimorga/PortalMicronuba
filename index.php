@@ -1,0 +1,432 @@
+<?php
+ ?>
+<?php
+require_once 'config/config.php';
+?>
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <?php if (BASE_URL): ?>
+    <base href="<?php echo BASE_URL; ?>">
+    <?php endif; ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroNuba - Tu negocio en la nube</title>
+    <meta name="description" content="Empresa de tecnología experta en desarrollo de software, infraestructura cloud y consultoría para PYMES.">
+    
+    <!-- CÓDIGO ACTUALIZADO PARA FAVICON .ICO -->
+    <!-- Asegúrate de guardar tu archivo .ico en la misma carpeta con el nombre "favicon.ico" -->
+    <!-- Si tu archivo tiene otro nombre, cambia "favicon.ico" por el nombre de tu archivo -->
+    <link rel="icon" href="assets/img/micronuba-logo.ico" type="image/x-icon">
+
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración de Colores -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgDark: '#0f172a',     /* Navy Oscuro */
+                        bgCard: '#1e293b',     /* Slate 800 */
+                        accent: '#06b6d4',     /* Cyan 500 */
+                        accentHover: '#22d3ee',
+                        textMain: '#f8fafc',
+                        textMuted: '#94a3b8',
+                    },
+                    fontFamily: {
+                        display: ['Space Grotesk', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilos Personalizados */
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        /* Fondo Tecnológico Abstracto */
+        .tech-bg {
+            background-image: 
+                radial-gradient(circle at 100% 0%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 0% 100%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: #06b6d4;
+        }
+
+        /* Animaciones */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Acento en títulos */
+        .title-accent {
+            position: relative;
+            padding-left: 20px;
+        }
+        .title-accent::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10%;
+            bottom: 10%;
+            width: 4px;
+            background-color: #06b6d4;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="tech-bg font-body">
+
+    <!-- NAV BAR -->
+    <nav class="fixed w-full z-50 bg-bgDark/90 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- BANNER LOGO -->
+            <a href="#" class="flex items-center group">
+                <!-- Ajusté la altura (h-12 md:h-16) para acomodar el formato banner rectangular -->
+                <img src="assets/img/micronuba_dark_logo_banner.png" alt="MicroNuba Banner" class="h-24 md:h-32 w-auto object-contain">
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-8 text-sm font-semibold items-center">
+                <a href="#nosotros" class="hover:text-accent transition-colors">Nosotros</a>
+                <a href="#servicios" class="hover:text-accent transition-colors">Servicios</a>
+                <a href="#saas" class="hover:text-accent transition-colors">Productos SaaS</a>
+                <a href="cotizar.php" class="bg-accent hover:bg-accentHover text-bgDark px-5 py-2 rounded-full transition-all">Cotizar Ahora</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in">
+                <p class="text-accent font-bold tracking-[0.2em] mb-4 uppercase text-sm">Empresa de Tecnología</p>
+                <h1 class="font-display text-6xl md:text-7xl font-bold leading-tight text-white mb-6">
+                    Tu negocio <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-accent">en la nube</span>
+                </h1>
+                <p class="text-2xl text-textMuted font-light border-l-4 border-accent pl-6 mb-10">
+                    Simple, Potente y a tu medida.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="cotizar.php" class="bg-accent hover:bg-accentHover text-bgDark font-bold px-8 py-4 rounded-lg text-center transition-all transform hover:scale-105">
+                        Transformar mi Empresa
+                    </a>
+                    <a href="#servicios" class="border border-white/20 hover:border-accent hover:text-accent text-white font-semibold px-8 py-4 rounded-lg text-center transition-all">
+                        Ver Servicios
+                    </a>
+                </div>
+            </div>
+            <!-- Imagen Abstracta Hero -->
+            <div class="relative fade-in delay-200 hidden md:block">
+                <div class="absolute inset-0 bg-accent/20 blur-[100px] rounded-full"></div>
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" alt="Cloud Technology" class="relative z-10 rounded-2xl border border-white/10 shadow-2xl opacity-80 hover:opacity-100 transition-opacity duration-500">
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEXTO & DESAFÍOS -->
+    <section class="py-20 bg-bgDark relative">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="fade-in">
+                    <h2 class="font-display text-4xl font-bold mb-6 title-accent">El Desafío Digital</h2>
+                    <p class="text-textMuted text-lg mb-6">
+                        En la era actual, las PYMES enfrentan una encrucijada: modernizarse o quedarse atrás. La brecha tecnológica, los costos de infraestructura y la ciberseguridad son barreras reales.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-textMain">
+                            <i class="fa-solid fa-triangle-exclamation text-accent mt-1"></i>
+                            <span><strong>Infraestructura Costosa:</strong> Obsolescencia rápida de equipos.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-textMain">
+                            <i class="fa-solid fa-user-xmark text-accent mt-1"></i>
+                            <span><strong>Talento Escaso:</strong> Dificultad para gestionar TI compleja internamente.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-textMain">
+                            <i class="fa-solid fa-shield-virus text-accent mt-1"></i>
+                            <span><strong>Ciberseguridad:</strong> Vulnerabilidad creciente de datos.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="glass-card p-8 rounded-2xl fade-in delay-100">
+                    <h3 class="font-display text-2xl text-white mb-4">La Solución MicroNuba</h3>
+                    <p class="text-textMuted mb-6">
+                        Democratizamos el acceso a tecnología de nivel empresarial. Transformamos la tecnología en un motor de crecimiento, eliminando la complejidad técnica.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-bgDark/50 p-4 rounded-lg text-center">
+                            <i class="fa-solid fa-piggy-bank text-accent text-2xl mb-2"></i>
+                            <p class="text-sm font-bold">Ahorro Costos</p>
+                        </div>
+                        <div class="bg-bgDark/50 p-4 rounded-lg text-center">
+                            <i class="fa-solid fa-rocket text-accent text-2xl mb-2"></i>
+                            <p class="text-sm font-bold">Escalabilidad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="py-20 relative overflow-hidden">
+        <!-- Elemento decorativo fondo -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-accent/5 to-transparent"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+                <h2 class="font-display text-4xl font-bold mb-6 inline-block border-b-4 border-accent pb-2">Identidad Corporativa</h2>
+                <p class="text-textMuted text-lg">
+                    Fundada el 10 de Noviembre de 2025, nacimos para ser el aliado estratégico que las PYMES necesitan.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Misión -->
+                <div class="glass-card p-8 rounded-2xl fade-in">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-rocket text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white mb-4">Misión</h3>
+                    <p class="text-textMuted">
+                        Ser el aliado tecnológico integral de las PYMES, ofreciendo soluciones confiables y modernas en software, infraestructura y consultoría para que operen eficientemente.
+                    </p>
+                </div>
+
+                <!-- Visión -->
+                <div class="glass-card p-8 rounded-2xl fade-in delay-100">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-eye text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white mb-4">Visión</h3>
+                    <p class="text-textMuted">
+                        Convertirnos en la empresa que transforma y moderniza el tejido empresarial de las PYMES, siendo reconocidos como el socio estratégico para su evolución digital.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-20 bg-bgCard/30">
+        <div class="container mx-auto px-6">
+            <div class="mb-16 fade-in">
+                <h2 class="font-display text-4xl font-bold mb-4 title-accent">Portafolio Integral</h2>
+                <p class="text-textMuted text-lg max-w-2xl">Un ecosistema completo de servicios para cubrir cada etapa de su evolución digital.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Servicio 1 -->
+                <div class="glass-card p-8 rounded-xl fade-in">
+                    <i class="fa-solid fa-code text-4xl text-accent mb-6"></i>
+                    <h3 class="font-display text-xl font-bold text-white mb-3">Desarrollo a la Medida</h3>
+                    <p class="text-textMuted text-sm">Software adaptado a sus reglas de negocio. Web, Móvil y Backend robusto.</p>
+                </div>
+                <!-- Servicio 2 -->
+                <div class="glass-card p-8 rounded-xl fade-in delay-100">
+                    <i class="fa-solid fa-server text-4xl text-accent mb-6"></i>
+                    <h3 class="font-display text-xl font-bold text-white mb-3">Infraestructura Cloud</h3>
+                    <p class="text-textMuted text-sm">Arquitectura segura y escalable en AWS, Azure o Híbrida. Docker & Terraform.</p>
+                </div>
+                <!-- Servicio 3 -->
+                <div class="glass-card p-8 rounded-xl fade-in delay-200">
+                    <i class="fa-solid fa-cubes text-4xl text-accent mb-6"></i>
+                    <h3 class="font-display text-xl font-bold text-white mb-3">Productos SaaS</h3>
+                    <p class="text-textMuted text-sm">Soluciones listas para usar que aceleran su operación desde el día uno.</p>
+                </div>
+                <!-- Servicio 4 -->
+                <div class="glass-card p-8 rounded-xl fade-in">
+                    <i class="fa-solid fa-chart-line text-4xl text-accent mb-6"></i>
+                    <h3 class="font-display text-xl font-bold text-white mb-3">Consultoría TI</h3>
+                    <p class="text-textMuted text-sm">Estrategia digital, diagnóstico y optimización de procesos operativos.</p>
+                </div>
+                <!-- Servicio 5 -->
+                <div class="glass-card p-8 rounded-xl fade-in delay-100">
+                    <i class="fa-solid fa-microchip text-4xl text-accent mb-6"></i>
+                    <h3 class="font-display text-xl font-bold text-white mb-3">Venta de Equipos</h3>
+                    <p class="text-textMuted text-sm">Suministro de hardware corporativo e infraestructura física.</p>
+                </div>
+                <!-- CTA Card -->
+                <div class="bg-accent p-8 rounded-xl flex flex-col justify-center items-center text-center fade-in delay-200 transform hover:scale-105 transition-transform cursor-pointer" onclick="window.location.href='cotizar.php'">
+                    <h3 class="font-display text-xl font-bold text-bgDark mb-2">¿Necesitas algo específico?</h3>
+                    <p class="text-bgDark/80 text-sm mb-4">Hablemos de tu proyecto</p>
+                    <i class="fa-solid fa-arrow-right text-bgDark text-2xl"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS SAAS -->
+    <section id="saas" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-4xl font-bold mb-12 text-center">Proyectos <span class="text-accent">Destacados</span></h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Proyecto 1 -->
+                <div class="group relative rounded-2xl overflow-hidden h-64 md:h-80 cursor-pointer fade-in">
+                    <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-bgDark/80 to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop" alt="Gestión Colegios" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 p-8 z-20">
+                        <div class="bg-accent text-bgDark text-xs font-bold px-3 py-1 rounded-full w-fit mb-3">SaaS Educativo</div>
+                        <h3 class="font-display text-3xl font-bold text-white mb-2">Gestión Colegios</h3>
+                        <p class="text-textMuted text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Plataforma integral para la administración académica y administrativa de instituciones educativas.</p>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="group relative rounded-2xl overflow-hidden h-64 md:h-80 cursor-pointer fade-in delay-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-bgDark/80 to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" alt="Gestión Gimnasios" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 p-8 z-20">
+                        <div class="bg-accent text-bgDark text-xs font-bold px-3 py-1 rounded-full w-fit mb-3">SaaS Wellness</div>
+                        <h3 class="font-display text-3xl font-bold text-white mb-2">Gestión Gimnasios</h3>
+                        <p class="text-textMuted text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Solución completa para control de accesos, membresías y seguimiento de usuarios.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALORES -->
+    <section class="py-20 bg-bgCard/30">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-3xl font-bold mb-12 text-center">Nuestros <span class="text-accent">Valores</span></h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="text-center p-4 fade-in">
+                    <i class="fa-regular fa-circle-check text-3xl text-accent mb-3"></i>
+                    <h4 class="font-bold text-white">Simplicidad</h4>
+                </div>
+                <div class="text-center p-4 fade-in delay-100">
+                    <i class="fa-solid fa-bolt text-3xl text-accent mb-3"></i>
+                    <h4 class="font-bold text-white">Innovación</h4>
+                </div>
+                <div class="text-center p-4 fade-in delay-200">
+                    <i class="fa-solid fa-shield-halved text-3xl text-accent mb-3"></i>
+                    <h4 class="font-bold text-white">Seguridad</h4>
+                </div>
+                <div class="text-center p-4 fade-in delay-300">
+                    <i class="fa-solid fa-handshake text-3xl text-accent mb-3"></i>
+                    <h4 class="font-bold text-white">Confiabilidad</h4>
+                </div>
+                <div class="text-center p-4 fade-in delay-400">
+                    <i class="fa-solid fa-magnifying-glass text-3xl text-accent mb-3"></i>
+                    <h4 class="font-bold text-white">Claridad</h4>
+                </div>
+                <div class="text-center p-4 fade-in delay-500">
+                    <i class="fa-solid fa-chart-line text-3xl text-accent mb-3"></i>
+                    <h4 class="font-bold text-white">Crecimiento</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO & FOOTER -->
+    <footer id="contacto" class="bg-black pt-20 pb-10 border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <a href="#" class="flex items-center gap-3 mb-6">
+                         <!-- Banner en Footer: Ajuste de altura -->
+                         <img src="micronuba_dark_logo_banner.png" alt="MicroNuba Banner" class="h-10 md:h-14 object-contain">
+                    </a>
+                    <p class="text-textMuted text-lg max-w-md mb-8">
+                        Tu negocio en la nube: Simple, Potente y a tu medida.
+                        Transformemos tu futuro hoy mismo.
+                    </p>
+                    <div class="flex gap-6">
+                        <a href="#" class="text-white hover:text-accent text-2xl transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="text-white hover:text-accent text-2xl transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-accent text-2xl transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-8 rounded-xl">
+                    <h3 class="font-display text-2xl font-bold text-white mb-6">Contáctanos</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-4 text-textMain">
+                            <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <span>contacto@micronuba.net</span>
+                        </li>
+                        <li class="flex items-center gap-4 text-textMain">
+                            <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <span>www.micronuba.net</span>
+                        </li>
+                         <li class="flex items-center gap-4 text-textMain">
+                            <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span>Bogotá, Colombia</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-sm text-textMuted">
+                <p>&copy; 2025 MicroNuba SAS. Todos los derechos reservados.</p>
+                <p class="mt-2 md:mt-0">Constituida el 10 de Noviembre de 2025 • Cámara de Comercio de Bogotá</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para animaciones simples al hacer scroll -->
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
