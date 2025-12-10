@@ -3,10 +3,11 @@ require_once 'config/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <?php if (BASE_URL): ?>
-    <base href="<?php echo BASE_URL; ?>">
+        <base href="<?php echo BASE_URL; ?>">
     <?php endif; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotizar Proyecto - MicroNuba</title>
@@ -17,22 +18,25 @@ require_once 'config/config.php';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
+
     <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Configuración de Colores (Misma que index.php) -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        bgDark: '#0f172a',     /* Navy Oscuro */
-                        bgCard: '#1e293b',     /* Slate 800 */
-                        accent: '#06b6d4',     /* Cyan 500 */
+                        bgDark: '#0f172a',
+                        /* Navy Oscuro */
+                        bgCard: '#1e293b',
+                        /* Slate 800 */
+                        accent: '#06b6d4',
+                        /* Cyan 500 */
                         accentHover: '#22d3ee',
                         textMain: '#f8fafc',
                         textMuted: '#94a3b8',
@@ -51,9 +55,9 @@ require_once 'config/config.php';
             background-color: #0f172a;
             color: #f8fafc;
         }
-        
+
         .tech-bg {
-            background-image: 
+            background-image:
                 radial-gradient(circle at 100% 0%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 0% 100%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
         }
@@ -72,12 +76,13 @@ require_once 'config/config.php';
             color: #f8fafc;
             transition: all 0.3s ease;
         }
+
         .form-input:focus {
             border-color: #06b6d4;
             outline: none;
             box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.2);
         }
-        
+
         /* Custom Select Arrow */
         select.form-input {
             appearance: none;
@@ -102,6 +107,7 @@ require_once 'config/config.php';
         }
     </style>
 </head>
+
 <body class="tech-bg font-body min-h-screen flex flex-col">
 
     <!-- NAV BAR SIMPLIFICADA -->
@@ -119,7 +125,7 @@ require_once 'config/config.php';
     <!-- MAIN CONTENT -->
     <main class="flex-grow container mx-auto px-6 py-8 flex items-center justify-center">
         <div class="w-full max-w-4xl fade-in">
-            
+
             <div class="text-center mb-10">
                 <h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-4">Cotiza tu <span class="text-accent">Proyecto</span></h1>
                 <p class="text-textMuted text-lg max-w-2xl mx-auto">
@@ -129,7 +135,7 @@ require_once 'config/config.php';
 
             <div class="glass-form rounded-2xl p-8 md:p-12">
                 <form id="quoteForm" class="space-y-8">
-                    
+
                     <!-- SECCIÓN 1: CLIENTE -->
                     <div>
                         <h3 class="text-xl font-display font-bold text-white mb-6 flex items-center gap-3">
@@ -181,7 +187,7 @@ require_once 'config/config.php';
                                 <input type="text" name="project_name" class="form-input w-full rounded-lg px-4 py-3" placeholder="Ej: Rediseño Portal Corporativo">
                             </div>
                         </div>
-                        
+
                         <div class="space-y-2 mb-6">
                             <label class="text-sm font-medium text-textMuted">Descripción General *</label>
                             <textarea name="description" required rows="4" class="form-input w-full rounded-lg px-4 py-3" placeholder="Describe brevemente de qué trata el proyecto..."></textarea>
@@ -206,10 +212,10 @@ require_once 'config/config.php';
                                 <label class="text-sm font-medium text-textMuted">Rango de Presupuesto Estimado</label>
                                 <select name="budget" class="form-input w-full rounded-lg px-4 py-3">
                                     <option value="" disabled selected>Selecciona un rango</option>
-                                    <option value="<1k">Menos de $1,000 USD</option>
-                                    <option value="1k-5k">$1,000 - $5,000 USD</option>
-                                    <option value="5k-10k">$5,000 - $10,000 USD</option>
-                                    <option value=">10k">Más de $10,000 USD</option>
+                                    <option value="<4M">Menos de $4,000,000 COP</option>
+                                    <option value="4M-20M">$4,000,000 - $20,000,000 COP</option>
+                                    <option value="20M-40M">$20,000,000 - $40,000,000 COP</option>
+                                    <option value=">40M">Más de $40,000,000 COP</option>
                                 </select>
                             </div>
                             <div class="space-y-2">
@@ -254,7 +260,7 @@ require_once 'config/config.php';
             const showError = (input, message) => {
                 const parent = input.parentElement;
                 let errorMsg = parent.querySelector('.error-msg');
-                
+
                 // Borde Rojo
                 input.classList.add('border-red-500', 'focus:border-red-500', 'focus:ring-red-500');
                 input.classList.remove('border-white/10', 'focus:border-accent');
@@ -271,11 +277,11 @@ require_once 'config/config.php';
             const clearError = (input) => {
                 const parent = input.parentElement;
                 const errorMsg = parent.querySelector('.error-msg');
-                
+
                 // Restaurar Estilos
                 input.classList.remove('border-red-500', 'focus:border-red-500', 'focus:ring-red-500');
                 input.classList.add('border-white/10');
-                
+
                 if (errorMsg) {
                     errorMsg.remove();
                 }
@@ -313,7 +319,7 @@ require_once 'config/config.php';
             inputs.forEach(input => {
                 // Validar al salir del campo (blur)
                 input.addEventListener('blur', () => validateInput(input));
-                
+
                 // Limpiar error mientras escribe (input)
                 input.addEventListener('input', () => {
                     if (input.classList.contains('border-red-500')) {
@@ -325,7 +331,7 @@ require_once 'config/config.php';
             // Manejo del Submit
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                
+
                 // Validar todos los campos antes de enviar
                 let isFormValid = true;
                 inputs.forEach(input => {
@@ -338,14 +344,17 @@ require_once 'config/config.php';
                     // Shake effect o scroll al primer error
                     const firstError = form.querySelector('.border-red-500');
                     if (firstError) {
-                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        firstError.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
                         firstError.focus();
                     }
                     return;
                 }
 
                 const originalText = submitBtn.innerHTML;
-                
+
                 // Estado de carga
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Enviando...';
@@ -362,7 +371,7 @@ require_once 'config/config.php';
                     // Intentar parsear JSON, si falla es porque el servidor devolvió algo raro (HTML, warnings)
                     let result;
                     const textResponse = await response.text();
-                    
+
                     try {
                         result = JSON.parse(textResponse);
                     } catch (jsonError) {
@@ -375,7 +384,7 @@ require_once 'config/config.php';
                         submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Enviado con Éxito!';
                         submitBtn.classList.remove('bg-accent', 'hover:bg-accentHover', 'text-bgDark');
                         submitBtn.classList.add('bg-green-500', 'text-white');
-                        
+
                         setTimeout(() => {
                             alert('¡Gracias! Hemos recibido tu solicitud. Te contactaremos pronto.');
                             window.location.href = 'index.php';
@@ -386,7 +395,7 @@ require_once 'config/config.php';
                 } catch (error) {
                     console.error('Error:', error);
                     alert('Hubo un error al enviar el formulario: ' + error.message);
-                    
+
                     // Restaurar botón
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalText;
@@ -396,4 +405,5 @@ require_once 'config/config.php';
         });
     </script>
 </body>
+
 </html>
