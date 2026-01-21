@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  portal-micronuba:
+    build: .
+    container_name: PortalMicronuba
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html/sitepro/portal_web_micronuba
+    restart: unless-stopped
