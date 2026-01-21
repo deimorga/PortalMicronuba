@@ -434,7 +434,7 @@ require_once 'config/config.php';
 
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Proyecto 1 -->
-                <div class="group relative rounded-2xl overflow-hidden h-64 md:h-80 cursor-pointer fade-in">
+                <a href="plagie.php" class="group relative rounded-2xl overflow-hidden h-64 md:h-80 cursor-pointer fade-in block">
                     <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-bgDark/80 to-transparent z-10"></div>
                     <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop" alt="Gestión Colegios" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute bottom-0 left-0 p-8 z-20">
@@ -442,7 +442,7 @@ require_once 'config/config.php';
                         <h3 class="font-display text-3xl font-bold text-white mb-2">Gestión Colegios</h3>
                         <p class="text-textMuted text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Plataforma integral. Ayudando a instituciones a reducir un 40% su carga administrativa.</p>
                     </div>
-                </div>
+                </a>
 
                 <!-- Proyecto 2 -->
                 <div class="group relative rounded-2xl overflow-hidden h-64 md:h-80 cursor-pointer fade-in delay-100">
