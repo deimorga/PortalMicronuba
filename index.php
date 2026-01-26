@@ -15,7 +15,7 @@ require_once 'config/config.php';
     <title>MicroNuba | Desarrollo de Software y Consultoría Cloud en Colombia</title>
     <meta name="description" content="Expertos en desarrollo a la medida, SaaS e infraestructura TI. Llevamos la tecnología de las grandes empresas a tu Pyme. Agenda tu diagnóstico hoy.">
 
-    <link rel="icon" href="assets/img/Micronuba%20favicon%20sin%20fondo.PNG" type="image/png">
+    <link rel="icon" href="assets/img/micronuba_favicon.png" type="image/png">
 
 
     <!-- Fuentes -->
@@ -151,7 +151,7 @@ require_once 'config/config.php';
             <!-- BANNER LOGO -->
             <a href="#" class="flex items-center group">
                 <!-- Ajusté la altura (h-12 md:h-16) para acomodar el formato banner rectangular -->
-                <img src="assets/img/micronuba_horizontal_sin_fondo_x2.png" alt="MicroNuba Banner" class="h-24 md:h-32 w-auto object-contain">
+                <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba Banner" class="h-24 md:h-32 w-auto object-contain">
             </a>
 
             <!-- Desktop Menu -->
@@ -496,7 +496,7 @@ require_once 'config/config.php';
                 <div>
                     <a href="#" class="flex items-center gap-3 mb-6">
                         <!-- Banner en Footer: Ajuste de altura -->
-                        <img src="assets/img/micronuba_horizontal_sin_fondo_x2.png" alt="MicroNuba Banner" class="h-20 md:h-28 object-contain">
+                        <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba Banner" class="h-20 md:h-28 object-contain">
                     </a>
                     <p class="text-textMuted text-lg max-w-md mb-8">
                         Tu negocio en la nube: Simple, Potente y a tu medida.

@@ -12,7 +12,7 @@ require_once 'config/config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLAGIE | Gestión Integral Educativa - MicroNuba</title>
     <meta name="description" content="PLAGIE: La plataforma definitiva para la gestión de colegios. Optimiza procesos académicos, administrativos y de comunicación.">
-    <link rel="icon" href="assets/img/Micronuba%20favicon%20sin%20fondo.PNG" type="image/png">
+    <link rel="icon" href="assets/img/micronuba_favicon.png" type="image/png">
 
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,7 +124,7 @@ require_once 'config/config.php';
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <!-- BANNER LOGO -->
             <a href="index.php" class="flex items-center group">
-                <img src="assets/img/micronuba_horizontal_sin_fondo_x2.png" alt="MicroNuba Banner" class="h-24 md:h-32 w-auto object-contain">
+                <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba Banner" class="h-24 md:h-32 w-auto object-contain">
             </a>
 
             <!-- Desktop Menu -->
@@ -167,7 +167,7 @@ require_once 'config/config.php';
             <!-- LOGO PLAGIE -->
             <div class="mb-12 flex justify-center fade-in">
                 <div class="flex items-center justify-center p-6 transition-colors duration-500">
-                    <img src="assets/img/Plagie%20sin%20fondo%202.PNG" alt="PLAGIE Logo" class="h-64 md:h-80 object-contain">
+                    <img src="assets/img/plagie_logo_full.png" alt="PLAGIE Logo" class="h-64 md:h-80 object-contain">
                 </div>
             </div>
 
@@ -373,7 +373,7 @@ require_once 'config/config.php';
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-2">
-                    <img src="assets/img/micronuba_horizontal_sin_fondo_x2.png" alt="MicroNuba" class="h-10 mb-6">
+                    <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba" class="h-10 mb-6">
                     <p class="text-textMuted text-sm leading-relaxed mb-6">
                         Transformemos tu futuro hoy mismo.
                     </p>

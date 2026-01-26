@@ -12,7 +12,7 @@ require_once 'config/config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotizar Proyecto - MicroNuba</title>
     <meta name="description" content="Solicita una cotización para tu proyecto tecnológico. Desarrollo web, apps móviles, consultoría y más.">
-    <link rel="icon" href="assets/img/Micronuba%20favicon%20sin%20fondo.PNG" type="image/png">
+    <link rel="icon" href="assets/img/micronuba_favicon.png" type="image/png">
 
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -114,7 +114,7 @@ require_once 'config/config.php';
     <nav class="w-full z-50 py-6">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a href="index.php" class="flex items-center group">
-                <img src="assets/img/micronuba_horizontal_sin_fondo_x2.png" alt="MicroNuba Banner" class="h-16 md:h-20 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
+                <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba Banner" class="h-16 md:h-20 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
             </a>
             <a href="index.php" class="text-textMuted hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
                 <i class="fa-solid fa-arrow-left"></i> Volver al Inicio
