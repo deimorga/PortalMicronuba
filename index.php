@@ -460,30 +460,65 @@ require_once 'config/config.php';
     <section class="py-20 bg-bgCard/30">
         <div class="container mx-auto px-6">
             <h2 class="font-display text-3xl font-bold mb-12 text-center">Nuestros <span class="text-accent">Valores</span></h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                <div class="text-center p-4 fade-in">
-                    <i class="fa-regular fa-circle-check text-3xl text-accent mb-3"></i>
-                    <h4 class="font-bold text-white">Simplicidad</h4>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Simplicidad -->
+                <div class="glass-card p-8 rounded-2xl group hover:bg-white/10 transition-all duration-300 cursor-default h-full flex flex-col items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <i class="fa-regular fa-circle-check text-4xl text-accent mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"></i>
+                    <h4 class="font-bold text-white text-xl mb-2 relative z-10">Simplicidad</h4>
+                    <p class="text-textMuted text-sm text-center opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-24 transition-all duration-500 relative z-10">
+                        Diseñamos soluciones fáciles. Si complica, no sirve.
+                    </p>
                 </div>
-                <div class="text-center p-4 fade-in delay-100">
-                    <i class="fa-solid fa-bolt text-3xl text-accent mb-3"></i>
-                    <h4 class="font-bold text-white">Innovación</h4>
+
+                <!-- Potencia -->
+                <div class="glass-card p-8 rounded-2xl group hover:bg-white/10 transition-all duration-300 cursor-default h-full flex flex-col items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <i class="fa-solid fa-bolt text-4xl text-accent mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"></i>
+                    <h4 class="font-bold text-white text-xl mb-2 relative z-10">Potencia</h4>
+                    <p class="text-textMuted text-sm text-center opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-24 transition-all duration-500 relative z-10">
+                        Infraestructura robusta para operaciones críticas.
+                    </p>
                 </div>
-                <div class="text-center p-4 fade-in delay-200">
-                    <i class="fa-solid fa-shield-halved text-3xl text-accent mb-3"></i>
-                    <h4 class="font-bold text-white">Seguridad</h4>
+
+                <!-- Seguridad -->
+                <div class="glass-card p-8 rounded-2xl group hover:bg-white/10 transition-all duration-300 cursor-default h-full flex flex-col items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <i class="fa-solid fa-shield-halved text-4xl text-accent mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"></i>
+                    <h4 class="font-bold text-white text-xl mb-2 relative z-10">Seguridad</h4>
+                    <p class="text-textMuted text-sm text-center opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-24 transition-all duration-500 relative z-10">
+                        Protegemos su información con estándares globales.
+                    </p>
                 </div>
-                <div class="text-center p-4 fade-in delay-300">
-                    <i class="fa-solid fa-handshake text-3xl text-accent mb-3"></i>
-                    <h4 class="font-bold text-white">Confiabilidad</h4>
+
+                <!-- Confiabilidad -->
+                <div class="glass-card p-8 rounded-2xl group hover:bg-white/10 transition-all duration-300 cursor-default h-full flex flex-col items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <i class="fa-solid fa-handshake text-4xl text-accent mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"></i>
+                    <h4 class="font-bold text-white text-xl mb-2 relative z-10">Confiabilidad</h4>
+                    <p class="text-textMuted text-sm text-center opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-24 transition-all duration-500 relative z-10">
+                        Cumplimos sin letra pequeña. Soporte real.
+                    </p>
                 </div>
-                <div class="text-center p-4 fade-in delay-400">
-                    <i class="fa-solid fa-magnifying-glass text-3xl text-accent mb-3"></i>
-                    <h4 class="font-bold text-white">Claridad</h4>
+
+                <!-- Claridad -->
+                <div class="glass-card p-8 rounded-2xl group hover:bg-white/10 transition-all duration-300 cursor-default h-full flex flex-col items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <i class="fa-solid fa-magnifying-glass text-4xl text-accent mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"></i>
+                    <h4 class="font-bold text-white text-xl mb-2 relative z-10">Claridad</h4>
+                    <p class="text-textMuted text-sm text-center opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-24 transition-all duration-500 relative z-10">
+                        Comunicación directa y transparente.
+                    </p>
                 </div>
-                <div class="text-center p-4 fade-in delay-500">
-                    <i class="fa-solid fa-chart-line text-3xl text-accent mb-3"></i>
-                    <h4 class="font-bold text-white">Crecimiento</h4>
+
+                <!-- Crecimiento -->
+                <div class="glass-card p-8 rounded-2xl group hover:bg-white/10 transition-all duration-300 cursor-default h-full flex flex-col items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <i class="fa-solid fa-chart-line text-4xl text-accent mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"></i>
+                    <h4 class="font-bold text-white text-xl mb-2 relative z-10">Crecimiento</h4>
+                    <p class="text-textMuted text-sm text-center opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-24 transition-all duration-500 relative z-10">
+                        Mentalidad enfocada en la prosperidad del cliente.
+                    </p>
                 </div>
             </div>
         </div>
