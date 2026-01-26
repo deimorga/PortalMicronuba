@@ -15,10 +15,7 @@ require_once 'config/config.php';
     <title>MicroNuba | Desarrollo de Software y Consultoría Cloud en Colombia</title>
     <meta name="description" content="Expertos en desarrollo a la medida, SaaS e infraestructura TI. Llevamos la tecnología de las grandes empresas a tu Pyme. Agenda tu diagnóstico hoy.">
 
-    <!-- CÓDIGO ACTUALIZADO PARA FAVICON .ICO -->
-    <!-- Asegúrate de guardar tu archivo .ico en la misma carpeta con el nombre "favicon.ico" -->
-    <!-- Si tu archivo tiene otro nombre, cambia "favicon.ico" por el nombre de tu archivo -->
-    <link rel="icon" href="assets/img/micronuba-logo.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/Micronuba%20favicon%20sin%20fondo.PNG" type="image/png">
 
 
     <!-- Fuentes -->
@@ -119,10 +116,9 @@ require_once 'config/config.php';
             overflow: hidden;
             white-space: nowrap;
             width: 100%;
-            position: absolute;
-            top: 15%;
-            /* Adjust vertical position */
-            left: 0;
+            /* position: absolute; REMOVED */
+            /* top: 140px; REMOVED */
+            /* left: 0; REMOVED */
             z-index: 10;
             mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
             -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
@@ -130,7 +126,7 @@ require_once 'config/config.php';
 
         .marquee-content {
             display: inline-block;
-            animation: marquee 15s linear infinite;
+            animation: marquee 40s linear infinite;
             padding-left: 100%;
             /* Start from right */
         }
@@ -155,7 +151,7 @@ require_once 'config/config.php';
             <!-- BANNER LOGO -->
             <a href="#" class="flex items-center group">
                 <!-- Ajusté la altura (h-12 md:h-16) para acomodar el formato banner rectangular -->
-                <img src="assets/img/micronuba_dark_logo_banner.png" alt="MicroNuba Banner" class="h-24 md:h-32 w-auto object-contain">
+                <img src="assets/img/micronuba_horizontal_sin_fondo_x2.png" alt="MicroNuba Banner" class="h-24 md:h-32 w-auto object-contain">
             </a>
 
             <!-- Desktop Menu -->
@@ -198,11 +194,11 @@ require_once 'config/config.php';
     </nav>
 
     <!-- HERO SECTION -->
-    <header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <header class="relative min-h-screen flex flex-col justify-center pt-40 overflow-hidden">
         <!-- Full Width Marquee -->
-        <div class="marquee-container">
-            <p class="marquee-content text-accent/80 font-bold tracking-[0.2em] uppercase text-6xl md:text-8xl opacity-10">
-                Empresa de Desarrollo de Software a la medida en Colombia &nbsp; • &nbsp; Soluciones Cloud & SaaS &nbsp; • &nbsp; Transformación Digital &nbsp; • &nbsp;
+        <div class="marquee-container mb-12">
+            <p class="marquee-content text-accent/80 font-bold tracking-[0.2em] uppercase text-3xl md:text-4xl opacity-40">
+                Empresa de Tecnología &nbsp; • &nbsp; Desarrollo de Software a la Medida &nbsp; • &nbsp; Soluciones Cloud & SaaS &nbsp; • &nbsp; Transformación Digital &nbsp; • &nbsp;
             </p>
         </div>
 
@@ -228,7 +224,7 @@ require_once 'config/config.php';
             <!-- Imagen Abstracta Hero -->
             <div class="relative fade-in delay-200 hidden md:block">
                 <div class="absolute inset-0 bg-accent/20 blur-[100px] rounded-full"></div>
-                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" alt="Cloud Technology" class="relative z-10 rounded-2xl border border-white/10 shadow-2xl opacity-80 hover:opacity-100 transition-opacity duration-500">
+                <img src="assets/img/hero_tech.png" alt="Cloud Technology" class="relative z-10 rounded-2xl border border-white/10 shadow-2xl opacity-80 hover:opacity-100 transition-opacity duration-500 w-[85%] mx-auto">
             </div>
         </div>
     </header>
@@ -439,8 +435,10 @@ require_once 'config/config.php';
                     <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop" alt="Gestión Colegios" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute bottom-0 left-0 p-8 z-20">
                         <div class="bg-accent text-bgDark text-xs font-bold px-3 py-1 rounded-full w-fit mb-3">SaaS Educativo</div>
-                        <h3 class="font-display text-3xl font-bold text-white mb-2">Gestión Colegios</h3>
-                        <p class="text-textMuted text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Plataforma integral. Ayudando a instituciones a reducir un 40% su carga administrativa.</p>
+                        <h3 class="font-display text-3xl font-bold text-white mb-2">Plagie</h3>
+                        <p class="text-textMuted text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">
+                            Gestión Integral Educativa. Controla admisiones, notas, cartera y comunicaciones en una sola plataforma en la nube.
+                        </p>
                     </div>
                 </a>
 
@@ -498,7 +496,7 @@ require_once 'config/config.php';
                 <div>
                     <a href="#" class="flex items-center gap-3 mb-6">
                         <!-- Banner en Footer: Ajuste de altura -->
-                        <img src="assets/img/micronuba_dark_logo_banner.png" alt="MicroNuba Banner" class="h-10 md:h-14 object-contain">
+                        <img src="assets/img/micronuba_horizontal_sin_fondo_x2.png" alt="MicroNuba Banner" class="h-20 md:h-28 object-contain">
                     </a>
                     <p class="text-textMuted text-lg max-w-md mb-8">
                         Tu negocio en la nube: Simple, Potente y a tu medida.

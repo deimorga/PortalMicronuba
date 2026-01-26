@@ -12,7 +12,7 @@ require_once 'config/config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLAGIE | Gestión Integral Educativa - MicroNuba</title>
     <meta name="description" content="PLAGIE: La plataforma definitiva para la gestión de colegios. Optimiza procesos académicos, administrativos y de comunicación.">
-    <link rel="icon" href="assets/img/micronuba-logo.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/Micronuba%20favicon%20sin%20fondo.PNG" type="image/png">
 
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,7 +124,7 @@ require_once 'config/config.php';
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <!-- BANNER LOGO -->
             <a href="index.php" class="flex items-center group">
-                <img src="assets/img/micronuba_dark_logo_banner.png" alt="MicroNuba Banner" class="h-24 md:h-32 w-auto object-contain">
+                <img src="assets/img/micronuba_horizontal_sin_fondo_x2.png" alt="MicroNuba Banner" class="h-24 md:h-32 w-auto object-contain">
             </a>
 
             <!-- Desktop Menu -->
@@ -166,15 +166,11 @@ require_once 'config/config.php';
         <div class="container mx-auto px-6 relative z-10 text-center">
             <!-- LOGO PLAGIE -->
             <div class="mb-12 flex justify-center fade-in">
-                <div class="bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center p-6 backdrop-blur-sm shadow-2xl hover:border-accent/30 transition-colors duration-500">
-                    <img src="assets/img/plagie_logo.png" alt="PLAGIE Logo" class="h-32 md:h-40 object-contain">
+                <div class="flex items-center justify-center p-6 transition-colors duration-500">
+                    <img src="assets/img/Plagie%20sin%20fondo%202.PNG" alt="PLAGIE Logo" class="h-64 md:h-80 object-contain">
                 </div>
             </div>
 
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 font-display tracking-tight leading-tight">
-                Gestión Integral Educativa <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-500 text-3xl md:text-5xl">by MicroNuba</span>
-            </h1>
             <p class="text-xl text-textMuted max-w-2xl mx-auto mb-10">
                 La solución definitiva para optimizar la gestión de su institución.
             </p>
@@ -377,7 +373,7 @@ require_once 'config/config.php';
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-2">
-                    <img src="assets/img/micronuba_dark_logo.png" alt="MicroNuba" class="h-10 mb-6">
+                    <img src="assets/img/micronuba_horizontal_sin_fondo_x2.png" alt="MicroNuba" class="h-10 mb-6">
                     <p class="text-textMuted text-sm leading-relaxed mb-6">
                         Transformemos tu futuro hoy mismo.
                     </p>
