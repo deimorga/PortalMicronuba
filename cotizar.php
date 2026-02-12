@@ -175,6 +175,7 @@ require_once 'config/config.php';
                                 <label class="text-sm font-medium text-textMuted">Tipo de Proyecto *</label>
                                 <select name="project_type" required class="form-input w-full rounded-lg px-4 py-3">
                                     <option value="" disabled selected>Selecciona una opción</option>
+                                    <option value="PLAGIE">PLAGIE - Plataforma Integral de Gestión Educativa</option>
                                     <option value="Web">Desarrollo Web / E-commerce</option>
                                     <option value="Mobile">Aplicación Móvil</option>
                                     <option value="Cloud">Infraestructura Cloud / DevOps</option>
