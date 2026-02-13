@@ -71,15 +71,39 @@ require_once 'config/config.php';
 
         /* Glassmorphism Cards */
         .glass-card {
-            background: rgba(30, 41, 59, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg,
+                    transparent,
+                    rgba(6, 182, 212, 0.05),
+                    transparent);
+            transition: 0.5s;
+        }
+
+        .glass-card:hover::before {
+            left: 100%;
         }
 
         .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: #06b6d4;
+            transform: translateY(-8px);
+            border-color: rgba(6, 182, 212, 0.3);
+            box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.15);
+            background: rgba(30, 41, 59, 0.6);
         }
 
         /* Animaciones */
@@ -150,8 +174,8 @@ require_once 'config/config.php';
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <!-- BANNER LOGO -->
             <a href="#" class="flex items-center group">
-                <!-- Ajusté la altura (h-12 md:h-16) para acomodar el formato banner rectangular -->
-                <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba Banner" class="h-24 md:h-32 w-auto object-contain">
+                <!-- Reducción de tamaño del logo para mejor jerarquía visual -->
+                <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba Banner" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
             </a>
 
             <!-- Desktop Menu -->
@@ -161,15 +185,12 @@ require_once 'config/config.php';
                 <a href="#saas" class="hover:text-accent transition-colors">Productos SaaS</a>
 
                 <!-- Tools Dropdown -->
-                <div class="group relative">
-                    <button class="hover:text-accent transition-colors flex items-center gap-2 outline-none">
-                        Herramientas <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                <div class="relative">
+                    <button id="tools-menu-button" aria-expanded="false" aria-haspopup="true" class="hover:text-accent transition-colors flex items-center gap-2 outline-none focus:ring-2 focus:ring-accent/50 rounded-lg px-2 py-1">
+                        Herramientas <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="tools-chevron"></i>
                     </button>
                     <!-- Dropdown Menu -->
-                    <div class="absolute top-full left-0 mt-4 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
-                        <!-- Bridge to prevent closing when moving from button to dropdown -->
-                        <div class="absolute -top-4 left-0 w-full h-4 bg-transparent"></div>
-
+                    <div id="tools-menu" class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 opacity-0 invisible transition-all duration-300 transform translate-y-2 z-50">
                         <div class="bg-bgCard/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden p-2">
                             <div class="px-4 py-2 text-xs font-bold text-textMuted uppercase tracking-wider mb-1">Utilidades</div>
 
@@ -190,8 +211,34 @@ require_once 'config/config.php';
 
                 <a href="cotizar.php" class="bg-accent hover:bg-accentHover text-bgDark px-5 py-2 rounded-full transition-all">Cotizar</a>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-open" class="md:hidden text-white p-2 focus:outline-none" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
         </div>
     </nav>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bgDark/95 backdrop-blur-2xl invisible opacity-0 transition-all duration-500 md:hidden">
+        <div class="flex justify-between items-center p-6 border-b border-white/10">
+            <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba" class="h-8">
+            <button id="mobile-menu-close" class="text-white p-2 focus:outline-none" aria-label="Cerrar menú">
+                <i class="fa-solid fa-xmark text-3xl"></i>
+            </button>
+        </div>
+        <div class="flex flex-col gap-6 p-8 text-center h-full justify-center -mt-20">
+            <a href="#nosotros" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">Nosotros</a>
+            <a href="#servicios" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">Servicios</a>
+            <a href="#saas" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">SaaS</a>
+            <a href="tools/Turnos.php" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">Herramientas</a>
+            <div class="pt-8">
+                <a href="cotizar.php" class="bg-accent text-bgDark px-10 py-5 rounded-full font-bold text-2xl shadow-lg shadow-accent/20 active:scale-95 transition-all inline-block w-full">
+                    Cotizar
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- HERO SECTION -->
     <header class="relative min-h-screen flex flex-col justify-center pt-40 overflow-hidden">
@@ -234,7 +281,33 @@ require_once 'config/config.php';
         <div class="container mx-auto px-6 text-center">
             <p class="text-textMuted text-sm uppercase tracking-widest mb-6">Stack Tecnológico que dominamos</p>
             <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                <!-- Logos con FontAwesome y Texto por falta de SVG -->
+                <!-- IA Stack (Premium - Logos Oficiales) -->
+                <div class="flex items-center gap-2">
+                    <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="GCP" class="h-8 w-auto">
+                    <span class="font-bold text-xl">GCP</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="https://www.gstatic.com/images/branding/product/2x/antigravity_64dp.png" alt="Antigravity" class="h-8 w-auto">
+                    <span class="font-bold text-xl">Antigravity</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Google_Gemini_logo.svg" alt="Gemini" class="h-8 w-auto">
+                    <span class="font-bold text-xl">Gemini</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="https://notebooklm.google.com/_/static/branding/v5/light_mode/icon.svg" alt="NotebookLM" class="h-8 w-auto">
+                    <span class="font-bold text-xl">NotebookLM</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="https://www.gstatic.com/images/branding/product/2x/ai_studio_64dp.png" alt="AI Studio" class="h-8 w-auto">
+                    <span class="font-bold text-xl">AI Studio</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <img src="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/labs/default/24px.svg" alt="Stitch" class="h-8 w-auto">
+                    <span class="font-bold text-xl">Stitch</span>
+                </div>
+
+                <!-- Infrastructure & Languages -->
                 <div class="flex items-center gap-2"><i class="fa-brands fa-aws text-3xl"></i> <span class="font-bold text-xl">AWS</span></div>
                 <div class="flex items-center gap-2"><i class="fa-brands fa-microsoft text-3xl"></i> <span class="font-bold text-xl">Azure</span></div>
                 <div class="flex items-center gap-2"><i class="fa-brands fa-python text-3xl"></i> <span class="font-bold text-xl">Python</span></div>
@@ -328,49 +401,31 @@ require_once 'config/config.php';
             <!-- SECCIÓN LIDERAZGO (NUEVA) -->
             <div class="mt-20 fade-in text-center">
                 <h3 class="font-display text-3xl font-bold text-white mb-10 title-accent inline-block">Liderazgo</h3>
-                <div class="grid md:grid-cols-3 gap-8 justify-center">
-                    <!-- Socio 1 -->
+                <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                    <!-- Deiby Moreno - Socio Fundador -->
                     <div class="glass-card p-6 rounded-xl">
-                        <div class="w-24 h-24 bg-gray-600 rounded-full mx-auto mb-4 overflow-hidden border-2 border-accent">
-                            <!-- Placeholder Image -->
-                            <i class="fa-solid fa-user text-4xl text-gray-400 mt-6"></i>
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-accent shadow-xl">
+                            <img src="assets/img/team/deiby_moreno.jpeg" alt="Deiby Moreno" class="w-full h-full object-cover">
                         </div>
-                        <h4 class="text-xl font-bold text-white">Socio Fundador</h4>
-                        <p class="text-accent text-sm mb-4">Chief Technology Officer</p>
-                        <p class="text-textMuted text-sm mb-4">Ex-Arquitecto de Software en Banca Multinacional. +10 años liderando migración Cloud.</p>
-                        <!-- Logos Ex-empleadores (Simulados) -->
-                        <div class="flex justify-center gap-3 opacity-50 grayscale hover:grayscale-0 transition-all">
-                            <i class="fa-brands fa-microsoft text-xl"></i>
-                            <i class="fa-brands fa-aws text-xl"></i>
-                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-1">Deiby Moreno</h4>
+                        <p class="text-accent text-lg font-semibold mb-1">Socio Fundador</p>
+                        <p class="text-accent/80 text-sm mb-4">Chief Technology Officer</p>
+                        <p class="text-textMuted text-sm leading-relaxed">
+                            Especialista en Transformación Digital y Consultor de Tecnología Multinacional. +15 años liderando Proyectos Tecnológicos.
+                        </p>
                     </div>
-                    <!-- Socio 2 -->
+
+                    <!-- Andrés Rodrigo Tovar - Socio Fundador -->
                     <div class="glass-card p-6 rounded-xl">
-                        <div class="w-24 h-24 bg-gray-600 rounded-full mx-auto mb-4 overflow-hidden border-2 border-accent">
-                            <!-- Placeholder Image -->
-                            <i class="fa-solid fa-user text-4xl text-gray-400 mt-6"></i>
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-accent shadow-xl">
+                            <img src="assets/img/team/andres_tovar.jpeg" alt="Andrés Rodrigo Tovar" class="w-full h-full object-cover">
                         </div>
-                        <h4 class="text-xl font-bold text-white">Socio Director</h4>
-                        <p class="text-accent text-sm mb-4">Director de Operaciones</p>
-                        <p class="text-textMuted text-sm mb-4">Especialista en Transformación Digital para Retail y Logística. MBA en Innovación.</p>
-                        <div class="flex justify-center gap-3 opacity-50 grayscale hover:grayscale-0 transition-all">
-                            <i class="fa-brands fa-google text-xl"></i>
-                            <i class="fa-solid fa-building text-xl"></i>
-                        </div>
-                    </div>
-                    <!-- Socio 3 -->
-                    <div class="glass-card p-6 rounded-xl">
-                        <div class="w-24 h-24 bg-gray-600 rounded-full mx-auto mb-4 overflow-hidden border-2 border-accent">
-                            <!-- Placeholder Image -->
-                            <i class="fa-solid fa-user text-4xl text-gray-400 mt-6"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-white">Lead Developer</h4>
-                        <p class="text-accent text-sm mb-4">Head of Engineering</p>
-                        <p class="text-textMuted text-sm mb-4">Full Stack Senior con experiencia en Silicon Valley. Experto en React y Microservicios.</p>
-                        <div class="flex justify-center gap-3 opacity-50 grayscale hover:grayscale-0 transition-all">
-                            <i class="fa-brands fa-meta text-xl"></i>
-                            <i class="fa-brands fa-stripe text-xl"></i>
-                        </div>
+                        <h4 class="text-2xl font-bold text-white mb1">Andrés Rodrigo Tovar</h4>
+                        <p class="text-accent text-lg font-semibold mb-1">Socio Fundador</p>
+                        <p class="text-accent/80 text-sm mb-4">Director de Operaciones</p>
+                        <p class="text-textMuted text-sm leading-relaxed">
+                            Arquitecto de Software en Telecomunicaciones. +15 años liderando Proyectos Tecnológicos.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -576,8 +631,9 @@ require_once 'config/config.php';
         </div>
     </footer>
 
-    <!-- Script para animaciones simples al hacer scroll -->
+    <!-- Script para animaciones y menú -->
     <script>
+        // Observador para animaciones fade-in
         const observerOptions = {
             root: null,
             rootMargin: '0px',
@@ -595,6 +651,76 @@ require_once 'config/config.php';
 
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
+        });
+
+        // Lógica del Menú Dropdown (Accesibilidad)
+        const toolsBtn = document.getElementById('tools-menu-button');
+        const toolsMenu = document.getElementById('tools-menu');
+        const toolsChevron = document.getElementById('tools-chevron');
+
+        const toggleMenu = (show) => {
+            const isVisible = show !== undefined ? show : toolsMenu.classList.contains('invisible');
+            if (isVisible) {
+                toolsMenu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+                toolsBtn.setAttribute('aria-expanded', 'true');
+                toolsChevron.classList.add('rotate-180');
+            } else {
+                toolsMenu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+                toolsBtn.setAttribute('aria-expanded', 'false');
+                toolsChevron.classList.remove('rotate-180');
+            }
+        };
+
+        toolsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        // Cerrar menú al hacer click fuera o presionar Escape
+        document.addEventListener('click', () => toggleMenu(false));
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') toggleMenu(false);
+        });
+
+        // Evitar que el click dentro del menú lo cierre prematuramente
+        toolsMenu.addEventListener('click', (e) => e.stopPropagation());
+
+        // Lógica del Menú Móvil
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openBtn = document.getElementById('mobile-menu-open');
+        const closeBtn = document.getElementById('mobile-menu-close');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        const toggleMobileMenu = (show) => {
+            if (show) {
+                mobileMenu.classList.remove('invisible', 'opacity-0');
+                mobileMenu.classList.add('visible', 'opacity-100');
+                document.body.style.overflow = 'hidden'; // Evitar scroll
+            } else {
+                mobileMenu.classList.add('invisible', 'opacity-0');
+                mobileMenu.classList.remove('visible', 'opacity-100');
+                document.body.style.overflow = ''; // Restaurar scroll
+            }
+        };
+
+        openBtn.addEventListener('click', () => toggleMobileMenu(true));
+        closeBtn.addEventListener('click', () => toggleMobileMenu(false));
+
+        // Cerrar al hacer click en un link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => toggleMobileMenu(false));
+        });
+
+        // Cambio de estilo del Navbar al hacer Scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'bg-bgDark/95', 'shadow-xl');
+                nav.classList.remove('py-3');
+            } else {
+                nav.classList.remove('py-2', 'bg-bgDark/95', 'shadow-xl');
+                nav.classList.add('py-3');
+            }
         });
     </script>
 </body>
