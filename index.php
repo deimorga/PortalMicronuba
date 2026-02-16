@@ -12,7 +12,7 @@ require_once 'config/config.php';
         <base href="<?php echo BASE_URL; ?>">
     <?php endif; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MicroNuba | Desarrollo de Software y Consultoría Cloud en Colombia</title>
+    <title>MicroNuba: Impulsamos el motor de la economía con tecnología transversal para todos los sectores, apoyados con soluciones y herramientas IA.</title>
     <meta name="description" content="Expertos en desarrollo a la medida, SaaS e infraestructura TI. Llevamos la tecnología de las grandes empresas a tu Pyme. Agenda tu diagnóstico hoy.">
 
     <link rel="icon" href="assets/img/micronuba_favicon.png" type="image/png">
@@ -27,32 +27,9 @@ require_once 'config/config.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
 
     <!-- Configuración de Colores -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        bgDark: '#0f172a',
-                        /* Navy Oscuro */
-                        bgCard: '#1e293b',
-                        /* Slate 800 */
-                        accent: '#06b6d4',
-                        /* Cyan 500 */
-                        accentHover: '#22d3ee',
-                        textMain: '#f8fafc',
-                        textMuted: '#94a3b8',
-                    },
-                    fontFamily: {
-                        display: ['Space Grotesk', 'sans-serif'],
-                        body: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
 
     <style>
         /* Estilos Personalizados */
@@ -171,11 +148,11 @@ require_once 'config/config.php';
 
     <!-- NAV BAR -->
     <nav class="fixed w-full z-50 bg-bgDark/90 backdrop-blur-md border-b border-white/10">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
             <!-- BANNER LOGO -->
             <a href="#" class="flex items-center group">
                 <!-- Reducción de tamaño del logo para mejor jerarquía visual -->
-                <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba Banner" class="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba Banner" class="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
             </a>
 
             <!-- Desktop Menu -->
@@ -213,7 +190,7 @@ require_once 'config/config.php';
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-open" class="md:hidden text-white p-2 focus:outline-none" aria-label="Abrir menú">
+            <button id="mobile-menu-open" class="md:hidden text-white p-2 focus:outline-none focus:ring-2 focus:ring-accent rounded-lg" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
                 <i class="fa-solid fa-bars-staggered text-2xl"></i>
             </button>
         </div>
@@ -245,7 +222,7 @@ require_once 'config/config.php';
         <!-- Full Width Marquee -->
         <div class="marquee-container mb-12">
             <p class="marquee-content text-accent/80 font-bold tracking-[0.2em] uppercase text-3xl md:text-4xl opacity-40">
-                Empresa de Tecnología &nbsp; • &nbsp; Desarrollo de Software a la Medida &nbsp; • &nbsp; Soluciones Cloud & SaaS &nbsp; • &nbsp; Transformación Digital &nbsp; • &nbsp;
+                EMPRESA DE TECNOLOGÍA ORIENTADA A SOLUCIONES CON IA &nbsp; • &nbsp; DESARROLLO DE SOFTWARE A LA MEDIDA &nbsp; • &nbsp; SOLUCIONES CLOUD & SAAS &nbsp; • &nbsp; TRANSFORMACIÓN DIGITAL &nbsp; • &nbsp;
             </p>
         </div>
 
@@ -257,7 +234,7 @@ require_once 'config/config.php';
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-accent">en la nube</span>
                 </h1>
                 <p class="text-2xl text-textMuted font-light border-l-4 border-accent pl-6 mb-10">
-                    Soluciones de nivel corporativo, adaptadas a la agilidad de tu Pyme.
+                    Soluciones de nivel corporativo, adaptadas a la agilidad de tu Pyme con soluciones y herramientas de IA.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="cotizar.php" class="bg-accent hover:bg-accentHover text-bgDark font-bold px-8 py-4 rounded-lg text-center transition-all transform hover:scale-105">
@@ -269,8 +246,8 @@ require_once 'config/config.php';
                 </div>
             </div>
             <!-- Imagen Abstracta Hero -->
-            <div class="relative fade-in delay-200 hidden md:block">
-                <div class="absolute inset-0 bg-accent/20 blur-[100px] rounded-full"></div>
+            <div class="relative fade-in delay-200 hidden md:block" id="particles-js">
+                <div class="absolute inset-0 bg-accent/20 blur-[100px] rounded-full pointer-events-none"></div>
                 <img src="assets/img/hero_tech.png" alt="Cloud Technology" class="relative z-10 rounded-2xl border border-white/10 shadow-2xl opacity-80 hover:opacity-100 transition-opacity duration-500 w-[85%] mx-auto">
             </div>
         </div>
@@ -287,11 +264,11 @@ require_once 'config/config.php';
                     <span class="font-bold text-xl">GCP</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <img src="https://www.gstatic.com/images/branding/product/2x/antigravity_64dp.png" alt="Antigravity" class="h-8 w-auto">
+                    <img src="assets/img/icons/antigravity.svg" alt="Antigravity" class="h-8 w-auto">
                     <span class="font-bold text-xl">Antigravity</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Google_Gemini_logo.svg" alt="Gemini" class="h-8 w-auto">
+                    <img src="assets/img/icons/gemini.svg" alt="Gemini" class="h-8 w-auto">
                     <span class="font-bold text-xl">Gemini</span>
                 </div>
                 <div class="flex items-center gap-2">
@@ -299,7 +276,7 @@ require_once 'config/config.php';
                     <span class="font-bold text-xl">NotebookLM</span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <img src="https://www.gstatic.com/images/branding/product/2x/ai_studio_64dp.png" alt="AI Studio" class="h-8 w-auto">
+                    <img src="assets/img/icons/ai_studio.svg" alt="AI Studio" class="h-8 w-auto">
                     <span class="font-bold text-xl">AI Studio</span>
                 </div>
                 <div class="flex items-center gap-2">
@@ -344,7 +321,7 @@ require_once 'config/config.php';
                 <div class="glass-card p-8 rounded-2xl fade-in delay-100">
                     <h3 class="font-display text-2xl text-white mb-4">La Solución MicroNuba</h3>
                     <p class="text-textMuted mb-6">
-                        Democratizamos el acceso a tecnología de nivel empresarial. Transformamos la tecnología en un motor de crecimiento, eliminando la complejidad técnica.
+                        MicroNuba nace con un propósito claro: llevar a pequeñas y medianas empresas a operar con tecnología de clase mundial, con un foco especial en la Inteligencia Artificial, eliminando complejidad y elevando su desempeño con soluciones confiables y modernas en software, infraestructura, herramientas de IA y consultoría.
                     </p>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="bg-bgDark/50 p-4 rounded-lg text-center">
@@ -382,7 +359,7 @@ require_once 'config/config.php';
                     </div>
                     <h3 class="font-display text-2xl font-bold text-white mb-4">Misión</h3>
                     <p class="text-textMuted">
-                        Reducimos tu deuda tecnológica y aceleramos tu Time-to-Market. Ofrecemos soluciones confiables y modernas.
+                        Ser el aliado tecnológico integral de las pymes colombianas y latinoamericanas, entregando soluciones confiables y modernas en software, infraestructura, consultoría y herramientas de Inteligencia Artificial, que les permitan operar con eficiencia, crecer de forma sostenible y aprovechar tecnologías innovadoras.
                     </p>
                 </div>
 
@@ -393,7 +370,9 @@ require_once 'config/config.php';
                     </div>
                     <h3 class="font-display text-2xl font-bold text-white mb-4">Visión</h3>
                     <p class="text-textMuted">
-                        Convertirnos en la empresa que transforma y moderniza el tejido empresarial de las PYMES, siendo reconocidos como el socio estratégico para su evolución digital.
+                        Convertirnos en la empresa tecnológica que transforma y moderniza el tejido empresarial pyme, combinando desarrollo a la medida, productos SaaS, infraestructura física y en la nube, y servicios de consultoría de alto impacto con la integración estratégica de soluciones y herramientas de Inteligencia Artificial.
+                        <br><br>
+                        Queremos que cada pyme vea en MicroNuba un socio estratégico capaz de acompañarla en su evolución digital, operativa y en la adopción de la Inteligencia Artificial como ventaja competitiva.
                     </p>
                 </div>
             </div>
@@ -441,32 +420,32 @@ require_once 'config/config.php';
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Servicio 1: Desarrollo -->
+                <!-- 1. Desarrollo a la Medida -->
                 <div class="glass-card p-8 rounded-xl fade-in">
                     <i class="fa-solid fa-code text-4xl text-accent mb-6"></i>
-                    <h3 class="font-display text-xl font-bold text-white mb-3">Desarrollo de Software</h3>
-                    <p class="text-textMuted text-sm">Web, Apps Móviles y plataformas a la medida. Backend robusto y escalable.</p>
+                    <h3 class="font-display text-xl font-bold text-white mb-3">Desarrollo a la Medida</h3>
+                    <p class="text-textMuted text-sm">Software adaptado a sus reglas de negocio con apoyo de soluciones y herramientas IA.</p>
                 </div>
 
-                <!-- Servicio 2: SaaS -->
+                <!-- 2. Infraestructura Cloud -->
                 <div class="glass-card p-8 rounded-xl fade-in delay-100">
-                    <i class="fa-solid fa-cubes text-4xl text-accent mb-6"></i>
-                    <h3 class="font-display text-xl font-bold text-white mb-3">Software de Gestión (SaaS)</h3>
-                    <p class="text-textMuted text-sm">Soluciones listas para colegios y gimnasios. Acelera tu operación hoy.</p>
-                </div>
-
-                <!-- Servicio 3: Consultoría + Cloud (Consolidado) -->
-                <div class="glass-card p-8 rounded-xl fade-in delay-200">
                     <i class="fa-solid fa-cloud text-4xl text-accent mb-6"></i>
-                    <h3 class="font-display text-xl font-bold text-white mb-3">Consultoría Cloud & TI</h3>
-                    <p class="text-textMuted text-sm">Consultoría en Transformación Digital para Pymes. Migración Cloud (AWS/Azure) y Optimización de Procesos.</p>
+                    <h3 class="font-display text-xl font-bold text-white mb-3">Infraestructura Cloud</h3>
+                    <p class="text-textMuted text-sm">Arquitectura segura y escalable.</p>
                 </div>
 
-                <!-- Servicio 4: Hardware -->
+                <!-- 3. Productos SaaS -->
+                <div class="glass-card p-8 rounded-xl fade-in delay-200">
+                    <i class="fa-solid fa-cubes text-4xl text-accent mb-6"></i>
+                    <h3 class="font-display text-xl font-bold text-white mb-3">Productos SaaS</h3>
+                    <p class="text-textMuted text-sm">Soluciones listas para acelerar su operación con funcionalidades IA.</p>
+                </div>
+
+                <!-- 4. Consultoría TI -->
                 <div class="glass-card p-8 rounded-xl fade-in">
-                    <i class="fa-solid fa-microchip text-4xl text-accent mb-6"></i>
-                    <h3 class="font-display text-xl font-bold text-white mb-3">Infraestructura Física</h3>
-                    <p class="text-textMuted text-sm">Venta de equipos corporativos y servidores para tu oficina.</p>
+                    <i class="fa-solid fa-lightbulb text-4xl text-accent mb-6"></i>
+                    <h3 class="font-display text-xl font-bold text-white mb-3">Consultoría TI</h3>
+                    <p class="text-textMuted text-sm">Estrategia digital desde el diagnóstico hacia la innovación.</p>
                 </div>
                 <!-- CTA Card -->
                 <div class="bg-accent p-8 rounded-xl flex flex-col justify-center items-center text-center fade-in delay-200 transform hover:scale-105 transition-transform cursor-pointer" onclick="window.location.href='cotizar.php'">
@@ -516,63 +495,63 @@ require_once 'config/config.php';
         <div class="container mx-auto px-6">
             <h2 class="font-display text-3xl font-bold mb-12 text-center">Nuestros <span class="text-accent">Valores</span></h2>
             <div class="grid md:grid-cols-3 gap-6">
-                <!-- Simplicidad -->
+                <!-- 1. Simplicidad -->
                 <div class="glass-card p-8 rounded-2xl group hover:bg-white/10 transition-all duration-300 cursor-default h-full flex flex-col items-center justify-center relative overflow-hidden">
                     <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <i class="fa-regular fa-circle-check text-4xl text-accent mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"></i>
                     <h4 class="font-bold text-white text-xl mb-2 relative z-10">Simplicidad</h4>
                     <p class="text-textMuted text-sm text-center opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-24 transition-all duration-500 relative z-10">
-                        Diseñamos soluciones fáciles. Si complica, no sirve.
+                        Diseñamos soluciones fáciles de usar. Si complica, no sirve. Buscamos la eficiencia en la experiencia del usuario.
                     </p>
                 </div>
 
-                <!-- Potencia -->
+                <!-- 2. Innovación Útil -->
                 <div class="glass-card p-8 rounded-2xl group hover:bg-white/10 transition-all duration-300 cursor-default h-full flex flex-col items-center justify-center relative overflow-hidden">
                     <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <i class="fa-solid fa-bolt text-4xl text-accent mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"></i>
-                    <h4 class="font-bold text-white text-xl mb-2 relative z-10">Potencia</h4>
+                    <h4 class="font-bold text-white text-xl mb-2 relative z-10">Innovación Útil</h4>
                     <p class="text-textMuted text-sm text-center opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-24 transition-all duration-500 relative z-10">
-                        Infraestructura robusta para operaciones críticas.
+                        Aplicamos tecnología moderna — IA, automatización, IoT — únicamente cuando aporta valor tangible y medible.
                     </p>
                 </div>
 
-                <!-- Seguridad -->
-                <div class="glass-card p-8 rounded-2xl group hover:bg-white/10 transition-all duration-300 cursor-default h-full flex flex-col items-center justify-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <i class="fa-solid fa-shield-halved text-4xl text-accent mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"></i>
-                    <h4 class="font-bold text-white text-xl mb-2 relative z-10">Seguridad</h4>
-                    <p class="text-textMuted text-sm text-center opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-24 transition-all duration-500 relative z-10">
-                        Protegemos su información con estándares globales.
-                    </p>
-                </div>
-
-                <!-- Confiabilidad -->
-                <div class="glass-card p-8 rounded-2xl group hover:bg-white/10 transition-all duration-300 cursor-default h-full flex flex-col items-center justify-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <i class="fa-solid fa-handshake text-4xl text-accent mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"></i>
-                    <h4 class="font-bold text-white text-xl mb-2 relative z-10">Confiabilidad</h4>
-                    <p class="text-textMuted text-sm text-center opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-24 transition-all duration-500 relative z-10">
-                        Cumplimos sin letra pequeña. Soporte real.
-                    </p>
-                </div>
-
-                <!-- Claridad -->
+                <!-- 3. Claridad -->
                 <div class="glass-card p-8 rounded-2xl group hover:bg-white/10 transition-all duration-300 cursor-default h-full flex flex-col items-center justify-center relative overflow-hidden">
                     <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <i class="fa-solid fa-magnifying-glass text-4xl text-accent mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"></i>
                     <h4 class="font-bold text-white text-xl mb-2 relative z-10">Claridad</h4>
                     <p class="text-textMuted text-sm text-center opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-24 transition-all duration-500 relative z-10">
-                        Comunicación directa y transparente.
+                        Ofrecemos condiciones transparentes y comunicación directa. Sin sorpresas, sin letra pequeña.
                     </p>
                 </div>
 
-                <!-- Crecimiento -->
+                <!-- 4. Confiabilidad -->
+                <div class="glass-card p-8 rounded-2xl group hover:bg-white/10 transition-all duration-300 cursor-default h-full flex flex-col items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <i class="fa-solid fa-handshake text-4xl text-accent mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"></i>
+                    <h4 class="font-bold text-white text-xl mb-2 relative z-10">Confiabilidad</h4>
+                    <p class="text-textMuted text-sm text-center opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-24 transition-all duration-500 relative z-10">
+                        Cumplimos nuestras promesas. Soporte real y continuidad garantizada para operaciones críticas.
+                    </p>
+                </div>
+
+                <!-- 5. Seguridad y Responsabilidad -->
+                <div class="glass-card p-8 rounded-2xl group hover:bg-white/10 transition-all duration-300 cursor-default h-full flex flex-col items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <i class="fa-solid fa-shield-halved text-4xl text-accent mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"></i>
+                    <h4 class="font-bold text-white text-xl mb-2 relative z-10">Seguridad y Responsabilidad</h4>
+                    <p class="text-textMuted text-sm text-center opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-24 transition-all duration-500 relative z-10">
+                        Cuidamos la información como activo primordial. Tecnología estable, escalable y segura.
+                    </p>
+                </div>
+
+                <!-- 6. Mentalidad de Crecimiento -->
                 <div class="glass-card p-8 rounded-2xl group hover:bg-white/10 transition-all duration-300 cursor-default h-full flex flex-col items-center justify-center relative overflow-hidden">
                     <div class="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <i class="fa-solid fa-chart-line text-4xl text-accent mb-4 transform transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-2"></i>
-                    <h4 class="font-bold text-white text-xl mb-2 relative z-10">Crecimiento</h4>
+                    <h4 class="font-bold text-white text-xl mb-2 relative z-10">Mentalidad de Crecimiento</h4>
                     <p class="text-textMuted text-sm text-center opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-24 transition-all duration-500 relative z-10">
-                        Mentalidad enfocada en la prosperidad del cliente.
+                        Nos dedicamos a que las pymes prosperen usando la tecnología (IA) como ventaja competitiva.
                     </p>
                 </div>
             </div>
@@ -684,34 +663,162 @@ require_once 'config/config.php';
 
         // Evitar que el click dentro del menú lo cierre prematuramente
         toolsMenu.addEventListener('click', (e) => e.stopPropagation());
+    </script>
 
-        // Lógica del Menú Móvil
+    <!-- Particles.js Lite (Sin dependencias externas) -->
+    <script>
+        (function() {
+            const canvas = document.createElement('canvas');
+            const container = document.getElementById('particles-js');
+            if (!container) return;
+
+            canvas.style.position = 'absolute';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.width = '100%';
+            canvas.style.height = '100%';
+            canvas.style.zIndex = '0';
+            canvas.style.pointerEvents = 'none';
+            container.appendChild(canvas);
+
+            const ctx = canvas.getContext('2d');
+            let width, height;
+            let particles = [];
+
+            function resize() {
+                width = canvas.width = container.offsetWidth;
+                height = canvas.height = container.offsetHeight;
+            }
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.vx = (Math.random() - 0.5) * 0.5;
+                    this.vy = (Math.random() - 0.5) * 0.5;
+                    this.size = Math.random() * 2 + 1;
+                    this.color = `rgba(6, 182, 212, ${Math.random() * 0.5})`; // Accent color
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0) this.x = width;
+                    if (this.x > width) this.x = 0;
+                    if (this.y < 0) this.y = height;
+                    if (this.y > height) this.y = 0;
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+            }
+
+            function init() {
+                resize();
+                for (let i = 0; i < 50; i++) particles.push(new Particle());
+                animate();
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                // Conexiones
+                particles.forEach((p1, i) => {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p2 = particles[j];
+                        const dx = p1.x - p2.x;
+                        const dy = p1.y - p2.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 100) {
+                            ctx.beginPath();
+                            ctx.strokeStyle = `rgba(6, 182, 212, ${0.1 - dist / 1000})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.moveTo(p1.x, p1.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.stroke();
+                        }
+                    }
+                });
+                requestAnimationFrame(animate);
+            }
+
+            window.addEventListener('resize', resize);
+            init();
+        })();
+
+        // Lógica del Menú Móvil Mejorada (Accesibilidad)
         const mobileMenu = document.getElementById('mobile-menu');
         const openBtn = document.getElementById('mobile-menu-open');
         const closeBtn = document.getElementById('mobile-menu-close');
         const mobileLinks = document.querySelectorAll('.mobile-link');
+        const mainContent = document.querySelector('main') || document.body; // Fallback
+
+        // Focus Trap
+        const focusableElements = mobileMenu.querySelectorAll('a, button');
+        const firstFocusable = focusableElements[0];
+        const lastFocusable = focusableElements[focusableElements.length - 1];
+
+        const trapFocus = (e) => {
+            if (e.key === 'Tab') {
+                if (e.shiftKey) { // Shift + Tab
+                    if (document.activeElement === firstFocusable) {
+                        e.preventDefault();
+                        lastFocusable.focus();
+                    }
+                } else { // Tab
+                    if (document.activeElement === lastFocusable) {
+                        e.preventDefault();
+                        firstFocusable.focus();
+                    }
+                }
+            } else if (e.key === 'Escape') {
+                toggleMobileMenu(false);
+                openBtn.focus();
+            }
+        };
 
         const toggleMobileMenu = (show) => {
             if (show) {
                 mobileMenu.classList.remove('invisible', 'opacity-0');
                 mobileMenu.classList.add('visible', 'opacity-100');
-                document.body.style.overflow = 'hidden'; // Evitar scroll
+                document.body.style.overflow = 'hidden';
+                openBtn.setAttribute('aria-expanded', 'true');
+                mobileMenu.addEventListener('keydown', trapFocus);
+                closeBtn.focus();
+                // aria-hidden para el resto
+                Array.from(document.body.children).forEach(child => {
+                    if (child !== mobileMenu && child.tagName !== 'SCRIPT') {
+                        child.setAttribute('aria-hidden', 'true');
+                    }
+                });
             } else {
                 mobileMenu.classList.add('invisible', 'opacity-0');
                 mobileMenu.classList.remove('visible', 'opacity-100');
-                document.body.style.overflow = ''; // Restaurar scroll
+                document.body.style.overflow = '';
+                openBtn.setAttribute('aria-expanded', 'false');
+                mobileMenu.removeEventListener('keydown', trapFocus);
+                openBtn.focus();
+                // Restaurar aria-hidden
+                Array.from(document.body.children).forEach(child => {
+                    child.removeAttribute('aria-hidden');
+                });
             }
         };
 
         openBtn.addEventListener('click', () => toggleMobileMenu(true));
         closeBtn.addEventListener('click', () => toggleMobileMenu(false));
 
-        // Cerrar al hacer click en un link
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => toggleMobileMenu(false));
         });
-
-        // Cambio de estilo del Navbar al hacer Scroll
+    </script>
+    <!-- Cambio de estilo del Navbar al hacer Scroll -->
+    <script>
         const nav = document.querySelector('nav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {

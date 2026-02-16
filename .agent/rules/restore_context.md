@@ -1,10 +1,14 @@
+---
+trigger: always_on
+---
+
 ```
 trigger: always_on
 description: Restaura el contexto del proyecto leyendo la documentación clave.
 ---
 
 1.  **Leer Reglas:**
-    *   Lee `.agent/RULES.md` para entender los límites y la regla de idioma.
+    *   Lee `.agent/RULES.md` para entender los límites y la regla de idioma siempre en español.
 
 2.  **Leer Mapa del Proyecto:**
     *   Lee `doc/estructura_proyecto.md` para entender dónde están los archivos.

@@ -1,0 +1,49 @@
+{
+  "title": "Auditoría de UX — Portal MicroNuba (Landing Page)",
+  "project": "Portal MicroNuba",
+  "date": "2025-05-15",
+  
+  "macro_bets": [
+    { "category": "innovation", "description": "Uso de tendencias visuales como Glassmorphism para posicionarse como empresa de tecnología moderna.", "alignment": "strong" },
+    { "category": "velocity", "description": "Despliegue rápido mediante Tailwind CDN y PHP directo.", "alignment": "strong" }
+  ],
+  
+  "jtbd": [
+    { "user": "Dueño de PYME", "situation": "Necesita digitalizar procesos o infraestructura", "motivation": "Encontrar un aliado técnico que no sea excesivamente costoso o complejo", "outcome": "Sentir confianza en la capacidad técnica de MicroNuba y solicitar una cotización." }
+  ],
+  
+  "visual_hierarchy": {
+    "title": "Jerarquía Visual",
+    "checks": [
+      { "label": "Dimensiones del Logo en Nav", "status": "fail", "notes": "El logo horizontal es masivo (h-24/h-32). Ocupa casi el 20% de la altura visible en pantallas pequeñas, restando importancia al Hero." },
+      { "label": "Contraste del Hero", "status": "pass", "notes": "El título 'Tu negocio en la nube' tiene excelente visibilidad con el degradado." },
+      { "label": "Escaneo de Servicios", "status": "pass", "notes": "El uso de tarjetas glassmorphism ayuda a agrupar la información de forma clara." }
+    ]
+  },
+  
+  "visual_style": {
+    "title": "Estilo Visual",
+    "checks": [
+      { "label": "Consistencia Cromática", "status": "pass", "notes": "Mantiene el Navy y Cyan de forma coherente." },
+      { "label": "Micro-animaciones", "status": "warn", "notes": "Las animaciones fade-in son genéricas. Falta un toque distintivo 'Wow' en las transiciones de las tarjetas o el menú." },
+      { "label": "Calidad de Activos", "status": "warn", "notes": "Uso de placeholders y fotos de Unsplash genéricas. Se recomienda generar imágenes de marca más específicas." }
+    ]
+  },
+  
+  "accessibility": {
+    "title": "Accesibilidad",
+    "checks": [
+      { "label": "Navegación por Teclado", "status": "fail", "notes": "El menú desplegable 'Herramientas' funciona por hover. Inaccesible para usuarios que solo usan teclado o lectores de pantalla." },
+      { "label": "Contraste de Texto Muted", "status": "warn", "notes": "El color textMuted (#94a3b8) sobre el fondo oscuro podría estar al límite del ratio de contraste AA (4.5:1)." }
+    ]
+  },
+  
+  "priority_fixes": [
+    { "rank": 1, "title": "Optimización de Navbar y Logo", "description": "Reducir el tamaño del logo en el nav a dimensiones estándar (max h-12/16) y ajustar el padding del navbar.", "framework_reference": "23-patterns-visual-hierarchy.md → Tamaño" },
+    { "rank": 2, "title": "Eliminación de Tailwind CDN", "description": "Compilar los estilos o descargarlos localmente para evitar dependencias externas y mejorar el tiempo de carga (LCP).", "framework_reference": "00-core-framework.md → Restricciones Técnicas" },
+    { "rank": 3, "title": "Mejora de Accesibilidad del Menú", "description": "Cambiar el disparador del menú 'Herramientas' de hover a click/tap y añadir soporte ARIA.", "framework_reference": "27-patterns-accessibility.md → Navegación por teclado" },
+    { "rank": 4, "title": "Refinamiento Estético 'Wow Effect'", "description": "Implementar un fondo de partículas sutil o una animación de gradiente fluida para reforzar la identidad tecnológica.", "framework_reference": "13-checklist-innovation.md → Nivel 3: Refinamiento" }
+  ],
+  
+  "notes": "El portal tiene una base sólida y estética moderna, pero carece de pulido en detalles técnicos y de accesibilidad que son vitales para una empresa que vende profesionalismo tecnológico."
+}
