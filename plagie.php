@@ -105,7 +105,7 @@ require_once 'config/config.php';
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <!-- BANNER LOGO -->
             <a href="index.php" class="flex items-center group">
-                <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba Banner" class="h-24 md:h-32 w-auto object-contain">
+                <img src="assets/img/micronuba_horizontal_sin_fondo_Ajus.png" alt="MicroNuba Banner" class="h-logo-90 w-auto object-contain transition-all duration-300 group-hover:scale-105">
             </a>
 
             <!-- Desktop Menu -->
@@ -354,7 +354,7 @@ require_once 'config/config.php';
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-12 mb-12">
                 <div class="col-span-1 md:col-span-2">
-                    <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba" class="h-10 mb-6">
+                    <img src="assets/img/micronuba_horizontal_sin_fondo_Ajus.png" alt="MicroNuba" class="h-10 mb-6 object-contain">
                     <p class="text-textMuted text-sm leading-relaxed mb-6">
                         Transformemos tu futuro hoy mismo.
                     </p>

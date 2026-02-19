@@ -92,7 +92,7 @@ require_once 'config/config.php';
     <nav class="w-full z-50 py-6">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a href="index.php" class="flex items-center group">
-                <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba Banner" class="h-16 md:h-20 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
+                <img src="assets/img/micronuba_horizontal_sin_fondo_Ajus.png" alt="MicroNuba Banner" class="h-16 md:h-20 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
             </a>
             <a href="index.php" class="text-textMuted hover:text-white transition-colors flex items-center gap-2 text-sm font-medium">
                 <i class="fa-solid fa-arrow-left"></i> Volver al Inicio

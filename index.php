@@ -146,13 +146,12 @@ require_once 'config/config.php';
 
 <body class="tech-bg font-body">
 
-    <!-- NAV BAR -->
-    <nav class="fixed w-full z-50 bg-bgDark/90 backdrop-blur-md border-b border-white/10">
-        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
-            <!-- BANNER LOGO -->
+    <!-- NAVEGACIÓN ESTÁNDAR: Full-width con Glassmorphism sutil -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-bgDark/90 backdrop-blur-lg border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- LOGO -->
             <a href="#" class="flex items-center group">
-                <!-- Reducción de tamaño del logo para mejor jerarquía visual -->
-                <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba Banner" class="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="assets/img/micronuba_horizontal_sin_fondo_Ajus.png" alt="MicroNuba Banner" class="h-logo-90 w-auto object-contain transition-all duration-300 group-hover:scale-105">
             </a>
 
             <!-- Desktop Menu -->
@@ -163,17 +162,14 @@ require_once 'config/config.php';
 
                 <!-- Tools Dropdown -->
                 <div class="relative">
-                    <button id="tools-menu-button" aria-expanded="false" aria-haspopup="true" class="hover:text-accent transition-colors flex items-center gap-2 outline-none focus:ring-2 focus:ring-accent/50 rounded-lg px-2 py-1">
+                    <button id="tools-menu-button" aria-expanded="false" aria-haspopup="true" class="hover:text-accent transition-colors flex items-center gap-2 outline-none">
                         Herramientas <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="tools-chevron"></i>
                     </button>
                     <!-- Dropdown Menu -->
                     <div id="tools-menu" class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 opacity-0 invisible transition-all duration-300 transform translate-y-2 z-50">
-                        <div class="bg-bgCard/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden p-2">
+                        <div class="bg-bgCard/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden p-2">
                             <div class="px-4 py-2 text-xs font-bold text-textMuted uppercase tracking-wider mb-1">Utilidades</div>
-
-
-
-                            <a href="tools/Turnos.php" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-white/5 group/item transition-colors">
+                            <a href="tools/Turnos.php" class="flex items-start gap-3 px-4 py-3 rounded-lg hover:bg-white/5 group/item transition-colors">
                                 <div class="mt-1 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center group-hover/item:bg-accent/20 transition-colors shrink-0">
                                     <i class="fa-solid fa-calendar-days text-accent"></i>
                                 </div>
@@ -186,11 +182,11 @@ require_once 'config/config.php';
                     </div>
                 </div>
 
-                <a href="cotizar.php" class="bg-accent hover:bg-accentHover text-bgDark px-5 py-2 rounded-full transition-all">Cotizar</a>
+                <a href="cotizar.php" class="bg-accent hover:bg-accentHover text-bgDark px-5 py-2 rounded-lg font-bold transition-all">Cotizar</a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-open" class="md:hidden text-white p-2 focus:outline-none focus:ring-2 focus:ring-accent rounded-lg" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+            <button id="mobile-menu-open" class="md:hidden text-white p-2 focus:outline-none" aria-label="Abrir menú">
                 <i class="fa-solid fa-bars-staggered text-2xl"></i>
             </button>
         </div>
@@ -199,7 +195,7 @@ require_once 'config/config.php';
     <!-- MOBILE MENU OVERLAY -->
     <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bgDark/95 backdrop-blur-2xl invisible opacity-0 transition-all duration-500 md:hidden">
         <div class="flex justify-between items-center p-6 border-b border-white/10">
-            <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba" class="h-8">
+            <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba" class="h-10">
             <button id="mobile-menu-close" class="text-white p-2 focus:outline-none" aria-label="Cerrar menú">
                 <i class="fa-solid fa-xmark text-3xl"></i>
             </button>
