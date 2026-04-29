@@ -1,7 +1,8 @@
 <?php
 // Detectar Entorno y Definir Ruta Base
-if ($_SERVER['HTTP_HOST'] === 'localhost:8000' || in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1'])) {
-    define('BASE_URL', ''); // Entorno Local
+$host = isset($_SERVER['HTTP_HOST']) ? explode(':', $_SERVER['HTTP_HOST'])[0] : '';
+if ($host === 'portal.micronuba.local' || $host === 'localhost' || in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1'])) {
+    define('BASE_URL', '/'); // Entorno Local
 } else {
     define('BASE_URL', '/sitepro/portal_web_micronuba/'); // Entorno Producción
 }

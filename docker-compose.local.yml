@@ -1,0 +1,22 @@
+# Overlay para desarrollo local con micronuba-infra.
+# Uso: docker compose -f docker-compose.yml -f docker-compose.local.yml up -d
+#
+# Requiere:
+#   - micronuba-infra corriendo (red micronuba_public activa, Traefik en :8090)
+#   - /etc/hosts: 127.0.0.1  portal.micronuba.local
+
+services:
+  portal-micronuba:
+    networks:
+      - default
+      - micronuba_public
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.portal-local.rule=Host(`portal.micronuba.local`)"
+      - "traefik.http.routers.portal-local.entrypoints=web"
+      - "traefik.http.services.portal-local.loadbalancer.server.port=80"
+      - "traefik.docker.network=micronuba_public"
+
+networks:
+  micronuba_public:
+    external: true
