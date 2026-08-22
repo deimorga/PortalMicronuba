@@ -27,7 +27,8 @@ rsync -av --progress . "$TEMP_DIR/$ROOT_DIR" \
     --exclude ".DS_Store" \
     --exclude ".vscode" \
     --exclude "logs" \
-    --exclude "temp_build"
+    --exclude "temp_build" \
+    --exclude "node_modules"
 
 # Zip the project from the temp directory
 echo "Creating release package: $RELEASE_DIR/$ZIP_NAME"

@@ -112,35 +112,6 @@ require_once 'config/config.php';
             border-radius: 2px;
         }
 
-        /* Marquee Animation */
-        .marquee-container {
-            overflow: hidden;
-            white-space: nowrap;
-            width: 100%;
-            /* position: absolute; REMOVED */
-            /* top: 140px; REMOVED */
-            /* left: 0; REMOVED */
-            z-index: 10;
-            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-        }
-
-        .marquee-content {
-            display: inline-block;
-            animation: marquee 40s linear infinite;
-            padding-left: 100%;
-            /* Start from right */
-        }
-
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-100%);
-            }
-        }
     </style>
 </head>
 
@@ -155,15 +126,44 @@ require_once 'config/config.php';
             </a>
 
             <!-- Desktop Menu -->
-            <div class="hidden md:flex gap-8 text-sm font-semibold items-center">
+            <div class="hidden lg:flex gap-6 text-sm font-semibold items-center whitespace-nowrap">
                 <a href="#nosotros" class="hover:text-accent transition-colors">Nosotros</a>
                 <a href="#servicios" class="hover:text-accent transition-colors">Servicios</a>
-                <a href="#saas" class="hover:text-accent transition-colors">Productos SaaS</a>
+
+                <!-- Productos SaaS Dropdown -->
+                <div class="relative">
+                    <button id="saas-menu-button" data-dropdown-toggle="saas-menu" aria-expanded="false" aria-haspopup="true" class="hover:text-accent transition-colors flex items-center gap-2 outline-none">
+                        Productos SaaS <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 dropdown-chevron"></i>
+                    </button>
+                    <div id="saas-menu" class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 opacity-0 invisible transition-all duration-300 transform translate-y-2 z-50">
+                        <div class="bg-bgCard/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden p-2">
+                            <div class="px-4 py-2 text-xs font-bold text-textMuted uppercase tracking-wider mb-1">Nuestros productos</div>
+                            <a href="plagie.php" class="flex items-start gap-3 px-4 py-3 rounded-lg hover:bg-white/5 group/item transition-colors">
+                                <div class="mt-1 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center group-hover/item:bg-accent/20 transition-colors shrink-0">
+                                    <i class="fa-solid fa-graduation-cap text-accent"></i>
+                                </div>
+                                <div>
+                                    <span class="block font-bold text-white group-hover/item:text-accent transition-colors">PLAGIE</span>
+                                    <span class="block text-xs text-textMuted mt-0.5">Gestión Integral Educativa</span>
+                                </div>
+                            </a>
+                            <a href="#saas" class="flex items-start gap-3 px-4 py-3 rounded-lg hover:bg-white/5 group/item transition-colors">
+                                <div class="mt-1 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center group-hover/item:bg-accent/20 transition-colors shrink-0">
+                                    <i class="fa-solid fa-mobile-screen-button text-accent"></i>
+                                </div>
+                                <div>
+                                    <span class="block font-bold text-white group-hover/item:text-accent transition-colors">Appits</span>
+                                    <span class="block text-xs text-textMuted mt-0.5">Apps a la medida</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Tools Dropdown -->
                 <div class="relative">
-                    <button id="tools-menu-button" aria-expanded="false" aria-haspopup="true" class="hover:text-accent transition-colors flex items-center gap-2 outline-none">
-                        Herramientas <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="tools-chevron"></i>
+                    <button id="tools-menu-button" data-dropdown-toggle="tools-menu" aria-expanded="false" aria-haspopup="true" class="hover:text-accent transition-colors flex items-center gap-2 outline-none">
+                        Herramientas <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 dropdown-chevron"></i>
                     </button>
                     <!-- Dropdown Menu -->
                     <div id="tools-menu" class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 opacity-0 invisible transition-all duration-300 transform translate-y-2 z-50">
@@ -182,18 +182,24 @@ require_once 'config/config.php';
                     </div>
                 </div>
 
+                <span class="w-px h-5 bg-white/10"></span>
+
+                <a href="#contacto" class="text-textMuted hover:text-accent transition-colors font-medium">Contáctanos</a>
+                <a href="https://wa.me/573203543092?text=Hola%2C%20vengo%20desde%20el%20portal%20de%20MicroNuba%20y%20quisiera%20saber%20m%C3%A1s%20de%20sus%20servicios." target="_blank" class="flex items-center justify-center w-9 h-9 rounded-full bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all shrink-0" aria-label="Escríbenos por WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
                 <a href="cotizar.php" class="bg-accent hover:bg-accentHover text-bgDark px-5 py-2 rounded-lg font-bold transition-all">Cotizar</a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-open" class="md:hidden text-white p-2 focus:outline-none" aria-label="Abrir menú">
+            <button id="mobile-menu-open" class="lg:hidden text-white p-2 focus:outline-none" aria-label="Abrir menú">
                 <i class="fa-solid fa-bars-staggered text-2xl"></i>
             </button>
         </div>
     </nav>
 
     <!-- MOBILE MENU OVERLAY -->
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bgDark/95 backdrop-blur-2xl invisible opacity-0 transition-all duration-500 md:hidden">
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-bgDark/95 backdrop-blur-2xl invisible opacity-0 transition-all duration-500 lg:hidden">
         <div class="flex justify-between items-center p-6 border-b border-white/10">
             <img src="assets/img/micronuba_logo_horizontal.png" alt="MicroNuba" class="h-10">
             <button id="mobile-menu-close" class="text-white p-2 focus:outline-none" aria-label="Cerrar menú">
@@ -203,8 +209,13 @@ require_once 'config/config.php';
         <div class="flex flex-col gap-6 p-8 text-center h-full justify-center -mt-20">
             <a href="#nosotros" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">Nosotros</a>
             <a href="#servicios" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">Servicios</a>
-            <a href="#saas" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">SaaS</a>
+            <a href="plagie.php" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">PLAGIE</a>
+            <a href="#saas" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">Appits</a>
             <a href="tools/Turnos.php" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">Herramientas</a>
+            <a href="#contacto" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">Contáctanos</a>
+            <a href="https://wa.me/573203543092?text=Hola%2C%20vengo%20desde%20el%20portal%20de%20MicroNuba%20y%20quisiera%20saber%20m%C3%A1s%20de%20sus%20servicios." target="_blank" class="mobile-link text-2xl font-display font-bold text-[#25D366] transition-all flex items-center justify-center gap-3">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
             <div class="pt-8">
                 <a href="cotizar.php" class="bg-accent text-bgDark px-10 py-5 rounded-full font-bold text-2xl shadow-lg shadow-accent/20 active:scale-95 transition-all inline-block w-full">
                     Cotizar
@@ -215,13 +226,6 @@ require_once 'config/config.php';
 
     <!-- HERO SECTION -->
     <header class="relative min-h-screen flex flex-col justify-center pt-40 overflow-hidden">
-        <!-- Full Width Marquee -->
-        <div class="marquee-container mb-12">
-            <p class="marquee-content text-accent/80 font-bold tracking-[0.2em] uppercase text-3xl md:text-4xl opacity-40">
-                EMPRESA DE TECNOLOGÍA ORIENTADA A SOLUCIONES CON IA &nbsp; • &nbsp; DESARROLLO DE SOFTWARE A LA MEDIDA &nbsp; • &nbsp; SOLUCIONES CLOUD & SAAS &nbsp; • &nbsp; TRANSFORMACIÓN DIGITAL &nbsp; • &nbsp;
-            </p>
-        </div>
-
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-20">
             <div class="fade-in">
 
@@ -434,17 +438,17 @@ require_once 'config/config.php';
                 <div class="glass-card p-8 rounded-xl fade-in delay-200">
                     <i class="fa-solid fa-cubes text-4xl text-accent mb-6"></i>
                     <h3 class="font-display text-xl font-bold text-white mb-3">Productos SaaS</h3>
-                    <p class="text-textMuted text-sm">Soluciones listas para acelerar su operación con funcionalidades IA.</p>
+                    <p class="text-textMuted text-sm">Plataformas propias, como PLAGIE, listas para usar por suscripción: sin desarrollos a la medida ni tiempos de espera.</p>
                 </div>
 
                 <!-- 4. Consultoría TI -->
                 <div class="glass-card p-8 rounded-xl fade-in">
                     <i class="fa-solid fa-lightbulb text-4xl text-accent mb-6"></i>
                     <h3 class="font-display text-xl font-bold text-white mb-3">Consultoría TI</h3>
-                    <p class="text-textMuted text-sm">Estrategia digital desde el diagnóstico hacia la innovación.</p>
+                    <p class="text-textMuted text-sm">Un equipo humano que lo acompaña de principio a fin, potenciado con Inteligencia Artificial para diagnosticar y avanzar más rápido.</p>
                 </div>
                 <!-- CTA Card -->
-                <div class="bg-accent p-8 rounded-xl flex flex-col justify-center items-center text-center fade-in delay-200 transform hover:scale-105 transition-transform cursor-pointer" onclick="window.location.href='cotizar.php'">
+                <div class="bg-accent p-8 rounded-xl flex flex-col justify-center items-center text-center fade-in delay-200 transform hover:scale-105 transition-transform cursor-pointer order-first" onclick="window.location.href='cotizar.php'">
                     <h3 class="font-display text-xl font-bold text-bgDark mb-2">¿Necesitas algo específico?</h3>
                     <p class="text-bgDark/80 text-sm mb-4">Hablemos de tu proyecto</p>
                     <i class="fa-solid fa-arrow-right text-bgDark text-2xl"></i>
@@ -462,7 +466,7 @@ require_once 'config/config.php';
                 <!-- Proyecto 1 -->
                 <a href="plagie.php" class="group relative rounded-2xl overflow-hidden h-64 md:h-80 cursor-pointer fade-in block">
                     <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-bgDark/80 to-transparent z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop" alt="Gestión Colegios" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <img src="assets/img/plagie_card_bg.png" alt="Gestión Colegios" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute bottom-0 left-0 p-8 z-20">
                         <div class="bg-accent text-bgDark text-xs font-bold px-3 py-1 rounded-full w-fit mb-3">SaaS Educativo</div>
                         <h3 class="font-display text-3xl font-bold text-white mb-2">Plagie</h3>
@@ -475,11 +479,11 @@ require_once 'config/config.php';
                 <!-- Proyecto 2 -->
                 <div class="group relative rounded-2xl overflow-hidden h-64 md:h-80 cursor-pointer fade-in delay-100">
                     <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-bgDark/80 to-transparent z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" alt="Gestión Gimnasios" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=2070&auto=format&fit=crop" alt="Appits" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute bottom-0 left-0 p-8 z-20">
-                        <div class="bg-accent text-bgDark text-xs font-bold px-3 py-1 rounded-full w-fit mb-3">SaaS Wellness</div>
-                        <h3 class="font-display text-3xl font-bold text-white mb-2">Gestión Gimnasios</h3>
-                        <p class="text-textMuted text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Solución completa. Ayudando a centros deportivos a incrementar su retención en un 25%.</p>
+                        <div class="bg-accent text-bgDark text-xs font-bold px-3 py-1 rounded-full w-fit mb-3">SaaS Apps</div>
+                        <h3 class="font-display text-3xl font-bold text-white mb-2">Appits</h3>
+                        <p class="text-textMuted text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Aplicaciones a la medida, listas para lanzar. Lleva tu operación al celular de tus clientes y tu equipo.</p>
                     </div>
                 </div>
             </div>
@@ -568,9 +572,9 @@ require_once 'config/config.php';
                         Transformemos tu futuro hoy mismo.
                     </p>
                     <div class="flex gap-6">
-                        <a href="https://www.facebook.com/profile.php?id=61585605239590" target="_blank" class="text-white hover:text-accent text-2xl transition-colors"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/micro_nuba/" target="_blank" class="text-white hover:text-accent text-2xl transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://wa.me/573203543092" target="_blank" class="text-white hover:text-accent text-2xl transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61585605239590" target="_blank" class="text-[#1877F2] hover:opacity-80 hover:scale-110 text-2xl transition-all"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/micro_nuba/" target="_blank" class="text-[#E4405F] hover:opacity-80 hover:scale-110 text-2xl transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/573203543092?text=Hola%2C%20vengo%20desde%20el%20portal%20de%20MicroNuba%20y%20quisiera%20saber%20m%C3%A1s%20de%20sus%20servicios." target="_blank" class="text-[#25D366] hover:opacity-80 hover:scale-110 text-2xl transition-all"><i class="fa-brands fa-whatsapp"></i></a>
                     </div>
                 </div>
 
@@ -628,37 +632,39 @@ require_once 'config/config.php';
             observer.observe(el);
         });
 
-        // Lógica del Menú Dropdown (Accesibilidad)
-        const toolsBtn = document.getElementById('tools-menu-button');
-        const toolsMenu = document.getElementById('tools-menu');
-        const toolsChevron = document.getElementById('tools-chevron');
+        // Lógica de Menús Dropdown (Accesibilidad) — soporta varios dropdowns en el nav
+        const dropdowns = [...document.querySelectorAll('[data-dropdown-toggle]')].map((btn) => {
+            const menu = document.getElementById(btn.dataset.dropdownToggle);
+            const chevron = btn.querySelector('.dropdown-chevron');
 
-        const toggleMenu = (show) => {
-            const isVisible = show !== undefined ? show : toolsMenu.classList.contains('invisible');
-            if (isVisible) {
-                toolsMenu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
-                toolsBtn.setAttribute('aria-expanded', 'true');
-                toolsChevron.classList.add('rotate-180');
-            } else {
-                toolsMenu.classList.add('opacity-0', 'invisible', 'translate-y-2');
-                toolsBtn.setAttribute('aria-expanded', 'false');
-                toolsChevron.classList.remove('rotate-180');
-            }
-        };
+            const toggleMenu = (show) => {
+                const isVisible = show !== undefined ? show : menu.classList.contains('invisible');
+                if (isVisible) {
+                    menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+                    btn.setAttribute('aria-expanded', 'true');
+                    chevron?.classList.add('rotate-180');
+                } else {
+                    menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+                    btn.setAttribute('aria-expanded', 'false');
+                    chevron?.classList.remove('rotate-180');
+                }
+            };
 
-        toolsBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleMenu();
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdowns.filter(d => d.toggleMenu !== toggleMenu).forEach(d => d.toggleMenu(false));
+                toggleMenu();
+            });
+            menu.addEventListener('click', (e) => e.stopPropagation());
+
+            return { toggleMenu };
         });
 
-        // Cerrar menú al hacer click fuera o presionar Escape
-        document.addEventListener('click', () => toggleMenu(false));
+        // Cerrar todos los menús al hacer click fuera o presionar Escape
+        document.addEventListener('click', () => dropdowns.forEach(d => d.toggleMenu(false)));
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') toggleMenu(false);
+            if (e.key === 'Escape') dropdowns.forEach(d => d.toggleMenu(false));
         });
-
-        // Evitar que el click dentro del menú lo cierre prematuramente
-        toolsMenu.addEventListener('click', (e) => e.stopPropagation());
     </script>
 
     <!-- Particles.js Lite (Sin dependencias externas) -->
