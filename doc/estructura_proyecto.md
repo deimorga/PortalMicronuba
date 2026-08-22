@@ -7,8 +7,10 @@ Mapa detallado de la ubicación de los archivos clave.
 - `plagie.php`: Módulo relacionado con funcionalidad Plagie.
 - `cotizar.php`: Módulo de cotizaciones.
 - `docker-compose.yml`: Configuración de servicios (Docker).
+- `docker-compose.local.yml`: Overlay para integrarse al gateway compartido `micronuba-infra` (Traefik) en desarrollo local.
 - `Dockerfile`: Definición de la imagen del contenedor.
-- `build_release.sh`: Script de despliegue/construcción.
+- `build_release.sh`: Script de despliegue/construcción (excluye `node_modules`).
+- `robots.txt`, `sitemap.xml`, `llms.txt`: metadata para crawlers tradicionales y de IA. Nota: en producción, `robots.txt` es interceptado y sustituido por Cloudflare independientemente del archivo de origen; `sitemap.xml` y `llms.txt` requieren copia adicional en `public_html/` del hosting (fuera de este repo) por una regla de reescritura heredada del Neolo Website Builder.
 
 ## Directorios Clave
 - `api/`: Endpoint de la API (ej: `send_quote.php`).
