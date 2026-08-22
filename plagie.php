@@ -12,6 +12,40 @@ require_once 'config/config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLAGIE | Gestión Integral Educativa - MicroNuba</title>
     <meta name="description" content="PLAGIE: La plataforma definitiva para la gestión de colegios. Optimiza procesos académicos, administrativos y de comunicación.">
+    <link rel="canonical" href="https://micronuba.net/plagie.php">
+
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MicroNuba">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:url" content="https://micronuba.net/plagie.php">
+    <meta property="og:title" content="PLAGIE | Gestión Integral Educativa - MicroNuba">
+    <meta property="og:description" content="PLAGIE: La plataforma definitiva para la gestión de colegios. Optimiza procesos académicos, administrativos y de comunicación.">
+    <meta property="og:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/plagie_logo_full.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PLAGIE | Gestión Integral Educativa - MicroNuba">
+    <meta name="twitter:description" content="PLAGIE: La plataforma definitiva para la gestión de colegios. Optimiza procesos académicos, administrativos y de comunicación.">
+    <meta name="twitter:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/plagie_logo_full.png">
+
+    <!-- Datos estructurados -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PLAGIE",
+        "applicationCategory": "EducationApplication",
+        "operatingSystem": "Web",
+        "description": "PLAGIE: plataforma de Gestión Integral Educativa para colegios — portal web institucional, matrículas en línea, gestión administrativa y financiera, y control académico.",
+        "url": "https://micronuba.net/plagie.php",
+        "image": "https://micronuba.net/sitepro/portal_web_micronuba/assets/img/plagie_logo_full.png",
+        "publisher": {
+            "@type": "Organization",
+            "name": "MicroNuba",
+            "url": "https://micronuba.net/"
+        }
+    }
+    </script>
+
     <link rel="icon" href="assets/img/micronuba_favicon.png" type="image/png">
 
     <!-- Fuentes -->
@@ -210,6 +244,7 @@ require_once 'config/config.php';
     <header class="relative min-h-[80vh] flex items-center pt-32 pb-20 overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-bgDark/50 to-bgDark"></div>
         <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="sr-only">PLAGIE - Gestión Integral Educativa by MicroNuba</h1>
             <!-- LOGO PLAGIE -->
             <div class="mb-12 flex justify-center fade-in">
                 <div class="flex items-center justify-center p-6 transition-colors duration-500">

@@ -12,6 +12,21 @@ require_once 'config/config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotizar Proyecto - MicroNuba</title>
     <meta name="description" content="Solicita una cotización para tu proyecto tecnológico. Desarrollo web, apps móviles, consultoría y más.">
+    <link rel="canonical" href="https://micronuba.net/cotizar.php">
+
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MicroNuba">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:url" content="https://micronuba.net/cotizar.php">
+    <meta property="og:title" content="Cotizar Proyecto - MicroNuba">
+    <meta property="og:description" content="Solicita una cotización para tu proyecto tecnológico. Desarrollo web, apps móviles, consultoría y más.">
+    <meta property="og:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/hero_tech.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cotizar Proyecto - MicroNuba">
+    <meta name="twitter:description" content="Solicita una cotización para tu proyecto tecnológico. Desarrollo web, apps móviles, consultoría y más.">
+    <meta name="twitter:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/hero_tech.png">
+
     <link rel="icon" href="assets/img/micronuba_favicon.png" type="image/png">
 
     <!-- Fuentes -->

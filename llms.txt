@@ -1,0 +1,17 @@
+# MicroNuba
+
+> MicroNuba es una empresa de tecnología colombiana dedicada al desarrollo de software a la medida, productos SaaS, infraestructura cloud y consultoría TI para pymes en Colombia y Latinoamérica, con apoyo de herramientas de Inteligencia Artificial.
+
+MicroNuba lleva tecnología de nivel corporativo a pequeñas y medianas empresas, combinando desarrollo a la medida, productos SaaS propios e infraestructura cloud, con acompañamiento humano potenciado por IA.
+
+## Páginas principales
+
+- [Inicio](https://micronuba.net/): portafolio de servicios (desarrollo a la medida, infraestructura cloud, productos SaaS, consultoría TI), misión y visión, equipo fundador.
+- [PLAGIE](https://micronuba.net/plagie.php): producto propio de MicroNuba — plataforma de Gestión Integral Educativa para colegios (portal web institucional, matrículas en línea, gestión administrativa y financiera, control académico).
+- [Cotizar](https://micronuba.net/cotizar.php): formulario de solicitud de cotización de proyectos.
+
+## Contacto
+
+- Correo: contacto@micronuba.net
+- Sitio web: https://micronuba.net/
+- Ubicación: Bogotá, Colombia

@@ -14,6 +14,48 @@ require_once 'config/config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MicroNuba: Impulsamos el motor de la economía con tecnología transversal para todos los sectores, apoyados con soluciones y herramientas IA.</title>
     <meta name="description" content="Expertos en desarrollo a la medida, SaaS e infraestructura TI. Llevamos la tecnología de las grandes empresas a tu Pyme. Agenda tu diagnóstico hoy.">
+    <link rel="canonical" href="https://micronuba.net/">
+
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MicroNuba">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:url" content="https://micronuba.net/">
+    <meta property="og:title" content="MicroNuba: tecnología a la medida para tu Pyme, con IA">
+    <meta property="og:description" content="Expertos en desarrollo a la medida, SaaS e infraestructura TI. Llevamos la tecnología de las grandes empresas a tu Pyme.">
+    <meta property="og:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/hero_tech.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MicroNuba: tecnología a la medida para tu Pyme, con IA">
+    <meta name="twitter:description" content="Expertos en desarrollo a la medida, SaaS e infraestructura TI. Llevamos la tecnología de las grandes empresas a tu Pyme.">
+    <meta name="twitter:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/hero_tech.png">
+
+    <!-- Datos estructurados -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MicroNuba",
+        "legalName": "MicroNuba SAS",
+        "url": "https://micronuba.net/",
+        "logo": "https://micronuba.net/sitepro/portal_web_micronuba/assets/img/micronuba_horizontal_sin_fondo_Ajus.png",
+        "description": "Empresa de tecnología dedicada al desarrollo de software a la medida, productos SaaS, infraestructura cloud y consultoría TI para pymes en Colombia y Latinoamérica.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bogotá",
+            "addressCountry": "CO"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contacto@micronuba.net",
+            "contactType": "customer service",
+            "areaServed": "CO"
+        },
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61585605239590",
+            "https://www.instagram.com/micro_nuba/"
+        ]
+    }
+    </script>
 
     <link rel="icon" href="assets/img/micronuba_favicon.png" type="image/png">
 
