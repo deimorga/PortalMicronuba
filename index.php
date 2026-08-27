@@ -189,13 +189,13 @@ require_once 'config/config.php';
                                     <span class="block text-xs text-textMuted mt-0.5">Gestión Integral Educativa</span>
                                 </div>
                             </a>
-                            <a href="#saas" class="flex items-start gap-3 px-4 py-3 rounded-lg hover:bg-white/5 group/item transition-colors">
+                            <a href="appits.php" class="flex items-start gap-3 px-4 py-3 rounded-lg hover:bg-white/5 group/item transition-colors">
                                 <div class="mt-1 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center group-hover/item:bg-accent/20 transition-colors shrink-0">
-                                    <i class="fa-solid fa-mobile-screen-button text-accent"></i>
+                                    <i class="fa-solid fa-car-side text-accent"></i>
                                 </div>
                                 <div>
                                     <span class="block font-bold text-white group-hover/item:text-accent transition-colors">Appits</span>
-                                    <span class="block text-xs text-textMuted mt-0.5">Apps a la medida</span>
+                                    <span class="block text-xs text-textMuted mt-0.5">Gestión de Talleres</span>
                                 </div>
                             </a>
                         </div>
@@ -252,7 +252,7 @@ require_once 'config/config.php';
             <a href="#nosotros" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">Nosotros</a>
             <a href="#servicios" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">Servicios</a>
             <a href="plagie.php" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">PLAGIE</a>
-            <a href="#saas" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">Appits</a>
+            <a href="appits.php" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">Appits</a>
             <a href="tools/Turnos.php" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">Herramientas</a>
             <a href="#contacto" class="mobile-link text-3xl font-display font-bold hover:text-accent transition-all">Contáctanos</a>
             <a href="https://wa.me/573203543092?text=Hola%2C%20vengo%20desde%20el%20portal%20de%20MicroNuba%20y%20quisiera%20saber%20m%C3%A1s%20de%20sus%20servicios." target="_blank" class="mobile-link text-2xl font-display font-bold text-[#25D366] transition-all flex items-center justify-center gap-3">
@@ -531,15 +531,15 @@ require_once 'config/config.php';
                 </a>
 
                 <!-- Proyecto 2 -->
-                <div class="group relative rounded-2xl overflow-hidden h-64 md:h-80 cursor-pointer fade-in delay-100">
+                <a href="appits.php" class="group relative rounded-2xl overflow-hidden h-64 md:h-80 cursor-pointer fade-in delay-100 block">
                     <div class="absolute inset-0 bg-gradient-to-t from-bgDark via-bgDark/80 to-transparent z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=2070&auto=format&fit=crop" alt="Appits" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <img src="assets/img/appits_ejecucion.png" alt="Appits" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute bottom-0 left-0 p-8 z-20">
-                        <div class="bg-accent text-bgDark text-xs font-bold px-3 py-1 rounded-full w-fit mb-3">SaaS Apps</div>
+                        <div class="bg-accent text-bgDark text-xs font-bold px-3 py-1 rounded-full w-fit mb-3">SaaS Talleres</div>
                         <h3 class="font-display text-3xl font-bold text-white mb-2">Appits</h3>
-                        <p class="text-textMuted text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Aplicaciones a la medida, listas para lanzar. Lleva tu operación al celular de tus clientes y tu equipo.</p>
+                        <p class="text-textMuted text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Gestión integral para talleres mecánicos: recepción, diagnóstico, facturación y portal del cliente en un solo lugar.</p>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>

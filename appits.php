@@ -10,34 +10,34 @@ require_once 'config/config.php';
         <base href="<?php echo BASE_URL; ?>">
     <?php endif; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLAGIE | Gestión Integral Educativa - MicroNuba</title>
-    <meta name="description" content="PLAGIE: La plataforma definitiva para la gestión de colegios. Optimiza procesos académicos, administrativos y de comunicación.">
-    <link rel="canonical" href="https://micronuba.net/plagie.php">
+    <title>Appits | Gestión Integral de Talleres - MicroNuba</title>
+    <meta name="description" content="Appits: la plataforma SaaS para talleres mecánicos y centros de servicio automotor. Recepción, diagnóstico, portal del cliente, facturación y reportes en un solo lugar.">
+    <link rel="canonical" href="https://micronuba.net/appits.php">
 
     <!-- Open Graph / Twitter Card -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="MicroNuba">
     <meta property="og:locale" content="es_CO">
-    <meta property="og:url" content="https://micronuba.net/plagie.php">
-    <meta property="og:title" content="PLAGIE | Gestión Integral Educativa - MicroNuba">
-    <meta property="og:description" content="PLAGIE: La plataforma definitiva para la gestión de colegios. Optimiza procesos académicos, administrativos y de comunicación.">
-    <meta property="og:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/plagie_logo_full.png">
+    <meta property="og:url" content="https://micronuba.net/appits.php">
+    <meta property="og:title" content="Appits | Gestión Integral de Talleres - MicroNuba">
+    <meta property="og:description" content="Appits: la plataforma SaaS para talleres mecánicos y centros de servicio automotor. Recepción, diagnóstico, portal del cliente, facturación y reportes en un solo lugar.">
+    <meta property="og:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/appits_ejecucion.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PLAGIE | Gestión Integral Educativa - MicroNuba">
-    <meta name="twitter:description" content="PLAGIE: La plataforma definitiva para la gestión de colegios. Optimiza procesos académicos, administrativos y de comunicación.">
-    <meta name="twitter:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/plagie_logo_full.png">
+    <meta name="twitter:title" content="Appits | Gestión Integral de Talleres - MicroNuba">
+    <meta name="twitter:description" content="Appits: la plataforma SaaS para talleres mecánicos y centros de servicio automotor. Recepción, diagnóstico, portal del cliente, facturación y reportes en un solo lugar.">
+    <meta name="twitter:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/appits_ejecucion.png">
 
     <!-- Datos estructurados -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "PLAGIE",
-        "applicationCategory": "EducationApplication",
-        "operatingSystem": "Web",
-        "description": "PLAGIE: plataforma de Gestión Integral Educativa para colegios — portal web institucional, matrículas en línea, gestión administrativa y financiera, y control académico.",
-        "url": "https://micronuba.net/plagie.php",
-        "image": "https://micronuba.net/sitepro/portal_web_micronuba/assets/img/plagie_logo_full.png",
+        "name": "Appits",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Android",
+        "description": "Appits: plataforma SaaS multi-tenant de gestión integral para talleres mecánicos y centros de servicio automotor — recepción, diagnóstico, ejecución, portal del cliente, facturación e inventario.",
+        "url": "https://micronuba.net/appits.php",
+        "image": "https://micronuba.net/sitepro/portal_web_micronuba/assets/img/appits_ejecucion.png",
         "publisher": {
             "@type": "Organization",
             "name": "MicroNuba",
@@ -59,9 +59,6 @@ require_once 'config/config.php';
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <!-- Configuración de Colores (Igual a index.php) -->
-
-
     <style>
         body {
             background-color: #0f172a;
@@ -72,7 +69,7 @@ require_once 'config/config.php';
         .tech-bg {
             background-image:
                 linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)),
-                url('https://images.unsplash.com/photo-1596496356938-bb9274218ebf?q=80&w=2670&auto=format&fit=crop');
+                url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=2670&auto=format&fit=crop');
             background-size: cover;
             background-attachment: fixed;
         }
@@ -244,16 +241,18 @@ require_once 'config/config.php';
     <header class="relative min-h-[80vh] flex items-center pt-32 pb-20 overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-bgDark/50 to-bgDark"></div>
         <div class="container mx-auto px-6 relative z-10 text-center">
-            <h1 class="sr-only">PLAGIE - Gestión Integral Educativa by MicroNuba</h1>
-            <!-- LOGO PLAGIE -->
-            <div class="mb-12 flex justify-center fade-in">
-                <div class="flex items-center justify-center p-6 transition-colors duration-500">
-                    <img src="assets/img/plagie_logo_full.png" alt="PLAGIE Logo" class="h-64 md:h-80 object-contain">
+            <!-- WORDMARK APPITS -->
+            <div class="mb-8 flex justify-center fade-in">
+                <div class="flex items-center gap-4">
+                    <div class="w-20 h-20 rounded-2xl bg-accent/10 border border-accent/30 flex items-center justify-center text-4xl text-accent">
+                        <i class="fa-solid fa-car-side"></i>
+                    </div>
+                    <h1 class="font-display text-6xl md:text-7xl font-bold text-white">Appits</h1>
                 </div>
             </div>
 
             <p class="text-xl text-textMuted max-w-2xl mx-auto mb-10">
-                La solución definitiva para optimizar la gestión de su institución.
+                La plataforma integral para talleres mecánicos y centros de servicio automotor. Del mostrador a la entrega, cada vehículo bajo control.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="cotizar.php" class="bg-accent hover:bg-accentHover text-bgDark font-bold px-8 py-4 rounded-lg text-center transition-all transform hover:scale-105">
@@ -268,147 +267,151 @@ require_once 'config/config.php';
         <div class="container mx-auto px-6">
             <div class="mb-16 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display text-white title-accent inline-block">
-                    PLAGIE: Un Ecosistema Integral
+                    Appits: Un Ecosistema Integral para su Taller
                 </h2>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 mb-32">
-                <!-- Feature 1: Institucional -->
+                <!-- Feature 1: Operación -->
                 <div class="glass-card p-8 rounded-2xl relative group h-full fade-in delay-100 hover:bg-white/5 transition-all duration-300">
                     <div class="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center text-2xl text-accent mb-6">
-                        <i class="fa-solid fa-school"></i>
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-accent mb-3">Institucional</h3>
-                    <p class="text-white font-medium mb-2">La imagen de su colegio ante el mundo.</p>
+                    <h3 class="text-2xl font-bold text-accent mb-3">Operación</h3>
+                    <p class="text-white font-medium mb-2">El taller, siempre bajo control.</p>
                     <p class="text-textMuted text-sm">
-                        Portal web, admisiones y centro de contacto.
+                        Recepción, diagnóstico, ejecución y calidad, en un solo flujo.
                     </p>
                 </div>
 
-                <!-- Feature 2: Administrativo -->
+                <!-- Feature 2: Cliente -->
                 <div class="glass-card p-8 rounded-2xl relative group h-full fade-in delay-200 hover:bg-white/5 transition-all duration-300">
                     <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center text-2xl text-blue-400 mb-6">
-                        <i class="fa-solid fa-briefcase"></i>
+                        <i class="fa-solid fa-comments"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-blue-400 mb-3">Administrativo</h3>
-                    <p class="text-white font-medium mb-2">Eficiencia operativa.</p>
+                    <h3 class="text-2xl font-bold text-blue-400 mb-3">Cliente</h3>
+                    <p class="text-white font-medium mb-2">Su cliente, siempre informado.</p>
                     <p class="text-textMuted text-sm">
-                        Control financiero, reportes y gestión de datos centralizada.
+                        Portal, notificaciones y chat en tiempo real.
                     </p>
                 </div>
 
-                <!-- Feature 3: Académico -->
+                <!-- Feature 3: Negocio -->
                 <div class="glass-card p-8 rounded-2xl relative group h-full fade-in delay-300 hover:bg-white/5 transition-all duration-300">
                     <div class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center text-2xl text-cyan-400 mb-6">
-                        <i class="fa-solid fa-book-open"></i>
+                        <i class="fa-solid fa-chart-line"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-cyan-400 mb-3">Académico</h3>
-                    <p class="text-white font-medium mb-2">El corazón de la enseñanza.</p>
+                    <h3 class="text-2xl font-bold text-cyan-400 mb-3">Negocio</h3>
+                    <p class="text-white font-medium mb-2">Números claros, decisiones rápidas.</p>
                     <p class="text-textMuted text-sm">
-                        Currículo, calificaciones y seguimiento docente.
+                        Facturación, inventario y reportes financieros al día.
                     </p>
                 </div>
             </div>
 
             <!-- DETAILED SECTIONS -->
 
-            <!-- Section 1: Portal Web -->
+            <!-- Section 1: Recepción, Diagnóstico y Ejecución -->
             <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
                 <div class="order-2 md:order-1">
-                    <img src="assets/img/plagie_portal.png" alt="Portal Web Institucional" class="rounded-2xl border border-white/10 shadow-2xl w-full">
+                    <img src="assets/img/appits_ejecucion.png" alt="Kanban de Ejecución Appits" class="rounded-2xl border border-white/10 shadow-2xl w-full">
                 </div>
                 <div class="order-1 md:order-2">
-                    <h3 class="text-3xl font-bold text-white mb-2">Portal Web Institucional</h3>
-                    <h4 class="text-accent text-xl font-bold mb-6">Visibilidad y Comunicación</h4>
+                    <h3 class="text-3xl font-bold text-white mb-2">Recepción, Diagnóstico y Ejecución</h3>
+                    <h4 class="text-accent text-xl font-bold mb-6">Cada Vehículo, Siempre Visible</h4>
                     <p class="text-textMuted mb-6">
-                        Ofrecemos un sitio web completo y moderno, con tecnología responsiva adaptable a cualquier dispositivo (móvil, tablet, PC).
+                        Un tablero en tiempo real que sigue cada vehículo desde que entra al taller hasta que sale, sin llamadas ni planillas sueltas.
                     </p>
                     <ul class="space-y-4 text-textMuted">
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-accent mt-1"></i>
-                            <div><strong class="text-white">Galerías Multimedia:</strong> Fotos y videos de eventos.</div>
+                            <div><strong class="text-white">Kanban en Tiempo Real:</strong> Cada orden, visible por etapa: recepción, diagnóstico, ejecución y calidad.</div>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-accent mt-1"></i>
-                            <div><strong class="text-white">Matrículas en Línea:</strong> Simplifique el proceso de admisión.</div>
+                            <div><strong class="text-white">Diagnóstico Digital:</strong> Checklist estructurado con evidencia fotográfica y entrada por voz.</div>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-accent mt-1"></i>
-                            <div><strong class="text-white">Noticias y Circulares:</strong> Mantenga a la comunidad informada.</div>
+                            <div><strong class="text-white">Cotizaciones y Aprobaciones:</strong> El cliente aprueba por WhatsApp, correo o chat interno.</div>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-accent mt-1"></i>
-                            <div><strong class="text-white">Autogestión:</strong> Actualización de información por parte del usuario.</div>
+                            <div><strong class="text-white">Registro Express con QR:</strong> Recepción ágil directo desde el mostrador.</div>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Section 2: Administrativo -->
+            <!-- Section 2: Portal del Cliente -->
             <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
                 <div>
-                    <h3 class="text-3xl font-bold text-white mb-2">Gestión Administrativa Eficiente</h3>
-                    <h4 class="text-blue-400 text-xl font-bold mb-6">Control Total de Recursos</h4>
+                    <h3 class="text-3xl font-bold text-white mb-2">Portal del Cliente y Comunicación</h3>
+                    <h4 class="text-blue-400 text-xl font-bold mb-6">Su Cliente, Siempre Informado</h4>
                     <p class="text-textMuted mb-6">
-                        Centralice la información y garantice la fiabilidad de los datos para la toma de decisiones estratégicas.
+                        Nada de llamar a preguntar "¿cómo va mi carro?" — el cliente lo ve en tiempo real, desde su celular.
                     </p>
                     <ul class="space-y-4 text-textMuted">
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-blue-400 mt-1"></i>
-                            <div><strong class="text-white">Registro de Estudiantes:</strong> Base de datos centralizada y consultas ágiles.</div>
+                            <div><strong class="text-white">Portal Web y Móvil:</strong> El cliente sigue el estado real de su vehículo desde cualquier dispositivo.</div>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-blue-400 mt-1"></i>
-                            <div><strong class="text-white">Control Financiero:</strong> Gestión segura de pagos, cartera y estados financieros.</div>
+                            <div><strong class="text-white">Certificado de Calidad:</strong> Evidencia fotográfica del servicio entregado, con respaldo profesional.</div>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-blue-400 mt-1"></i>
-                            <div><strong class="text-white">Reportes e Informes:</strong> Estadísticas detalladas para controlar la labor administrativa.</div>
+                            <div><strong class="text-white">Chat en Tiempo Real:</strong> Mensajería directa, estilo WhatsApp, entre el taller y el cliente.</div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-blue-400 mt-1"></i>
+                            <div><strong class="text-white">Notificaciones Multicanal:</strong> Avisos push, email y WhatsApp en cada cambio de estado.</div>
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <img src="assets/img/plagie_admin.png" alt="Gestión Administrativa" class="rounded-2xl border border-white/10 shadow-2xl w-full">
+                <div class="flex justify-center">
+                    <img src="assets/img/appits_portal_cliente.png" alt="Portal del Cliente Appits" class="rounded-2xl border border-white/10 shadow-2xl max-w-[220px] w-full">
                 </div>
             </div>
 
-            <!-- Section 3: Dashboard Académico -->
+            <!-- Section 3: Gestión, Facturación y Reportes -->
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="order-2 md:order-1">
-                    <img src="assets/img/plagie_dashboard.png" alt="Dashboard Académico" class="rounded-2xl border border-white/10 shadow-2xl w-full">
+                    <img src="assets/img/appits_dashboard.png" alt="Dashboard Financiero Appits" class="rounded-2xl border border-white/10 shadow-2xl w-full">
                 </div>
                 <div class="order-1 md:order-2">
-                    <h3 class="text-3xl font-bold text-white mb-2">Control Académico</h3>
-                    <h4 class="text-cyan-400 text-xl font-bold mb-6">Excelencia Educativa</h4>
+                    <h3 class="text-3xl font-bold text-white mb-2">Gestión, Facturación y Reportes</h3>
+                    <h4 class="text-cyan-400 text-xl font-bold mb-6">El Negocio, Bajo Control</h4>
                     <p class="text-textMuted mb-6">
-                        Herramientas diseñadas para optimizar la labor docente y el seguimiento estudiantil detallado.
+                        Herramientas diseñadas para que el dueño del taller decida con datos reales, no con corazonadas.
                     </p>
                     <ul class="space-y-4 text-textMuted">
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-cyan-400 mt-1"></i>
-                            <div><strong class="text-white">Gestión Curricular:</strong> Planes de estudio y carga académica.</div>
+                            <div><strong class="text-white">Facturación Electrónica:</strong> Emisión, anulación e historial completo, con reversión automática de inventario.</div>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-cyan-400 mt-1"></i>
-                            <div><strong class="text-white">Calificaciones:</strong> Registro de notas y recomendaciones.</div>
+                            <div><strong class="text-white">Inventario Integrado:</strong> Control de repuestos conectado en tiempo real con el catálogo.</div>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-cyan-400 mt-1"></i>
-                            <div><strong class="text-white">Monitoreo:</strong> Seguimiento al desempeño docente y estado académico del alumno.</div>
+                            <div><strong class="text-white">Dashboard Financiero:</strong> KPIs operativos y financieros al instante, con exportación a PDF/Excel.</div>
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-cyan-400 mt-1"></i>
-                            <div><strong class="text-white">Observador del Alumno:</strong> Control disciplinario digitalizado.</div>
+                            <div><strong class="text-white">Multi-Sucursal:</strong> Un solo panel para todas sus sedes, con app móvil nativa para el equipo técnico.</div>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Section 4: Beneficios y Tecnología (Slides 13-15) -->
+            <!-- Section 4: Beneficios y Tecnología -->
             <div class="mt-32">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display text-white title-accent inline-block">
-                        ¿Por qué elegir PLAGIE?
+                        ¿Por qué elegir Appits?
                     </h2>
                     <p class="text-textMuted max-w-2xl mx-auto">
                         Más que un software, somos su aliado tecnológico estratégico.
@@ -416,32 +419,32 @@ require_once 'config/config.php';
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Benefit 1: Cloud -->
+                    <!-- Benefit 1: Multi-tenant -->
                     <div class="glass-card p-6 rounded-2xl hover:bg-white/5 transition-all duration-300">
-                        <div class="text-3xl text-accent mb-4"><i class="fa-solid fa-cloud"></i></div>
-                        <h4 class="text-lg font-bold text-white mb-2">100% en la Nube</h4>
-                        <p class="text-sm text-textMuted">Acceso seguro 24/7 desde cualquier lugar y dispositivo. Sin instalaciones complejas ni servidores locales.</p>
+                        <div class="text-3xl text-accent mb-4"><i class="fa-solid fa-building"></i></div>
+                        <h4 class="text-lg font-bold text-white mb-2">Su Negocio, Su Espacio</h4>
+                        <p class="text-sm text-textMuted">Cada taller opera con su propio subdominio y su propia marca, con los datos completamente aislados de los demás.</p>
                     </div>
 
                     <!-- Benefit 2: Security -->
                     <div class="glass-card p-6 rounded-2xl hover:bg-white/5 transition-all duration-300">
                         <div class="text-3xl text-accent mb-4"><i class="fa-solid fa-shield-halved"></i></div>
-                        <h4 class="text-lg font-bold text-white mb-2">Seguridad Total</h4>
-                        <p class="text-sm text-textMuted">Protección de datos con los más altos estándares. Backups automáticos y confidencialidad garantizada.</p>
+                        <h4 class="text-lg font-bold text-white mb-2">Seguridad de Nivel Empresarial</h4>
+                        <p class="text-sm text-textMuted">Aislamiento de datos a nivel de base de datos y roles y permisos configurables por cargo.</p>
                     </div>
 
                     <!-- Benefit 3: Mobile App -->
                     <div class="glass-card p-6 rounded-2xl hover:bg-white/5 transition-all duration-300">
                         <div class="text-3xl text-accent mb-4"><i class="fa-solid fa-mobile-screen-button"></i></div>
                         <h4 class="text-lg font-bold text-white mb-2">App Móvil Nativa</h4>
-                        <p class="text-sm text-textMuted">Conecte a toda su comunidad (Padres, Docentes, Estudiantes) con nuestra aplicación móvil Android e iOS.</p>
+                        <p class="text-sm text-textMuted">Aplicación Android para su equipo técnico, con notificaciones push nativas en cada actualización.</p>
                     </div>
 
-                    <!-- Benefit 4: Support -->
+                    <!-- Benefit 4: Ecosystem -->
                     <div class="glass-card p-6 rounded-2xl hover:bg-white/5 transition-all duration-300">
-                        <div class="text-3xl text-accent mb-4"><i class="fa-solid fa-headset"></i></div>
-                        <h4 class="text-lg font-bold text-white mb-2">Soporte Premium</h4>
-                        <p class="text-sm text-textMuted">Equipo de servicio al cliente dedicado. Capacitaciones constantes y acompañamiento en cada paso.</p>
+                        <div class="text-3xl text-accent mb-4"><i class="fa-solid fa-puzzle-piece"></i></div>
+                        <h4 class="text-lg font-bold text-white mb-2">Ecosistema MicroNuba</h4>
+                        <p class="text-sm text-textMuted">Conectado con nuestra plataforma de Inventarios: stock y precios de repuestos siempre al día.</p>
                     </div>
                 </div>
             </div>
@@ -470,7 +473,7 @@ require_once 'config/config.php';
                     <ul class="space-y-3 text-sm text-textMuted">
                         <li><a href="index.php" class="hover:text-accent transition-colors">Inicio</a></li>
                         <li><a href="index.php#servicios" class="hover:text-accent transition-colors">Servicios</a></li>
-                        <li><a href="index.php#saas" class="hover:text-accent transition-colors">Productos SaaS</a></li>
+                        <li><a href="plagie.php" class="hover:text-accent transition-colors">PLAGIE</a></li>
                         <li><a href="cotizar.php" class="hover:text-accent transition-colors">Cotizar</a></li>
                     </ul>
                 </div>
