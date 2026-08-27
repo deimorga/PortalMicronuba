@@ -248,7 +248,7 @@ require_once 'config/config.php';
             <!-- LOGO PLAGIE -->
             <div class="mb-12 flex justify-center fade-in">
                 <div class="flex items-center justify-center p-6 transition-colors duration-500">
-                    <img src="assets/img/plagie_logo_full.png" alt="PLAGIE Logo" class="h-[100px] object-contain">
+                    <img src="assets/img/plagie_logo_full.png" alt="PLAGIE Logo" class="h-[90px] object-contain">
                 </div>
             </div>
 
