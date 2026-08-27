@@ -163,7 +163,7 @@ require_once 'config/config.php';
                             </a>
                             <a href="appits.php" class="flex items-start gap-3 px-4 py-3 rounded-lg hover:bg-white/5 group/item transition-colors">
                                 <div class="mt-1 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center group-hover/item:bg-accent/20 transition-colors shrink-0">
-                                    <i class="fa-solid fa-car-side text-accent"></i>
+                                    <img src="assets/img/icons/appits_isotipo.png" alt="Appits" class="w-5 h-5 object-contain">
                                 </div>
                                 <div>
                                     <span class="block font-bold text-white group-hover/item:text-accent transition-colors">Appits</span>
@@ -244,9 +244,7 @@ require_once 'config/config.php';
             <!-- WORDMARK APPITS -->
             <div class="mb-8 flex justify-center fade-in">
                 <div class="flex items-center gap-4">
-                    <div class="w-20 h-20 rounded-2xl bg-accent/10 border border-accent/30 flex items-center justify-center text-4xl text-accent">
-                        <i class="fa-solid fa-car-side"></i>
-                    </div>
+                    <img src="assets/img/icons/appits_isotipo.png" alt="Appits" class="h-20 w-auto object-contain">
                     <h1 class="font-display text-6xl md:text-7xl font-bold text-white">Appits</h1>
                 </div>
             </div>
@@ -371,7 +369,7 @@ require_once 'config/config.php';
                     </ul>
                 </div>
                 <div class="flex justify-center">
-                    <img src="assets/img/appits_portal_cliente.png" alt="Portal del Cliente Appits" class="rounded-2xl border border-white/10 shadow-2xl max-w-[220px] w-full">
+                    <img src="assets/img/appits_portal_cliente.png" alt="Portal del Cliente Appits" class="rounded-2xl border border-white/10 shadow-2xl max-w-xs w-full">
                 </div>
             </div>
 

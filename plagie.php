@@ -166,7 +166,7 @@ require_once 'config/config.php';
                             </a>
                             <a href="appits.php" class="flex items-start gap-3 px-4 py-3 rounded-lg hover:bg-white/5 group/item transition-colors">
                                 <div class="mt-1 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center group-hover/item:bg-accent/20 transition-colors shrink-0">
-                                    <i class="fa-solid fa-car-side text-accent"></i>
+                                    <img src="assets/img/icons/appits_isotipo.png" alt="Appits" class="w-5 h-5 object-contain">
                                 </div>
                                 <div>
                                     <span class="block font-bold text-white group-hover/item:text-accent transition-colors">Appits</span>
