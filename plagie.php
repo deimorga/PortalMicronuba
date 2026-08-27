@@ -11,7 +11,7 @@ require_once 'config/config.php';
     <?php endif; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLAGIE | Gestión Integral Educativa - MicroNuba</title>
-    <meta name="description" content="PLAGIE: La plataforma definitiva para la gestión de colegios. Optimiza procesos académicos, administrativos y de comunicación.">
+    <meta name="description" content="PLAGIE: La plataforma definitiva para la gestión de instituciones educativas. Optimiza procesos académicos, administrativos y de comunicación.">
     <link rel="canonical" href="https://micronuba.net/plagie.php">
 
     <!-- Open Graph / Twitter Card -->
@@ -20,11 +20,11 @@ require_once 'config/config.php';
     <meta property="og:locale" content="es_CO">
     <meta property="og:url" content="https://micronuba.net/plagie.php">
     <meta property="og:title" content="PLAGIE | Gestión Integral Educativa - MicroNuba">
-    <meta property="og:description" content="PLAGIE: La plataforma definitiva para la gestión de colegios. Optimiza procesos académicos, administrativos y de comunicación.">
+    <meta property="og:description" content="PLAGIE: La plataforma definitiva para la gestión de instituciones educativas. Optimiza procesos académicos, administrativos y de comunicación.">
     <meta property="og:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/plagie_logo_full.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="PLAGIE | Gestión Integral Educativa - MicroNuba">
-    <meta name="twitter:description" content="PLAGIE: La plataforma definitiva para la gestión de colegios. Optimiza procesos académicos, administrativos y de comunicación.">
+    <meta name="twitter:description" content="PLAGIE: La plataforma definitiva para la gestión de instituciones educativas. Optimiza procesos académicos, administrativos y de comunicación.">
     <meta name="twitter:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/plagie_logo_full.png">
 
     <!-- Datos estructurados -->
@@ -35,7 +35,7 @@ require_once 'config/config.php';
         "name": "PLAGIE",
         "applicationCategory": "EducationApplication",
         "operatingSystem": "Web",
-        "description": "PLAGIE: plataforma de Gestión Integral Educativa para colegios — portal web institucional, matrículas en línea, gestión administrativa y financiera, y control académico.",
+        "description": "PLAGIE: plataforma de Gestión Integral Educativa para instituciones educativas — portal web institucional, matrículas en línea, gestión administrativa y financiera, y control académico.",
         "url": "https://micronuba.net/plagie.php",
         "image": "https://micronuba.net/sitepro/portal_web_micronuba/assets/img/plagie_logo_full.png",
         "publisher": {
@@ -253,7 +253,7 @@ require_once 'config/config.php';
             </div>
 
             <p class="text-xl text-textMuted max-w-2xl mx-auto mb-10">
-                La plataforma integral para la gestión de su colegio: portal institucional, control académico y administración financiera. De la matrícula al boletín, toda su comunidad educativa conectada.
+                La plataforma integral para la gestión de su institución educativa: portal institucional, control académico y administración financiera. De la matrícula al boletín, toda su comunidad educativa conectada.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://wa.me/573203543092?text=Hola%2C%20vengo%20desde%20el%20portal%20de%20MicroNuba%20y%20quisiera%20un%20demo%20de%20PLAGIE" target="_blank" class="bg-accent hover:bg-accentHover text-bgDark font-bold px-8 py-4 rounded-lg text-center transition-all transform hover:scale-105">
@@ -279,7 +279,7 @@ require_once 'config/config.php';
                         <i class="fa-solid fa-school"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-accent mb-3">Institucional</h3>
-                    <p class="text-white font-medium mb-2">La imagen de su colegio ante el mundo.</p>
+                    <p class="text-white font-medium mb-2">La imagen de su institución ante el mundo.</p>
                     <p class="text-textMuted text-sm">
                         Portal web, admisiones y centro de contacto.
                     </p>
