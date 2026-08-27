@@ -10,8 +10,8 @@ require_once 'config/config.php';
         <base href="<?php echo BASE_URL; ?>">
     <?php endif; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appits | Gestión Integral de Talleres - MicroNuba</title>
-    <meta name="description" content="Appits: la plataforma SaaS para talleres mecánicos y centros de servicio automotor. Recepción, diagnóstico, portal del cliente, facturación y reportes en un solo lugar.">
+    <title>Appits | Gestión Integral de Talleres y Lavaderos - MicroNuba</title>
+    <meta name="description" content="Appits: la plataforma SaaS para talleres mecánicos, lavaderos y centros de servicio automotor. Agendamiento, recepción, diagnóstico, portal del cliente, facturación y reportes en un solo lugar.">
     <link rel="canonical" href="https://micronuba.net/appits.php">
 
     <!-- Open Graph / Twitter Card -->
@@ -19,12 +19,12 @@ require_once 'config/config.php';
     <meta property="og:site_name" content="MicroNuba">
     <meta property="og:locale" content="es_CO">
     <meta property="og:url" content="https://micronuba.net/appits.php">
-    <meta property="og:title" content="Appits | Gestión Integral de Talleres - MicroNuba">
-    <meta property="og:description" content="Appits: la plataforma SaaS para talleres mecánicos y centros de servicio automotor. Recepción, diagnóstico, portal del cliente, facturación y reportes en un solo lugar.">
+    <meta property="og:title" content="Appits | Gestión Integral de Talleres y Lavaderos - MicroNuba">
+    <meta property="og:description" content="Appits: la plataforma SaaS para talleres mecánicos, lavaderos y centros de servicio automotor. Agendamiento, recepción, diagnóstico, portal del cliente, facturación y reportes en un solo lugar.">
     <meta property="og:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/appits_ejecucion.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Appits | Gestión Integral de Talleres - MicroNuba">
-    <meta name="twitter:description" content="Appits: la plataforma SaaS para talleres mecánicos y centros de servicio automotor. Recepción, diagnóstico, portal del cliente, facturación y reportes en un solo lugar.">
+    <meta name="twitter:title" content="Appits | Gestión Integral de Talleres y Lavaderos - MicroNuba">
+    <meta name="twitter:description" content="Appits: la plataforma SaaS para talleres mecánicos, lavaderos y centros de servicio automotor. Agendamiento, recepción, diagnóstico, portal del cliente, facturación y reportes en un solo lugar.">
     <meta name="twitter:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/appits_ejecucion.png">
 
     <!-- Datos estructurados -->
@@ -35,7 +35,7 @@ require_once 'config/config.php';
         "name": "Appits",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web, Android",
-        "description": "Appits: plataforma SaaS multi-tenant de gestión integral para talleres mecánicos y centros de servicio automotor — recepción, diagnóstico, ejecución, portal del cliente, facturación e inventario.",
+        "description": "Appits: plataforma SaaS multi-tenant de gestión integral para talleres mecánicos, lavaderos y centros de servicio automotor — agendamiento de citas, recepción, diagnóstico, ejecución, portal del cliente, facturación e inventario.",
         "url": "https://micronuba.net/appits.php",
         "image": "https://micronuba.net/sitepro/portal_web_micronuba/assets/img/appits_ejecucion.png",
         "publisher": {
@@ -167,7 +167,7 @@ require_once 'config/config.php';
                                 </div>
                                 <div>
                                     <span class="block font-bold text-white group-hover/item:text-accent transition-colors">Appits</span>
-                                    <span class="block text-xs text-textMuted mt-0.5">Gestión de Talleres</span>
+                                    <span class="block text-xs text-textMuted mt-0.5">Talleres y Lavaderos</span>
                                 </div>
                             </a>
                         </div>
@@ -250,7 +250,7 @@ require_once 'config/config.php';
             </div>
 
             <p class="text-xl text-textMuted max-w-2xl mx-auto mb-10">
-                La plataforma integral para talleres mecánicos y centros de servicio automotor. Del mostrador a la entrega, cada vehículo bajo control.
+                La plataforma integral para talleres mecánicos, lavaderos y centros de servicio automotor. Del agendamiento a la entrega, cada vehículo bajo control.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="cotizar.php" class="bg-accent hover:bg-accentHover text-bgDark font-bold px-8 py-4 rounded-lg text-center transition-all transform hover:scale-105">
@@ -265,7 +265,7 @@ require_once 'config/config.php';
         <div class="container mx-auto px-6">
             <div class="mb-16 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display text-white title-accent inline-block">
-                    Appits: Un Ecosistema Integral para su Taller
+                    Appits: Un Ecosistema Integral para su Taller o Lavadero
                 </h2>
             </div>
 
@@ -278,7 +278,7 @@ require_once 'config/config.php';
                     <h3 class="text-2xl font-bold text-accent mb-3">Operación</h3>
                     <p class="text-white font-medium mb-2">El taller, siempre bajo control.</p>
                     <p class="text-textMuted text-sm">
-                        Recepción, diagnóstico, ejecución y calidad, en un solo flujo.
+                        Agendamiento, recepción, diagnóstico, ejecución y calidad, en un solo flujo.
                     </p>
                 </div>
 
@@ -315,12 +315,16 @@ require_once 'config/config.php';
                     <img src="assets/img/appits_ejecucion.png" alt="Kanban de Ejecución Appits" class="rounded-2xl border border-white/10 shadow-2xl w-full">
                 </div>
                 <div class="order-1 md:order-2">
-                    <h3 class="text-3xl font-bold text-white mb-2">Recepción, Diagnóstico y Ejecución</h3>
+                    <h3 class="text-3xl font-bold text-white mb-2">Agendamiento, Recepción y Ejecución</h3>
                     <h4 class="text-accent text-xl font-bold mb-6">Cada Vehículo, Siempre Visible</h4>
                     <p class="text-textMuted mb-6">
-                        Un tablero en tiempo real que sigue cada vehículo desde que entra al taller hasta que sale, sin llamadas ni planillas sueltas.
+                        Desde que su cliente reserva la cita hasta que el vehículo sale, todo en un solo flujo en tiempo real — sin llamadas ni planillas sueltas.
                     </p>
                     <ul class="space-y-4 text-textMuted">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-accent mt-1"></i>
+                            <div><strong class="text-white">Agendamiento en Línea:</strong> Sus clientes reservan su cita desde el portal, sin coordinarla a mano por WhatsApp.</div>
+                        </li>
                         <li class="flex items-start gap-3">
                             <i class="fa-solid fa-check text-accent mt-1"></i>
                             <div><strong class="text-white">Kanban en Tiempo Real:</strong> Cada orden, visible por etapa: recepción, diagnóstico, ejecución y calidad.</div>
@@ -382,7 +386,7 @@ require_once 'config/config.php';
                     <h3 class="text-3xl font-bold text-white mb-2">Gestión, Facturación y Reportes</h3>
                     <h4 class="text-cyan-400 text-xl font-bold mb-6">El Negocio, Bajo Control</h4>
                     <p class="text-textMuted mb-6">
-                        Herramientas diseñadas para que el dueño del taller decida con datos reales, no con corazonadas.
+                        Herramientas diseñadas para que el dueño del taller o lavadero decida con datos reales, no con corazonadas.
                     </p>
                     <ul class="space-y-4 text-textMuted">
                         <li class="flex items-start gap-3">
@@ -421,7 +425,7 @@ require_once 'config/config.php';
                     <div class="glass-card p-6 rounded-2xl hover:bg-white/5 transition-all duration-300">
                         <div class="text-3xl text-accent mb-4"><i class="fa-solid fa-building"></i></div>
                         <h4 class="text-lg font-bold text-white mb-2">Su Negocio, Su Espacio</h4>
-                        <p class="text-sm text-textMuted">Cada taller opera con su propio subdominio y su propia marca, con los datos completamente aislados de los demás.</p>
+                        <p class="text-sm text-textMuted">Cada negocio opera con su propio subdominio y su propia marca, con los datos completamente aislados de los demás.</p>
                     </div>
 
                     <!-- Benefit 2: Security -->

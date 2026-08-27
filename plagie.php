@@ -170,7 +170,7 @@ require_once 'config/config.php';
                                 </div>
                                 <div>
                                     <span class="block font-bold text-white group-hover/item:text-accent transition-colors">Appits</span>
-                                    <span class="block text-xs text-textMuted mt-0.5">Gestión de Talleres</span>
+                                    <span class="block text-xs text-textMuted mt-0.5">Talleres y Lavaderos</span>
                                 </div>
                             </a>
                         </div>

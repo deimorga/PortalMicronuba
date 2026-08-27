@@ -195,7 +195,7 @@ require_once 'config/config.php';
                                 </div>
                                 <div>
                                     <span class="block font-bold text-white group-hover/item:text-accent transition-colors">Appits</span>
-                                    <span class="block text-xs text-textMuted mt-0.5">Gestión de Talleres</span>
+                                    <span class="block text-xs text-textMuted mt-0.5">Talleres y Lavaderos</span>
                                 </div>
                             </a>
                         </div>
@@ -537,7 +537,7 @@ require_once 'config/config.php';
                     <div class="absolute bottom-0 left-0 p-8 z-20">
                         <div class="bg-accent text-bgDark text-xs font-bold px-3 py-1 rounded-full w-fit mb-3">SaaS Talleres</div>
                         <h3 class="font-display text-3xl font-bold text-white mb-2">Appits</h3>
-                        <p class="text-textMuted text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Gestión integral para talleres mecánicos: recepción, diagnóstico, facturación y portal del cliente en un solo lugar.</p>
+                        <p class="text-textMuted text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">Gestión integral para talleres y lavaderos: agendamiento, recepción, diagnóstico, facturación y portal del cliente en un solo lugar.</p>
                     </div>
                 </a>
             </div>
