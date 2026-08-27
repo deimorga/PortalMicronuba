@@ -12,4 +12,11 @@
             height: 90px !important;
         }
     }
+
+    /* Nombre de clase fijo a propósito (no usar h-[Npx]): así, si algún caché
+       queda un paso atrás, sigue encontrando esta regla en vez de perder por
+       completo el control de tamaño. Ajustar solo el valor de height. */
+    .h-plagie-hero {
+        height: 90px;
+    }
 }
