@@ -53,6 +53,26 @@ require_once 'config/config.php';
         "sameAs": [
             "https://www.facebook.com/profile.php?id=61585605239590",
             "https://www.instagram.com/micro_nuba/"
+        ],
+        "makesOffer": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "SoftwareApplication",
+                    "name": "PLAGIE",
+                    "applicationCategory": "EducationApplication",
+                    "url": "https://micronuba.net/plagie.php"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "SoftwareApplication",
+                    "name": "Appits",
+                    "applicationCategory": "BusinessApplication",
+                    "url": "https://micronuba.net/appits.php"
+                }
+            }
         ]
     }
     </script>
