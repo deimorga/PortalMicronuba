@@ -154,7 +154,7 @@ require_once 'config/config.php';
                             <div class="px-4 py-2 text-xs font-bold text-textMuted uppercase tracking-wider mb-1">Nuestros productos</div>
                             <a href="plagie.php" class="flex items-start gap-3 px-4 py-3 rounded-lg hover:bg-white/5 group/item transition-colors">
                                 <div class="mt-1 w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center group-hover/item:bg-accent/20 transition-colors shrink-0">
-                                    <i class="fa-solid fa-graduation-cap text-accent"></i>
+                                    <img src="assets/img/icons/plagie_isotipo.png" alt="PLAGIE" class="w-5 h-5 object-contain">
                                 </div>
                                 <div>
                                     <span class="block font-bold text-white group-hover/item:text-accent transition-colors">PLAGIE</span>
@@ -253,7 +253,7 @@ require_once 'config/config.php';
                 La plataforma integral para talleres mecánicos, lavaderos y centros de servicio automotor. Del agendamiento a la entrega, cada vehículo bajo control.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="cotizar.php" class="bg-accent hover:bg-accentHover text-bgDark font-bold px-8 py-4 rounded-lg text-center transition-all transform hover:scale-105">
+                <a href="https://wa.me/573203543092?text=Hola%2C%20vengo%20desde%20el%20portal%20de%20MicroNuba%20y%20quisiera%20un%20demo%20de%20Appits" target="_blank" class="bg-accent hover:bg-accentHover text-bgDark font-bold px-8 py-4 rounded-lg text-center transition-all transform hover:scale-105">
                     Solicitar Demo
                 </a>
             </div>
