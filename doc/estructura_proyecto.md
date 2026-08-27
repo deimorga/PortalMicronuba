@@ -4,7 +4,8 @@ Mapa detallado de la ubicación de los archivos clave.
 
 ## Raíz (Root)
 - `index.php`: Punto de entrada principal.
-- `plagie.php`: Módulo relacionado con funcionalidad Plagie.
+- `plagie.php`: Página de producto PLAGIE (gestión educativa) — instituciones educativas en general, no solo colegios.
+- `appits.php`: Página de producto Appits (gestión de talleres mecánicos y lavaderos) — producto real en `appits.cloud`, repo fuente `SAAS-Gestion_Talleres`.
 - `cotizar.php`: Módulo de cotizaciones.
 - `docker-compose.yml`: Configuración de servicios (Docker).
 - `docker-compose.local.yml`: Overlay para integrarse al gateway compartido `micronuba-infra` (Traefik) en desarrollo local.
@@ -16,7 +17,7 @@ Mapa detallado de la ubicación de los archivos clave.
 - `api/`: Endpoint de la API (ej: `send_quote.php`).
 - `config/`: Archivos de configuración y ejemplos.
 - `lib/`: Librerías externas (PHPMailer).
-- `assets/`: Archivos estáticos (CSS, JS, imágenes).
+- `assets/`: Archivos estáticos (CSS, JS, imágenes). `assets/css/input.css` es la fuente de Tailwind (compilar con `npm run build`/`npm run dev` para generar `assets/css/styles.css`); tamaños que se ajustan iterativamente en producción (ej. logos de hero) deben vivir como clase fija en `@layer utilities` (ej. `.h-plagie-hero`), nunca como `h-[Npx]` arbitrario — ver `doc/contexto_gemini_web.md` para el porqué.
 - `logs/`: Registros del sistema.
 - `tests/`: Pruebas unitarias/funcionales.
 - `tools/`: Utilidades internas.
