@@ -233,7 +233,7 @@ require_once 'config/config.php';
 
     <!-- FOOTER SIMPLE -->
     <footer class="py-8 text-center text-textMuted text-sm border-t border-white/5 mt-10">
-        <p>&copy; 2025 MicroNuba SAS. Todos los derechos reservados.</p>
+        <p>&copy; <?php echo date('Y'); ?> MicroNuba SAS. Todos los derechos reservados.</p>
     </footer>
 
     <!-- SCRIPT PARA MANEJO DEL FORMULARIO -->
