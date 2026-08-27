@@ -253,7 +253,7 @@ require_once 'config/config.php';
             </div>
 
             <p class="text-xl text-textMuted max-w-2xl mx-auto mb-10">
-                La solución definitiva para optimizar la gestión de su institución.
+                La plataforma integral para la gestión de su colegio: portal institucional, control académico y administración financiera. De la matrícula al boletín, toda su comunidad educativa conectada.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://wa.me/573203543092?text=Hola%2C%20vengo%20desde%20el%20portal%20de%20MicroNuba%20y%20quisiera%20un%20demo%20de%20PLAGIE" target="_blank" class="bg-accent hover:bg-accentHover text-bgDark font-bold px-8 py-4 rounded-lg text-center transition-all transform hover:scale-105">
