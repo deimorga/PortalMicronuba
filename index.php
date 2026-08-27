@@ -309,10 +309,12 @@ require_once 'config/config.php';
                     <img src="assets/img/icons/antigravity.svg" alt="Antigravity" class="h-8 w-auto">
                     <span class="font-bold text-xl">Antigravity</span>
                 </div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-terminal text-3xl"></i> <span class="font-bold text-xl">Claude Code</span></div>
                 <div class="flex items-center gap-2">
                     <img src="assets/img/icons/gemini.svg" alt="Gemini" class="h-8 w-auto">
                     <span class="font-bold text-xl">Gemini</span>
                 </div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-sun text-3xl"></i> <span class="font-bold text-xl">Claude</span></div>
                 <div class="flex items-center gap-2">
                     <img src="https://notebooklm.google.com/_/static/branding/v5/light_mode/icon.svg" alt="NotebookLM" class="h-8 w-auto">
                     <span class="font-bold text-xl">NotebookLM</span>
