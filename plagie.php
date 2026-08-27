@@ -136,7 +136,7 @@ require_once 'config/config.php';
 
     <!-- NAV BAR -->
     <nav class="fixed w-full z-50 bg-bgDark/90 backdrop-blur-md border-b border-white/10">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
             <!-- BANNER LOGO -->
             <a href="index.php" class="flex items-center group">
                 <img src="assets/img/micronuba_horizontal_sin_fondo_Ajus.png" alt="MicroNuba Banner" class="h-logo-90 w-auto object-contain transition-all duration-300 group-hover:scale-105">
@@ -248,7 +248,7 @@ require_once 'config/config.php';
             <!-- LOGO PLAGIE -->
             <div class="mb-12 flex justify-center fade-in">
                 <div class="flex items-center justify-center p-6 transition-colors duration-500">
-                    <img src="assets/img/plagie_logo_full.png" alt="PLAGIE Logo" class="h-20 object-contain">
+                    <img src="assets/img/plagie_logo_full.png" alt="PLAGIE Logo" class="h-24 object-contain">
                 </div>
             </div>
 
