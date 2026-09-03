@@ -19,4 +19,16 @@
     .h-plagie-hero {
         height: 120px;
     }
+
+    /* Mismo criterio: clase fija en vez de text-[Nrem] arbitrario.
+       Base = 3rem (era text-6xl=3.75rem, -20%). */
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    @media (min-width: 768px) {
+        .hero-title {
+            font-size: 3.6rem !important; /* era md:text-7xl=4.5rem, -20% */
+        }
+    }
 }

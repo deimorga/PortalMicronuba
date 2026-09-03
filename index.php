@@ -89,7 +89,7 @@ require_once 'config/config.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Tailwind CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=<?php echo @filemtime(__DIR__ . '/assets/css/styles.css') ?: time(); ?>">
 
     <!-- Configuración de Colores -->
 
@@ -291,7 +291,7 @@ require_once 'config/config.php';
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-20">
             <div class="fade-in">
 
-                <h1 class="font-display text-6xl md:text-7xl font-bold leading-tight text-white mb-6">
+                <h1 class="font-display hero-title font-bold leading-tight text-white mb-6">
                     Tu negocio <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-accent">en la nube</span>
                 </h1>
