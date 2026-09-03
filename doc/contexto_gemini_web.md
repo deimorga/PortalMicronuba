@@ -1,9 +1,27 @@
 # Contexto de Sesión: Portal MicroNuba
 
-**Última Actualización:** 2026-08-27
+**Última Actualización:** 2026-09-03
 
 ## Estado Actual
-El portal ahora tiene **dos páginas de producto completas** (`plagie.php` y `appits.php`), stack tecnológico con marcas reales de Anthropic/Claude, y optimización de visibilidad para AI crawlers extendida a ambos productos. Todo desplegado y verificado en producción (`https://micronuba.net`).
+El portal tiene **dos páginas de producto completas** (`plagie.php` y `appits.php`), stack tecnológico con marcas reales de Anthropic/Claude, optimización de visibilidad para AI crawlers extendida a ambos productos, fotos reales del liderazgo, y desde el 02-03/09/2026 **el CSS ya no depende de purgas manuales de Cloudflare** (cache-busting automático). Todo desplegado y verificado en producción (`https://micronuba.net`).
+
+## Logros de la Sesión (2026-09-02/03)
+
+### Fotos reales del Liderazgo
+- Se reemplazaron `assets/img/team/deiby_moreno.jpeg` y `assets/img/team/andres_tovar.jpeg` por retratos profesionales nuevos (recortados/redimensionados a 600x600 centrados en cara+hombros para el círculo de 128px de la sección Liderazgo).
+
+### Título del hero reducido 20%
+- El `<h1>` de la portada ("Tu negocio en la nube") usaba `text-6xl md:text-7xl` (60px/72px). Se redujo exactamente 20% a petición del usuario: **48px móvil / 57.6px escritorio**, vía una clase fija `.hero-title` en `input.css` (mismo patrón que `.h-plagie-hero`).
+
+### Fix definitivo de caché de CSS: versión automática en el link
+- **Bug encontrado durante este mismo cambio:** tras desplegar el nuevo `styles.css` con `.hero-title`, Cloudflare siguió sirviendo la hoja de estilos vieja (sin esa clase) mientras el HTML nuevo ya no traía `text-6xl`/`md:text-7xl` — el resultado fue un `<h1>` sin NINGUNA clase de tamaño coincidente, cayendo al valor por defecto del navegador (~16px). Esto pareció al usuario un "-20% muy exagerado", pero en realidad era una desincronización HTML-nuevo/CSS-viejo, no el valor real elegido. Ni siquiera una purga de Cloudflare "Purge Everything" (confirmada por el usuario en el dashboard) resolvió el problema de inmediato — quedó un objeto stale en al menos un nodo de borde varios minutos después de purgar.
+- **Fix aplicado (permanente, no solo para este caso):** las 4 páginas (`index.php`, `plagie.php`, `cotizar.php`, `appits.php`) ahora referencian el CSS con versión automática basada en la fecha de modificación del archivo:
+  ```php
+  <link rel="stylesheet" href="assets/css/styles.css?v=<?php echo @filemtime(__DIR__ . '/assets/css/styles.css') ?: time(); ?>">
+  ```
+  Cada despliegue que toque `styles.css` cambia su `mtime` en el servidor → cambia automáticamente el query string `?v=` → Cloudflare lo trata como una URL nueva nunca cacheada → **MISS garantizado, sin depender de una purga manual que puede tardar en propagar.**
+  - **Regla para el futuro:** ya no hace falta pedirle al usuario que purgue Cloudflare después de un deploy que solo cambia `styles.css` — el cache-busting lo resuelve solo. La purga manual sigue siendo necesaria para imágenes/otros assets estáticos que no llevan este parámetro de versión (ver debajo).
+- Verificado con Chrome DevTools MCP en un contexto sin caché previa: `getComputedStyle(h1).fontSize` = `57.6px` en viewport ≥768px, coincide exactamente con lo esperado.
 
 ## Logros de la Sesión (2026-08-26/27)
 
@@ -46,4 +64,6 @@ El portal ahora tiene **dos páginas de producto completas** (`plagie.php` y `ap
 - **Producción real:** hosting compartido cPanel de Neolo (`homero.lineadns.com`), NO el VPS Docker. Acceso por FTPS (no hay SSH en este plan). Ver memoria del agente para credenciales y proceso de despliegue detallado.
 - **Docker local:** funcional, integrado al gateway `micronuba-infra` bajo `portal.micronuba.local:8090` (vía `docker-compose.local.yml`) cuando el gateway está disponible; también puede correr standalone en `:8080` si hay conflicto de IP en la red compartida con otro proyecto.
 - PHP: 8.2 (`php:8.2-apache`).
-- Cloudflare: proxy activo delante de `micronuba.net`; gestiona caché, bots/AI Crawl Control y robots.txt de forma independiente al origen. **Siempre purgar caché (Purge Everything) después de cada despliegue que toque CSS.**
+- Cloudflare: proxy activo delante de `micronuba.net`; gestiona caché, bots/AI Crawl Control y robots.txt de forma independiente al origen.
+  - **`styles.css` ya NO necesita purga manual** (cache-busting automático por `?v=filemtime`, ver arriba).
+  - **Imágenes y otros assets estáticos SÍ siguen necesitando purga manual de Cloudflare** ("Purge Everything") tras cada despliegue que los toque.
