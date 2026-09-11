@@ -477,6 +477,7 @@ require_once 'config/config.php';
                         <li><a href="index.php#servicios" class="hover:text-accent transition-colors">Servicios</a></li>
                         <li><a href="plagie.php" class="hover:text-accent transition-colors">PLAGIE</a></li>
                         <li><a href="cotizar.php" class="hover:text-accent transition-colors">Cotizar</a></li>
+                        <li><a href="privacidad.php" class="hover:text-accent transition-colors">Política de Privacidad</a></li>
                     </ul>
                 </div>
 

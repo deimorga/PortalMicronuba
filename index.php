@@ -677,9 +677,10 @@ require_once 'config/config.php';
                 </div>
             </div>
 
-            <div class="border-t border-white/10 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-sm text-textMuted">
+            <div class="border-t border-white/10 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-2 text-sm text-textMuted">
                 <p>&copy; <?php echo date('Y'); ?> MicroNuba SAS. Todos los derechos reservados.</p>
-                <p class="mt-2 md:mt-0">CCB • Colombia</p>
+                <a href="privacidad.php" class="hover:text-accent transition-colors">Política de Privacidad</a>
+                <p>CCB • Colombia</p>
             </div>
         </div>
     </footer>
