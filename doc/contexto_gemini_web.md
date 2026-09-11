@@ -1,9 +1,20 @@
 # Contexto de Sesión: Portal MicroNuba
 
-**Última Actualización:** 2026-09-03
+**Última Actualización:** 2026-09-11
 
 ## Estado Actual
-El portal tiene **dos páginas de producto completas** (`plagie.php` y `appits.php`), stack tecnológico con marcas reales de Anthropic/Claude, optimización de visibilidad para AI crawlers extendida a ambos productos, fotos reales del liderazgo, y desde el 02-03/09/2026 **el CSS ya no depende de purgas manuales de Cloudflare** (cache-busting automático). Todo desplegado y verificado en producción (`https://micronuba.net`).
+El portal tiene **dos páginas de producto completas** (`plagie.php` y `appits.php`), una **página de Política de Privacidad** (`privacidad.php`, nueva del 11/09), stack tecnológico con marcas reales de Anthropic/Claude, optimización de visibilidad para AI crawlers extendida a los productos, fotos reales del liderazgo, y desde el 02-03/09/2026 **el CSS ya no depende de purgas manuales de Cloudflare** (cache-busting automático). Todo desplegado y verificado en producción (`https://micronuba.net`).
+
+## Logros de la Sesión (2026-09-11)
+
+### Página nueva: Política de Privacidad (`privacidad.php`)
+- Creada a pedido explícito de Deiby para cumplir un requisito de **Google Cloud**: publicar en producción la app OAuth **"MicroNuba Respaldos"** (sube copias de seguridad cifradas del VPS al Google Drive de la empresa, scope `https://www.googleapis.com/auth/drive.file` únicamente — solo ve/modifica archivos que ella misma crea, no el resto del Drive) exige una URL de política de privacidad pública; sin ella el token OAuth caduca cada 7 días y los respaldos dejan de subir en silencio.
+- Sigue el patrón exacto de `plagie.php` (mismo `require_once 'config/config.php'`, mismo `<head>`, nav y footer idénticos, mismas clases Tailwind/glass-card del sitio) — no es una página aislada con diseño distinto.
+- Contenido cubre 9 puntos específicos que pidió Deiby: responsable del tratamiento (MicroNuba SAS, `contacto@micronuba.net`), tabla de datos reales de la app (nombre, qué hace, permiso exacto, qué implica, quién la usa, cifrado con `restic`, no-terceros, no-publicidad), finalidad del acceso, no comparte con terceros, conservación/eliminación, derechos del titular y cómo revocar el acceso (`myaccount.google.com/permissions`), Ley 1581 de 2012 (Colombia), y la declaración textual de cumplimiento de la **Google API Services User Data Policy** incluyendo *Limited Use* (Google exige esa frase específica, se incluyó tal cual en inglés además de su traducción).
+- Enlazada desde el pie de página de **las 4 páginas del sitio** (`index.php`, `plagie.php` ya la tenía por copiar el footer, `appits.php`, `cotizar.php`), no solo desde sí misma — cada footer tiene una estructura ligeramente distinta (`index.php` no usa el patrón "Enlaces Rápidos", se agregó el link directo junto al copyright).
+- Agregada a `sitemap.xml` y `llms.txt` siguiendo la regla ya establecida de este proyecto (toda página nueva se agrega al mismo tiempo que se crea, no después).
+- **No olvidar (pendiente fuera del repo, en el dashboard de Google Cloud):** agregar `micronuba.net` como dominio autorizado en "Información de la marca", y completar ahí la URL de página principal (`https://micronuba.net`) y la de política de privacidad (`https://micronuba.net/privacidad.php`) — si el botón "Publicar app" sigue deshabilitado tras crear la página, es por eso.
+- Verificado 200 sin redirecciones ni login, tanto por `curl` como visualmente con Chrome DevTools MCP en producción.
 
 ## Logros de la Sesión (2026-09-02/03)
 

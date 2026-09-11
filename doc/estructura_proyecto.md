@@ -7,6 +7,7 @@ Mapa detallado de la ubicación de los archivos clave.
 - `plagie.php`: Página de producto PLAGIE (gestión educativa) — instituciones educativas en general, no solo colegios.
 - `appits.php`: Página de producto Appits (gestión de talleres mecánicos y lavaderos) — producto real en `appits.cloud`, repo fuente `SAAS-Gestion_Talleres`.
 - `cotizar.php`: Módulo de cotizaciones.
+- `privacidad.php`: Política de Privacidad — requerida por Google Cloud para la app OAuth "MicroNuba Respaldos" (backups cifrados a Google Drive con scope `drive.file`). Enlazada desde el footer de las 4 páginas del sitio.
 - `docker-compose.yml`: Configuración de servicios (Docker).
 - `docker-compose.local.yml`: Overlay para integrarse al gateway compartido `micronuba-infra` (Traefik) en desarrollo local.
 - `Dockerfile`: Definición de la imagen del contenedor.
