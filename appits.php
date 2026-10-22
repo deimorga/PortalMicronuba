@@ -21,11 +21,11 @@ require_once 'config/config.php';
     <meta property="og:url" content="https://micronuba.net/appits.php">
     <meta property="og:title" content="Appits | Gestión Integral de Talleres y Lavaderos - MicroNuba">
     <meta property="og:description" content="Appits: la plataforma SaaS para talleres mecánicos, lavaderos y centros de servicio automotor. Agendamiento, recepción, diagnóstico, portal del cliente, facturación y reportes en un solo lugar.">
-    <meta property="og:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/appits_ejecucion.png">
+    <meta property="og:image" content="https://micronuba.net/assets/img/appits_ejecucion.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Appits | Gestión Integral de Talleres y Lavaderos - MicroNuba">
     <meta name="twitter:description" content="Appits: la plataforma SaaS para talleres mecánicos, lavaderos y centros de servicio automotor. Agendamiento, recepción, diagnóstico, portal del cliente, facturación y reportes en un solo lugar.">
-    <meta name="twitter:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/appits_ejecucion.png">
+    <meta name="twitter:image" content="https://micronuba.net/assets/img/appits_ejecucion.png">
 
     <!-- Datos estructurados -->
     <script type="application/ld+json">
@@ -37,7 +37,7 @@ require_once 'config/config.php';
         "operatingSystem": "Web, Android",
         "description": "Appits: plataforma SaaS multi-tenant de gestión integral para talleres mecánicos, lavaderos y centros de servicio automotor — agendamiento de citas, recepción, diagnóstico, ejecución, portal del cliente, facturación e inventario.",
         "url": "https://micronuba.net/appits.php",
-        "image": "https://micronuba.net/sitepro/portal_web_micronuba/assets/img/appits_ejecucion.png",
+        "image": "https://micronuba.net/assets/img/appits_ejecucion.png",
         "publisher": {
             "@type": "Organization",
             "name": "MicroNuba",

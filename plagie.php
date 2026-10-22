@@ -21,11 +21,11 @@ require_once 'config/config.php';
     <meta property="og:url" content="https://micronuba.net/plagie.php">
     <meta property="og:title" content="PLAGIE | Gestión Integral Educativa - MicroNuba">
     <meta property="og:description" content="PLAGIE: La plataforma definitiva para la gestión de instituciones educativas. Optimiza procesos académicos, administrativos y de comunicación.">
-    <meta property="og:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/plagie_logo_full.png">
+    <meta property="og:image" content="https://micronuba.net/assets/img/plagie_logo_full.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="PLAGIE | Gestión Integral Educativa - MicroNuba">
     <meta name="twitter:description" content="PLAGIE: La plataforma definitiva para la gestión de instituciones educativas. Optimiza procesos académicos, administrativos y de comunicación.">
-    <meta name="twitter:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/plagie_logo_full.png">
+    <meta name="twitter:image" content="https://micronuba.net/assets/img/plagie_logo_full.png">
 
     <!-- Datos estructurados -->
     <script type="application/ld+json">
@@ -37,7 +37,7 @@ require_once 'config/config.php';
         "operatingSystem": "Web",
         "description": "PLAGIE: plataforma de Gestión Integral Educativa para instituciones educativas — portal web institucional, matrículas en línea, gestión administrativa y financiera, y control académico.",
         "url": "https://micronuba.net/plagie.php",
-        "image": "https://micronuba.net/sitepro/portal_web_micronuba/assets/img/plagie_logo_full.png",
+        "image": "https://micronuba.net/assets/img/plagie_logo_full.png",
         "publisher": {
             "@type": "Organization",
             "name": "MicroNuba",

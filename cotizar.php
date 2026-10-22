@@ -21,11 +21,11 @@ require_once 'config/config.php';
     <meta property="og:url" content="https://micronuba.net/cotizar.php">
     <meta property="og:title" content="Cotizar Proyecto - MicroNuba">
     <meta property="og:description" content="Solicita una cotización para tu proyecto tecnológico. Desarrollo web, apps móviles, consultoría y más.">
-    <meta property="og:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/hero_tech.png">
+    <meta property="og:image" content="https://micronuba.net/assets/img/hero_tech.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Cotizar Proyecto - MicroNuba">
     <meta name="twitter:description" content="Solicita una cotización para tu proyecto tecnológico. Desarrollo web, apps móviles, consultoría y más.">
-    <meta name="twitter:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/hero_tech.png">
+    <meta name="twitter:image" content="https://micronuba.net/assets/img/hero_tech.png">
 
     <link rel="icon" href="assets/img/micronuba_favicon.png" type="image/png">
 

@@ -23,11 +23,11 @@ require_once 'config/config.php';
     <meta property="og:url" content="https://micronuba.net/">
     <meta property="og:title" content="MicroNuba: tecnología a la medida para tu Pyme, con IA">
     <meta property="og:description" content="Expertos en desarrollo a la medida, SaaS e infraestructura TI. Llevamos la tecnología de las grandes empresas a tu Pyme.">
-    <meta property="og:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/hero_tech.png">
+    <meta property="og:image" content="https://micronuba.net/assets/img/hero_tech.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MicroNuba: tecnología a la medida para tu Pyme, con IA">
     <meta name="twitter:description" content="Expertos en desarrollo a la medida, SaaS e infraestructura TI. Llevamos la tecnología de las grandes empresas a tu Pyme.">
-    <meta name="twitter:image" content="https://micronuba.net/sitepro/portal_web_micronuba/assets/img/hero_tech.png">
+    <meta name="twitter:image" content="https://micronuba.net/assets/img/hero_tech.png">
 
     <!-- Datos estructurados -->
     <script type="application/ld+json">
@@ -37,7 +37,7 @@ require_once 'config/config.php';
         "name": "MicroNuba",
         "legalName": "MicroNuba SAS",
         "url": "https://micronuba.net/",
-        "logo": "https://micronuba.net/sitepro/portal_web_micronuba/assets/img/micronuba_horizontal_sin_fondo_Ajus.png",
+        "logo": "https://micronuba.net/assets/img/micronuba_horizontal_sin_fondo_Ajus.png",
         "description": "Empresa de tecnología dedicada al desarrollo de software a la medida, productos SaaS, infraestructura cloud y consultoría TI para pymes en Colombia y Latinoamérica.",
         "address": {
             "@type": "PostalAddress",
