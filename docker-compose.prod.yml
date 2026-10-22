@@ -1,0 +1,45 @@
+# Producción — VPS de MicroNuba, detrás del gateway Traefik de micronuba-infra.
+# El código va copiado en la imagen (nada montado) y los secretos en .env, que
+# solo existe en el servidor (ver .env.example).
+#
+# Desplegar: git pull --ff-only && docker compose -f docker-compose.prod.yml up -d --build
+
+name: portal-micronuba
+
+services:
+  portal-micronuba:
+    build: .
+    image: portal-micronuba:prod
+    container_name: portal-micronuba
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - micronuba_public
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      # Contenido, no solo el código HTTP
+      test: ["CMD-SHELL", "curl -fsS http://localhost/ | grep -q '<title>MicroNuba'"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.portal-micronuba.rule=Host(`micronuba.net`) || Host(`www.micronuba.net`)"
+      - "traefik.http.routers.portal-micronuba.entrypoints=websecure"
+      - "traefik.http.routers.portal-micronuba.tls.certresolver=le"
+      - "traefik.http.services.portal-micronuba.loadbalancer.server.port=80"
+      - "traefik.docker.network=micronuba_public"
+
+networks:
+  micronuba_public:
+    external: true # propiedad de micronuba-infra, nunca se crea desde aquí

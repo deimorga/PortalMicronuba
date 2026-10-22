@@ -1,18 +1,16 @@
-FROM php:8.2-apache
+# Imagen del portal: PHP 8.3 + Apache, con el código copiado dentro.
+# Producción: docker-compose.prod.yml · Desarrollo: docker-compose.yml (monta el repo encima).
+FROM php:8.3-apache
 
-# Enable mod_rewrite for nice URLs
-RUN a2enmod rewrite
+RUN a2enmod rewrite headers \
+    && mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
-# Change document root to our subfolder
-ENV APACHE_DOCUMENT_ROOT /var/www/html/sitepro/portal_web_micronuba
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
-RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+COPY docker/apache/portal.conf /etc/apache2/conf-available/zz-portal.conf
+COPY docker/php/portal.ini "$PHP_INI_DIR/conf.d/portal.ini"
+RUN a2enconf zz-portal
 
-# Copy source files to specific path to match production
-COPY . /var/www/html/sitepro/portal_web_micronuba/
+# El .dockerignore deja fuera todo lo interno (doc/, tests/, .git, .env…)
+COPY . /var/www/html/
+RUN rm -rf /var/www/html/docker
 
-# Set working directory
-WORKDIR /var/www/html/sitepro/portal_web_micronuba
-
-# Expose port 80
 EXPOSE 80

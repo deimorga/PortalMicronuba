@@ -1,0 +1,24 @@
+# Lo que NO entra en la imagen: nada de esto debe publicarse en el sitio.
+.git
+.gitignore
+.dockerignore
+.agent
+.claude
+.vscode
+**/.DS_Store
+.env
+.env.*
+doc
+tests
+release
+temp_build
+node_modules
+logs
+Dockerfile
+docker-compose*.yml
+build_release.sh
+package.json
+package-lock.json
+tailwind.config.js
+assets/css/input.css
+*.md
