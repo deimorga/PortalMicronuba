@@ -1,6 +1,32 @@
 # Contexto de Sesión: Portal MicroNuba
 
-**Última Actualización:** 2026-09-11
+**Última Actualización:** 2026-10-22
+
+## Logros de la Sesión (2026-10-22) — Portal listo para el VPS
+
+MicroNuba deja el hosting compartido anterior (se apaga a más tardar el 28/10/2026). El portal pasa al VPS
+de la empresa, detrás del gateway Traefik de `micronuba-infra`. El plan completo, con los datos del
+servidor, vive en el repo privado `micronuba-infra` (`docs/migracion-neolo-a-vps-2026-10.md`), porque este
+repo es público.
+
+- **Imagen de producción** (`Dockerfile`, `docker/`, `.dockerignore`): PHP 8.3 + Apache, código copiado en
+  la imagen. Solo entra lo público. Responde 404 a `doc/`, `config/`, `lib/`, `tests/` y archivos ocultos;
+  sin listados de directorio; `Server: Apache` sin versión. Redirige `www` → `micronuba.net` y las rutas
+  viejas `/sitepro/portal_web_micronuba/…` → `/…` con 301.
+- **`docker-compose.prod.yml`**: etiquetas de Traefik (router `portal-micronuba`), límites de 1 CPU y 512 MB,
+  y un healthcheck que revisa el contenido.
+- **Configuración por entorno:** `config/config.php` ahora está en git y no lleva secretos: lee `getenv()`.
+  Los secretos van en `.env` (ver `.env.example`).
+- **URLs absolutas** de og:image, twitter:image y JSON-LD sin la ruta del hosting anterior.
+- **Tailwind compila todas las páginas** (`./*.php`). Antes, `appits.php` y `privacidad.php` no estaban en
+  `content` y el título de Appits salía sin tamaño en producción.
+- **Footer de `plagie.php`** con enlace a la Política de Privacidad.
+- **Formulario de cotización:** registra en `docker logs` (`error_log`) en vez de `logs/email_log.txt`.
+- **Verificado en local:** las 6 páginas por contenido, los 404 de lo interno, las redirecciones, los
+  estáticos y una cotización real enviada con éxito a un buzón propio.
+- **Borrador aparte:** los Términos de Servicio y la política de privacidad ampliada (integración con
+  WhatsApp) quedaron en la rama `borrador/paginas-legales-whatsapp`. **No fusionar** hasta rellenar sus
+  marcadores `{{…}}`: `privacidad.php` la usa Google para verificar la app de respaldos.
 
 ## Estado Actual
 El portal tiene **dos páginas de producto completas** (`plagie.php` y `appits.php`), una **página de Política de Privacidad** (`privacidad.php`, nueva del 11/09), stack tecnológico con marcas reales de Anthropic/Claude, optimización de visibilidad para AI crawlers extendida a los productos, fotos reales del liderazgo, y desde el 02-03/09/2026 **el CSS ya no depende de purgas manuales de Cloudflare** (cache-busting automático). Todo desplegado y verificado en producción (`https://micronuba.net`).
@@ -72,7 +98,7 @@ El portal tiene **dos páginas de producto completas** (`plagie.php` y `appits.p
 - Si se retoma Agendamiento de Citas como funcionalidad "real" en el portal, verificar si ya avanzó de fase de diseño a código en el repo de Talleres.
 
 ## Estado Técnico
-- **Producción real:** hosting compartido cPanel de Neolo (`homero.lineadns.com`), NO el VPS Docker. Acceso por FTPS (no hay SSH en este plan). Ver memoria del agente para credenciales y proceso de despliegue detallado.
+- **Producción:** hasta el corte, hosting compartido cPanel (despliegue por FTPS con `build_release.sh`). **En migración al VPS** de la empresa con `docker-compose.prod.yml` (ver la sesión del 2026-10-22). Los datos del servidor no se escriben en este repo, que es público.
 - **Docker local:** funcional, integrado al gateway `micronuba-infra` bajo `portal.micronuba.local:8090` (vía `docker-compose.local.yml`) cuando el gateway está disponible; también puede correr standalone en `:8080` si hay conflicto de IP en la red compartida con otro proyecto.
 - PHP: 8.2 (`php:8.2-apache`).
 - Cloudflare: proxy activo delante de `micronuba.net`; gestiona caché, bots/AI Crawl Control y robots.txt de forma independiente al origen.
