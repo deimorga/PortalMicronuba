@@ -1,4 +1,6 @@
-version: '3.8'
+# Desarrollo local: el repo se monta en caliente sobre el docroot del contenedor.
+# Uso: docker compose up -d   →   http://localhost:8080
+# Producción usa docker-compose.prod.yml (código copiado en la imagen, sin montaje).
 
 services:
   portal-micronuba:
@@ -7,5 +9,8 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./:/var/www/html/sitepro/portal_web_micronuba
+      - ./:/var/www/html
+    env_file:
+      - path: .env
+        required: false
     restart: unless-stopped
