@@ -177,15 +177,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $mail->send();
             
-            // Log de éxito
-            file_put_contents('../logs/email_log.txt', "--- ENVIADO POR SMTP [" . date('Y-m-d H:i:s') . "] ---\nTo: " . MAIL_TO_EMAIL . "\n\n", FILE_APPEND);
+            // Log de éxito (va a la salida del contenedor: docker logs). Sin datos del cliente.
+            error_log("[cotizacion] ENVIADO por SMTP a " . MAIL_TO_EMAIL);
             
             ob_clean(); // Limpiar cualquier salida previa
             echo json_encode(['success' => true, 'message' => 'Solicitud enviada correctamente.']);
         } catch (Exception $e) {
             // Fallback: Si falla SMTP, guardamos en log y avisamos error
-            $errorMsg = "Error SMTP: {$mail->ErrorInfo}";
-            file_put_contents('../logs/email_log.txt', "--- ERROR SMTP [" . date('Y-m-d H:i:s') . "] ---\n$errorMsg\n\n", FILE_APPEND);
+            error_log("[cotizacion] ERROR SMTP: {$mail->ErrorInfo}");
             throw new Exception("No se pudo enviar el correo. Por favor contacta a soporte.");
         }
 
