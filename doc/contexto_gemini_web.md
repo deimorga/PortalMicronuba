@@ -1,6 +1,18 @@
 # Contexto de Sesión: Portal MicroNuba
 
-**Última Actualización:** 2026-10-22
+**Última Actualización:** 2026-10-23
+
+## ✅ 2026-10-23 — El portal ya se sirve desde el VPS
+
+- **Corte hecho:** el DNS de `micronuba.net` (Cloudflare, proxeado) apunta al VPS. `www` lo sigue porque es un CNAME.
+  El certificado de origen es de Let's Encrypt (lo renueva Traefik). La imagen usa PHP 8.3.36, con versión exacta.
+- **Verificado por Cloudflare:** las páginas por contenido, los 404 de lo interno, las redirecciones (`www`, rutas
+  viejas, `http`), `privacidad.php` y una cotización real de punta a punta.
+- **El origen solo atiende a Cloudflare** (middleware `portal-cloudflare-solo`): llamar directo al servidor da 403.
+- **Desplegar desde ahora:** en el servidor, `git pull --ff-only && docker compose -f docker-compose.prod.yml up -d --build`.
+  No editar archivos versionados allí; solo el `.env`.
+- **Pendiente:** el SMTP del `.env` del servidor sigue en el correo del hosting anterior, que se apaga el 28/10. Se cambia
+  cuando esté el correo nuevo. Después del apagado se retiran `build_release.sh` y `release/`.
 
 ## Logros de la Sesión (2026-10-22) — Portal listo para el VPS
 
