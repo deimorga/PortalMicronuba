@@ -25,7 +25,6 @@ Mapa detallado de la ubicación de los archivos clave.
 - `assets/`: Archivos estáticos (CSS, JS, imágenes). `assets/css/input.css` es la fuente de Tailwind (compilar con `npm run build`/`npm run dev` para generar `assets/css/styles.css`); tamaños que se ajustan iterativamente en producción (ej. logos de hero, títulos) deben vivir como clase fija en `@layer utilities` (ej. `.h-plagie-hero`, `.hero-title`), nunca como `h-[Npx]`/`text-[Nrem]` arbitrario — ver `doc/contexto_gemini_web.md` para el porqué. El `<link>` a `styles.css` en las 4 páginas PHP lleva `?v=<?php echo filemtime(...) ?>` (cache-busting automático por fecha de modificación) — no quitarlo ni hay que purgar Cloudflare manualmente para cambios de CSS.
 - `logs/`: ya no se usa en producción (el formulario registra en la salida del contenedor, `docker logs`).
 - `tests/`: Pruebas unitarias/funcionales.
-- `tools/`: Utilidades internas.
 
 ## Sistema de Gobierno (.agent/)
 - `rules/`: Manuales y scripts de restauración de contexto.

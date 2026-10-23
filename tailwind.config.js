@@ -2,8 +2,7 @@ module.exports = {
     // Todas las páginas de la raíz: si una página no está aquí, sus clases
     // exclusivas no se compilan y se ve rota en producción (pasó con appits.php).
     content: [
-        "./*.php",
-        "./tools/**/*.php"
+        "./*.php"
     ],
     theme: {
         extend: {
