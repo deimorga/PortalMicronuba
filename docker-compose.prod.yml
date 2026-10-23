@@ -37,6 +37,26 @@ services:
       - "traefik.http.routers.portal-micronuba.rule=Host(`micronuba.net`) || Host(`www.micronuba.net`)"
       - "traefik.http.routers.portal-micronuba.entrypoints=websecure"
       - "traefik.http.routers.portal-micronuba.tls.certresolver=le"
+      # Solo se atiende a Cloudflare: quien llame directo al origen recibe 403 y
+      # no puede saltarse el WAF ni la protección DDoS. Mismo criterio que PLAGIE.
+      #
+      # `ipallowlist` evalúa la dirección del PAR (el nodo de Cloudflare), NO
+      # `X-Forwarded-For`, que la pone el cliente. No añadir una `ipstrategy`:
+      # convertiría el control en decorativo.
+      #
+      # Nombre propio (`portal-cloudflare-solo`) a propósito, en vez de reutilizar
+      # el `cloudflare-solo` de PLAGIE: si dos contenedores definen el mismo
+      # middleware con texto distinto, Traefik lo retira de TODAS las rutas que
+      # lo usan, incluidas las de otro proyecto.
+      #
+      # Rangos de cloudflare.com/ips-v4 e ips-v6, comprobados el 2026-10-23.
+      # CAMBIAN de vez en cuando: si el sitio empieza a dar 403 a tráfico legítimo,
+      # lo primero es refrescar esta lista.
+      #
+      # El certificado no se ve afectado: el desafío HTTP-01 de Let's Encrypt lo
+      # atiende Traefik en el entrypoint `web`, fuera de este router.
+      - "traefik.http.middlewares.portal-cloudflare-solo.ipallowlist.sourcerange=173.245.48.0/20,103.21.244.0/22,103.22.200.0/22,103.31.4.0/22,141.101.64.0/18,108.162.192.0/18,190.93.240.0/20,188.114.96.0/20,197.234.240.0/22,198.41.128.0/17,162.158.0.0/15,104.16.0.0/13,104.24.0.0/14,172.64.0.0/13,131.0.72.0/22,2400:cb00::/32,2606:4700::/32,2803:f800::/32,2405:b500::/32,2405:8100::/32,2a06:98c0::/29,2c0f:f248::/32"
+      - "traefik.http.routers.portal-micronuba.middlewares=portal-cloudflare-solo@docker"
       - "traefik.http.services.portal-micronuba.loadbalancer.server.port=80"
       - "traefik.docker.network=micronuba_public"
 
