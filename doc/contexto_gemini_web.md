@@ -1,6 +1,30 @@
 # Contexto de Sesión: Portal MicroNuba
 
-**Última Actualización:** 2026-10-23
+**Última Actualización:** 2026-10-27
+
+## 2026-10-27 — Cierre de sesión: formulario por Resend y Turnos retirado
+
+- **Formulario de cotización:** desde el 2026-10-27 envía por **Resend**, con una clave solo de envío restringida
+  al dominio `micronuba.net`. El correo de la empresa pasó a otro proveedor y la cuenta `cotizacion@` dejó de ser
+  un buzón con contraseña. El cambio fue **solo de `.env`** en el servidor; el código no cambió. Remitente
+  `cotizacion@micronuba.net` ("Portal MicroNuba"), destino `contacto@micronuba.net`, Reply-To del visitante. **No
+  envía nada al visitante**, y es el único punto del portal que envía correo. Verificado de punta a punta: la
+  cotización de prueba quedó entregada en `contacto@`.
+- **El `.env` local de desarrollo sigue con el SMTP del hosting anterior:** en local el formulario no enviará
+  después del apagado. No se puso la clave de producción en el portátil a propósito.
+- **Gestor de Turnos retirado** (2026-10-23): `tools/Turnos.php` y el menú «Herramientas» eliminados de todas las
+  páginas. Ya no se usaba.
+- **Monitor externo** del portal activo y gestionado desde `micronuba-infra`.
+
+### Pendientes al cerrar
+- **Páginas legales para el conector de WhatsApp (Meta Tech Provider):** la rama local
+  `borrador/paginas-legales-whatsapp` tiene `terminos.php` y la `privacidad.php` ampliada. **No se publica todavía:**
+  faltan los marcadores `{{DIAS_CONTENIDO}}`, `{{MESES_REGISTROS}}` y `{{FECHA_PUBLICACION}}` (este último en las dos
+  páginas). Al fusionarla hay que quitar también el menú «Herramientas», que la rama todavía tiene, y agregar el
+  enlace a Términos en el footer de PLAGIE.
+- Opcional: desactivar `session.upload_progress` en `docker/php/portal.ini`. Lo recomienda el proveedor del VPS;
+  el portal no usa sesiones ni subida de archivos.
+- Fase 4, después del apagado del hosting anterior: retirar `build_release.sh` y `release/`.
 
 ## ✅ 2026-10-23 — El portal ya se sirve desde el VPS
 
