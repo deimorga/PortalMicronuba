@@ -11,7 +11,7 @@ require_once 'config/config.php';
     <?php endif; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidad - MicroNuba</title>
-    <meta name="description" content="Política de privacidad de MicroNuba: cómo tratamos los datos personales y el acceso a Google Drive de la aplicación interna MicroNuba Respaldos.">
+    <meta name="description" content="Política de privacidad de MicroNuba: tratamiento de datos en la integración con WhatsApp Business Platform y en la herramienta interna MicroNuba Respaldos.">
     <link rel="canonical" href="https://micronuba.net/privacidad.php">
 
     <!-- Open Graph / Twitter Card -->
@@ -20,10 +20,10 @@ require_once 'config/config.php';
     <meta property="og:locale" content="es_CO">
     <meta property="og:url" content="https://micronuba.net/privacidad.php">
     <meta property="og:title" content="Política de Privacidad - MicroNuba">
-    <meta property="og:description" content="Política de privacidad de MicroNuba: cómo tratamos los datos personales y el acceso a Google Drive de la aplicación interna MicroNuba Respaldos.">
+    <meta property="og:description" content="Política de privacidad de MicroNuba: tratamiento de datos en la integración con WhatsApp Business Platform y en la herramienta interna MicroNuba Respaldos.">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Política de Privacidad - MicroNuba">
-    <meta name="twitter:description" content="Política de privacidad de MicroNuba: cómo tratamos los datos personales y el acceso a Google Drive de la aplicación interna MicroNuba Respaldos.">
+    <meta name="twitter:description" content="Política de privacidad de MicroNuba: tratamiento de datos en la integración con WhatsApp Business Platform y en la herramienta interna MicroNuba Respaldos.">
 
     <link rel="icon" href="assets/img/micronuba_favicon.png" type="image/png">
 
@@ -101,6 +101,18 @@ require_once 'config/config.php';
             color: #f8fafc;
             font-weight: 700;
             white-space: nowrap;
+        }
+        .policy-list {
+            list-style: disc;
+            padding-left: 1.5rem;
+        }
+
+        .policy-list li + li {
+            margin-top: 0.4rem;
+        }
+
+        [id] {
+            scroll-margin-top: 7rem;
         }
     </style>
 </head>
@@ -199,7 +211,7 @@ require_once 'config/config.php';
                 Política de Privacidad
             </h1>
             <p class="text-textMuted fade-in">
-                MicroNuba SAS — cómo tratamos los datos personales y de terceros, incluido el acceso a información de Google utilizado por nuestras herramientas internas.
+                MICRONUBA S.A.S. — cómo tratamos los datos personales en nuestra integración con WhatsApp Business Platform y en nuestras herramientas internas que usan servicios de Google.
             </p>
         </div>
     </header>
@@ -212,16 +224,156 @@ require_once 'config/config.php';
             <div class="glass-card p-8 rounded-2xl">
                 <h2 class="text-2xl font-bold text-white mb-4 title-accent">1. Responsable del tratamiento</h2>
                 <p class="text-textMuted leading-relaxed">
-                    El responsable del tratamiento de los datos descritos en esta política es <strong class="text-white">MicroNuba SAS</strong>, empresa de tecnología con domicilio en Bogotá, Colombia. Para cualquier consulta, solicitud o ejercicio de derechos relacionados con esta política, puede escribirnos a
+                    El responsable del tratamiento de los datos descritos en esta política es <strong class="text-white">MICRONUBA S.A.S.</strong>, identificada con NIT <strong class="text-white">902006565-9</strong>, con domicilio en <strong class="text-white">Carrera 70 A # 79-34</strong>, Bogotá D.C., Colombia. Para cualquier consulta, solicitud o ejercicio de derechos relacionados con esta política, puede escribirnos a
                     <a href="mailto:contacto@micronuba.net" class="text-accent hover:underline">contacto@micronuba.net</a>.
                 </p>
             </div>
 
-            <!-- 2. Aplicación MicroNuba Respaldos -->
+            <!-- 2. Alcance -->
             <div class="glass-card p-8 rounded-2xl">
-                <h2 class="text-2xl font-bold text-white mb-4 title-accent">2. Aplicación descrita en esta política</h2>
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">2. Aplicaciones descritas en esta política</h2>
+                <ul class="text-textMuted leading-relaxed policy-list">
+                    <li><a href="privacidad.php#whatsapp" class="text-accent hover:underline">Integración de WhatsApp de MicroNuba</a> (secciones 3 a 10): conecta las cuentas de WhatsApp Business de las empresas que usan nuestros productos de software, para que envíen y reciban mensajes desde ellos.</li>
+                    <li><a href="privacidad.php#respaldos" class="text-accent hover:underline">MicroNuba Respaldos</a> (secciones 11 a 15): herramienta interna que guarda copias de seguridad de nuestra infraestructura en Google Drive.</li>
+                </ul>
+            </div>
+
+            <!-- ===================== WHATSAPP ===================== -->
+
+            <!-- 3. Integración de WhatsApp -->
+            <div id="whatsapp" class="glass-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">3. Integración de WhatsApp de MicroNuba</h2>
                 <p class="text-textMuted leading-relaxed mb-6">
-                    Esta política describe específicamente el tratamiento de datos realizado por <strong class="text-white">MicroNuba Respaldos</strong>, una aplicación interna que utiliza la API de Google para almacenar copias de seguridad de la infraestructura propia de MicroNuba.
+                    Las empresas que usan los productos de software de MicroNuba (por ejemplo, gimnasios, colegios o talleres) pueden conectar su propia cuenta de WhatsApp Business a nuestra plataforma mediante el proceso de registro de Meta (<em>Embedded Signup</em>). A partir de ese momento, nuestra plataforma envía y recibe mensajes de WhatsApp en nombre de esa empresa, a través de la <strong class="text-white">WhatsApp Business Platform</strong> de Meta.
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm policy-table">
+                        <tbody>
+                            <tr>
+                                <th>Nombre de la aplicación en Meta</th>
+                                <td class="text-textMuted">MicroNuba Mensajería</td>
+                            </tr>
+                            <tr>
+                                <th>Quién la usa</th>
+                                <td class="text-textMuted">Las empresas clientes de MicroNuba que conectan su propia cuenta de WhatsApp Business. Cada empresa usa su propio número y paga directamente a Meta los mensajes que envía.</td>
+                            </tr>
+                            <tr>
+                                <th>Permisos solicitados a Meta</th>
+                                <td class="text-textMuted"><code class="text-accent">whatsapp_business_management</code> y <code class="text-accent">whatsapp_business_messaging</code>, únicamente.</td>
+                            </tr>
+                            <tr>
+                                <th>Qué implican esos permisos</th>
+                                <td class="text-textMuted">Acceder a la cuenta de WhatsApp Business, a los números y a las plantillas de mensaje <strong class="text-white">que la empresa autoriza</strong> durante el registro, y enviar y recibir mensajes con ellos. No accedemos al perfil personal de Facebook de quien hace el registro, ni a sus contactos, publicaciones o páginas.</td>
+                            </tr>
+                            <tr>
+                                <th>Publicidad</th>
+                                <td class="text-textMuted">Los datos no se usan para publicidad, perfilado ni venta a terceros.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 4. Roles -->
+            <div class="glass-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">4. Quién decide sobre los datos</h2>
+                <p class="text-textMuted leading-relaxed mb-4">
+                    <strong class="text-white">Sobre los datos de las personas que escriben o reciben mensajes</strong> de una empresa cliente, el responsable del tratamiento es esa empresa. Ella decide a quién escribe y con qué finalidad, y debe contar con la autorización de esas personas. MicroNuba actúa como <strong class="text-white">encargado del tratamiento</strong>: trata esos datos solo para prestar el servicio y siguiendo las instrucciones de la empresa.
+                </p>
+                <p class="text-textMuted leading-relaxed">
+                    <strong class="text-white">Sobre los datos de las propias empresas clientes</strong> y de sus usuarios administradores, el responsable es MicroNuba.
+                </p>
+            </div>
+
+            <!-- 5. Datos tratados -->
+            <div class="glass-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">5. Datos que tratamos</h2>
+                <p class="text-textMuted leading-relaxed mb-3"><strong class="text-white">De la empresa cliente:</strong></p>
+                <ul class="text-textMuted leading-relaxed policy-list mb-6">
+                    <li>nombre del negocio y datos de contacto de sus usuarios administradores;</li>
+                    <li>identificadores de su cuenta de WhatsApp Business y de sus números de teléfono;</li>
+                    <li>plantillas de mensaje y su estado de aprobación;</li>
+                    <li>el token de acceso que Meta emite para operar su cuenta, que guardamos cifrado.</li>
+                </ul>
+                <p class="text-textMuted leading-relaxed mb-3"><strong class="text-white">De las personas que se comunican con la empresa:</strong></p>
+                <ul class="text-textMuted leading-relaxed policy-list">
+                    <li>número de teléfono e identificador de WhatsApp, y el nombre de perfil que muestra WhatsApp;</li>
+                    <li>contenido de los mensajes enviados y recibidos: texto, imágenes, documentos, audio y otros archivos;</li>
+                    <li>estado de cada mensaje (enviado, entregado, leído o fallido) y la fecha y hora;</li>
+                    <li>la solicitud de no recibir más mensajes de la empresa, cuando la persona la hace.</li>
+                </ul>
+            </div>
+
+            <!-- 6. Finalidad -->
+            <div class="glass-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">6. Para qué los usamos</h2>
+                <ul class="text-textMuted leading-relaxed policy-list mb-4">
+                    <li>enviar los mensajes que la empresa cliente ordena desde nuestros productos, como recibos, recordatorios y avisos;</li>
+                    <li>recibir los mensajes que las personas envían a la empresa y entregarlos al producto de MicroNuba que la empresa usa;</li>
+                    <li>informar a la empresa del estado de sus mensajes y de sus plantillas;</li>
+                    <li>respetar las solicitudes de no recibir más mensajes;</li>
+                    <li>mantener la seguridad del servicio, prevenir abusos y atender solicitudes de soporte.</li>
+                </ul>
+                <p class="text-textMuted leading-relaxed">
+                    No usamos estos datos para publicidad, perfilado ni entrenamiento de modelos de inteligencia artificial, y no los vendemos.
+                </p>
+            </div>
+
+            <!-- 7. Con quién se comparten -->
+            <div class="glass-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">7. Con quién se comparten</h2>
+                <ul class="text-textMuted leading-relaxed policy-list">
+                    <li><strong class="text-white">Meta Platforms (WhatsApp):</strong> todos los mensajes pasan por la WhatsApp Business Platform, que trata los datos según sus propias condiciones y su <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" class="text-accent hover:underline">política de privacidad</a>.</li>
+                    <li><strong class="text-white">La empresa cliente:</strong> recibe en su producto los mensajes y estados de su propia cuenta. Nunca los de otra empresa.</li>
+                    <li><strong class="text-white">Proveedores de infraestructura</strong> (alojamiento del servidor y servicios de red), que solo almacenan o transportan los datos bajo obligaciones de confidencialidad.</li>
+                    <li><strong class="text-white">Autoridades</strong>, cuando una norma o una orden judicial lo exija.</li>
+                </ul>
+                <p class="text-textMuted leading-relaxed mt-4">
+                    Los servidores de Meta y de algunos proveedores pueden estar fuera de Colombia, lo que implica una transferencia internacional de datos.
+                </p>
+            </div>
+
+            <!-- 8. Conservación -->
+            <div class="glass-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">8. Cuánto tiempo los conservamos</h2>
+                <ul class="text-textMuted leading-relaxed policy-list">
+                    <li><strong class="text-white">Contenido de los mensajes y archivos multimedia:</strong> hasta 30 días en nuestra plataforma. Después de ese plazo solo los conserva el producto de la empresa cliente, según sus propias reglas.</li>
+                    <li><strong class="text-white">Registros de envío y estado</strong> (sin el contenido): hasta 12 meses, para soporte y auditoría.</li>
+                    <li><strong class="text-white">Token de acceso y configuración de la empresa:</strong> mientras la integración esté activa. Se eliminan en un plazo de 30 días desde que la empresa la desconecta.</li>
+                    <li><strong class="text-white">Solicitudes de supresión:</strong> guardamos una huella irreversible del número, sin el número en claro, como prueba de que la solicitud se atendió.</li>
+                </ul>
+            </div>
+
+            <!-- 9. Seguridad -->
+            <div class="glass-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">9. Cómo los protegemos</h2>
+                <p class="text-textMuted leading-relaxed">
+                    Las comunicaciones viajan cifradas (HTTPS). Los tokens de acceso se guardan cifrados. Comprobamos la firma de Meta en cada notificación que recibimos. Los datos de cada empresa están separados de los de las demás, y solo el personal técnico autorizado de MicroNuba puede acceder a ellos, para tareas de operación y soporte.
+                </p>
+            </div>
+
+            <!-- 10. Eliminación de datos -->
+            <div id="eliminacion-de-datos" class="glass-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">10. Cómo solicitar la eliminación de sus datos</h2>
+                <p class="text-textMuted leading-relaxed mb-3"><strong class="text-white">Si es una empresa cliente:</strong></p>
+                <ul class="text-textMuted leading-relaxed policy-list mb-6">
+                    <li>escriba a <a href="mailto:contacto@micronuba.net" class="text-accent hover:underline">contacto@micronuba.net</a> desde el correo de un administrador de la cuenta, pidiendo la desconexión y la eliminación de sus datos; o</li>
+                    <li>retire el acceso de nuestra aplicación desde la configuración de su portfolio comercial en Meta Business Suite, en la sección de integraciones o aplicaciones conectadas. Al recibir el aviso de Meta, eliminamos sus datos en los plazos de la sección 8.</li>
+                </ul>
+                <p class="text-textMuted leading-relaxed mb-3"><strong class="text-white">Si ha intercambiado mensajes con una de esas empresas:</strong></p>
+                <ul class="text-textMuted leading-relaxed policy-list">
+                    <li>puede pedir a la empresa que deje de escribirle, o bloquearla desde WhatsApp;</li>
+                    <li>puede pedir la eliminación de sus datos a la empresa, o escribirnos a <a href="mailto:contacto@micronuba.net" class="text-accent hover:underline">contacto@micronuba.net</a> indicando su número y el nombre de la empresa. Coordinamos la solicitud con ella y respondemos en un máximo de 15 días hábiles.</li>
+                </ul>
+            </div>
+
+            <!-- ===================== RESPALDOS ===================== -->
+
+            <!-- 11. Aplicación MicroNuba Respaldos -->
+            <div id="respaldos" class="glass-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">11. MicroNuba Respaldos</h2>
+                <p class="text-textMuted leading-relaxed mb-6">
+                    <strong class="text-white">MicroNuba Respaldos</strong> es una aplicación interna que utiliza la API de Google para almacenar copias de seguridad de la infraestructura propia de MicroNuba.
                 </p>
                 <div class="overflow-x-auto">
                     <table class="w-full text-sm policy-table">
@@ -263,36 +415,27 @@ require_once 'config/config.php';
                 </div>
             </div>
 
-            <!-- 3. Finalidad -->
+            <!-- 12. Finalidad -->
             <div class="glass-card p-8 rounded-2xl">
-                <h2 class="text-2xl font-bold text-white mb-4 title-accent">3. Datos que se acceden y para qué</h2>
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">12. Datos que accede MicroNuba Respaldos y para qué</h2>
                 <p class="text-textMuted leading-relaxed">
                     El único dato al que accede MicroNuba Respaldos son los <strong class="text-white">archivos creados por la propia aplicación</strong> en el Google Drive corporativo de MicroNuba — es decir, los archivos de respaldo que ella misma sube. La aplicación no tiene visibilidad ni acceso a ningún otro archivo, carpeta o dato de la cuenta de Google. La única finalidad de este acceso es el <strong class="text-white">almacenamiento de copias de seguridad cifradas de la infraestructura propia</strong> de la empresa, como mecanismo de continuidad operativa ante fallas o pérdidas de datos.
                 </p>
             </div>
 
-            <!-- 4. No se comparte -->
+            <!-- 13. No se comparte -->
             <div class="glass-card p-8 rounded-2xl">
-                <h2 class="text-2xl font-bold text-white mb-4 title-accent">4. Que no se comparte con terceros</h2>
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">13. Que no se comparte con terceros</h2>
                 <p class="text-textMuted leading-relaxed">
                     MicroNuba no comparte, vende, alquila ni cede a terceros los datos a los que accede esta aplicación, ni los utiliza con fines publicitarios o de perfilado. El acceso está limitado exclusivamente al personal técnico autorizado de MicroNuba para labores de administración de la infraestructura.
                 </p>
             </div>
 
-            <!-- 5. Conservación -->
+            <!-- 14. Conservación -->
             <div class="glass-card p-8 rounded-2xl">
-                <h2 class="text-2xl font-bold text-white mb-4 title-accent">5. Conservación y eliminación</h2>
-                <p class="text-textMuted leading-relaxed">
-                    Los respaldos almacenados se conservan de acuerdo con la política interna de retención de MicroNuba y se eliminan automáticamente al expirar dicho periodo. En ningún caso se conservan más allá del tiempo necesario para cumplir su finalidad de continuidad operativa.
-                </p>
-            </div>
-
-            <!-- 6. Derechos del titular -->
-            <div class="glass-card p-8 rounded-2xl">
-                <h2 class="text-2xl font-bold text-white mb-4 title-accent">6. Derechos del titular y revocación del acceso</h2>
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">14. Conservación y eliminación de los respaldos</h2>
                 <p class="text-textMuted leading-relaxed mb-4">
-                    Como titular de los datos, usted tiene derecho a conocer, actualizar, rectificar y solicitar la supresión de su información, así como a revocar la autorización otorgada, escribiendo a
-                    <a href="mailto:contacto@micronuba.net" class="text-accent hover:underline">contacto@micronuba.net</a>.
+                    Los respaldos almacenados se conservan de acuerdo con la política interna de retención de MicroNuba y se eliminan automáticamente al expirar dicho periodo. En ningún caso se conservan más allá del tiempo necesario para cumplir su finalidad de continuidad operativa.
                 </p>
                 <p class="text-textMuted leading-relaxed">
                     El acceso otorgado a MicroNuba Respaldos sobre una cuenta de Google puede revocarse en cualquier momento, de forma independiente y directa, desde
@@ -300,17 +443,9 @@ require_once 'config/config.php';
                 </p>
             </div>
 
-            <!-- 7. Normatividad -->
+            <!-- 15. Google API Services User Data Policy -->
             <div class="glass-card p-8 rounded-2xl">
-                <h2 class="text-2xl font-bold text-white mb-4 title-accent">7. Normatividad aplicable</h2>
-                <p class="text-textMuted leading-relaxed">
-                    El tratamiento de datos personales descrito en esta política se rige por la <strong class="text-white">Ley 1581 de 2012</strong> de protección de datos personales de Colombia y sus decretos reglamentarios.
-                </p>
-            </div>
-
-            <!-- 8. Google API Services User Data Policy -->
-            <div class="glass-card p-8 rounded-2xl">
-                <h2 class="text-2xl font-bold text-white mb-4 title-accent">8. Cumplimiento de la Google API Services User Data Policy</h2>
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">15. Cumplimiento de la Google API Services User Data Policy</h2>
                 <p class="text-textMuted leading-relaxed mb-4">
                     El uso que MicroNuba hace de la información recibida a través de las APIs de Google cumple con la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" class="text-accent hover:underline">Google API Services User Data Policy</a>, incluidos los requisitos de uso limitado (<em>Limited Use</em>).
                 </p>
@@ -319,15 +454,34 @@ require_once 'config/config.php';
                 </p>
             </div>
 
-            <!-- 9. Contacto y actualización -->
+            <!-- ===================== GENERAL ===================== -->
+
+            <!-- 16. Derechos del titular -->
             <div class="glass-card p-8 rounded-2xl">
-                <h2 class="text-2xl font-bold text-white mb-4 title-accent">9. Contacto</h2>
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">16. Derechos del titular</h2>
+                <p class="text-textMuted leading-relaxed">
+                    Como titular de los datos, usted tiene derecho a conocer, actualizar, rectificar y solicitar la supresión de su información, así como a revocar la autorización otorgada, escribiendo a
+                    <a href="mailto:contacto@micronuba.net" class="text-accent hover:underline">contacto@micronuba.net</a>. Atendemos las consultas en un máximo de 10 días hábiles y los reclamos en un máximo de 15 días hábiles.
+                </p>
+            </div>
+
+            <!-- 17. Normatividad -->
+            <div class="glass-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">17. Normatividad aplicable</h2>
+                <p class="text-textMuted leading-relaxed">
+                    El tratamiento de datos personales descrito en esta política se rige por la <strong class="text-white">Ley 1581 de 2012</strong> de protección de datos personales de Colombia y sus decretos reglamentarios.
+                </p>
+            </div>
+
+            <!-- 18. Contacto y actualización -->
+            <div class="glass-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-white mb-4 title-accent">18. Contacto</h2>
                 <p class="text-textMuted leading-relaxed mb-6">
                     Ante cualquier duda sobre esta política o sobre el tratamiento de sus datos, puede contactarnos en
-                    <a href="mailto:contacto@micronuba.net" class="text-accent hover:underline">contacto@micronuba.net</a>.
+                    <a href="mailto:contacto@micronuba.net" class="text-accent hover:underline">contacto@micronuba.net</a>. Las condiciones de uso de nuestros servicios están en los <a href="terminos.php" class="text-accent hover:underline">Términos de Servicio</a>.
                 </p>
                 <p class="text-textMuted text-sm">
-                    Última actualización: <strong class="text-white">11 de septiembre de 2026</strong>.
+                    Última actualización: <strong class="text-white">28 de octubre de 2026</strong>.
                 </p>
             </div>
 
@@ -358,6 +512,7 @@ require_once 'config/config.php';
                         <li><a href="index.php#saas" class="hover:text-accent transition-colors">Productos SaaS</a></li>
                         <li><a href="cotizar.php" class="hover:text-accent transition-colors">Cotizar</a></li>
                         <li><a href="privacidad.php" class="hover:text-accent transition-colors">Política de Privacidad</a></li>
+                        <li><a href="terminos.php" class="hover:text-accent transition-colors">Términos de Servicio</a></li>
                     </ul>
                 </div>
 
@@ -372,7 +527,7 @@ require_once 'config/config.php';
 
             <div class="border-t border-white/10 pt-8 text-center">
                 <p class="text-xs text-textMuted">
-                    &copy; <?php echo date('Y'); ?> MicroNuba. Todos los derechos reservados.
+                    &copy; <?php echo date('Y'); ?> MICRONUBA S.A.S. · NIT 902006565-9. Todos los derechos reservados.
                 </p>
             </div>
         </div>

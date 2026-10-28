@@ -35,12 +35,14 @@ require_once 'config/config.php';
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "MicroNuba",
-        "legalName": "MicroNuba SAS",
+        "legalName": "MICRONUBA S.A.S.",
+        "taxID": "902006565-9",
         "url": "https://micronuba.net/",
         "logo": "https://micronuba.net/assets/img/micronuba_horizontal_sin_fondo_Ajus.png",
         "description": "Empresa de tecnología dedicada al desarrollo de software a la medida, productos SaaS, infraestructura cloud y consultoría TI para pymes en Colombia y Latinoamérica.",
         "address": {
             "@type": "PostalAddress",
+            "streetAddress": "Carrera 70 A # 79-34",
             "addressLocality": "Bogotá",
             "addressCountry": "CO"
         },
@@ -655,8 +657,9 @@ require_once 'config/config.php';
             </div>
 
             <div class="border-t border-white/10 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-2 text-sm text-textMuted">
-                <p>&copy; <?php echo date('Y'); ?> MicroNuba SAS. Todos los derechos reservados.</p>
+                <p>&copy; <?php echo date('Y'); ?> MICRONUBA S.A.S. · NIT 902006565-9. Todos los derechos reservados.</p>
                 <a href="privacidad.php" class="hover:text-accent transition-colors">Política de Privacidad</a>
+                <a href="terminos.php" class="hover:text-accent transition-colors">Términos de Servicio</a>
                 <p>CCB • Colombia</p>
             </div>
         </div>

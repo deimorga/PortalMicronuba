@@ -10,7 +10,8 @@ MicroNuba lleva tecnología de nivel corporativo a pequeñas y medianas empresas
 - [PLAGIE](https://micronuba.net/plagie.php): producto propio de MicroNuba — plataforma de Gestión Integral Educativa para instituciones educativas (colegios, institutos y demás centros de enseñanza) — portal web institucional, matrículas en línea, gestión administrativa y financiera, control académico.
 - [Appits](https://micronuba.net/appits.php): producto propio de MicroNuba — plataforma de gestión integral para talleres mecánicos, lavaderos y centros de servicio automotor (agendamiento de citas, recepción y diagnóstico digital, portal del cliente en tiempo real, facturación e inventario, app móvil nativa).
 - [Cotizar](https://micronuba.net/cotizar.php): formulario de solicitud de cotización de proyectos.
-- [Política de Privacidad](https://micronuba.net/privacidad.php): tratamiento de datos personales y descripción del acceso a Google Drive utilizado por la herramienta interna de respaldos de MicroNuba.
+- [Política de Privacidad](https://micronuba.net/privacidad.php): tratamiento de datos personales en la integración de WhatsApp de MicroNuba y en la herramienta interna de respaldos que usa Google Drive.
+- [Términos de Servicio](https://micronuba.net/terminos.php): condiciones de uso de los productos de software de MicroNuba y de su integración con WhatsApp.
 
 ## Contacto
 

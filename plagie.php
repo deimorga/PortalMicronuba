@@ -451,6 +451,7 @@ require_once 'config/config.php';
                         <li><a href="index.php#saas" class="hover:text-accent transition-colors">Productos SaaS</a></li>
                         <li><a href="cotizar.php" class="hover:text-accent transition-colors">Cotizar</a></li>
                         <li><a href="privacidad.php" class="hover:text-accent transition-colors">Política de Privacidad</a></li>
+                        <li><a href="terminos.php" class="hover:text-accent transition-colors">Términos de Servicio</a></li>
                     </ul>
                 </div>
 
@@ -465,7 +466,7 @@ require_once 'config/config.php';
 
             <div class="border-t border-white/10 pt-8 text-center">
                 <p class="text-xs text-textMuted">
-                    &copy; <?php echo date('Y'); ?> MicroNuba. Todos los derechos reservados.
+                    &copy; <?php echo date('Y'); ?> MICRONUBA S.A.S. · NIT 902006565-9. Todos los derechos reservados.
                 </p>
             </div>
         </div>

@@ -233,7 +233,7 @@ require_once 'config/config.php';
 
     <!-- FOOTER SIMPLE -->
     <footer class="py-8 text-center text-textMuted text-sm border-t border-white/5 mt-10">
-        <p>&copy; <?php echo date('Y'); ?> MicroNuba SAS. Todos los derechos reservados. · <a href="privacidad.php" class="hover:text-accent transition-colors">Política de Privacidad</a></p>
+        <p>&copy; <?php echo date('Y'); ?> MICRONUBA S.A.S. · NIT 902006565-9. Todos los derechos reservados. · <a href="privacidad.php" class="hover:text-accent transition-colors">Política de Privacidad</a> · <a href="terminos.php" class="hover:text-accent transition-colors">Términos de Servicio</a></p>
     </footer>
 
     <!-- SCRIPT PARA MANEJO DEL FORMULARIO -->
