@@ -14,7 +14,7 @@ Mapa detallado de la ubicación de los archivos clave.
 - `docker-compose.yml`: desarrollo local en `http://localhost:8080` (monta el repo en caliente).
 - `docker-compose.local.yml`: overlay para integrarse al gateway compartido `micronuba-infra` (Traefik) en desarrollo local.
 - `.env.example`: plantilla de las variables (SMTP y destinatario de cotizaciones). El `.env` real nunca va a git.
-- `build_release.sh`: despliegue **antiguo** por FTP al hosting compartido. Se retira cuando termine la migración al VPS.
+- `build_release.sh`: despliegue **antiguo** por FTP al hosting compartido. La migración al VPS terminó; se retira cuando se dé de baja la cuenta del hosting anterior.
 - `robots.txt`, `sitemap.xml`, `llms.txt`: metadata para crawlers tradicionales y de IA. Nota: en producción, `robots.txt` es interceptado y sustituido por Cloudflare independientemente del archivo de origen. Toda página nueva se agrega a `sitemap.xml` y `llms.txt` en el mismo cambio que la crea.
 
 ## Directorios Clave

@@ -1,6 +1,22 @@
 # Contexto de Sesión: Portal MicroNuba
 
-**Última Actualización:** 2026-10-27
+**Última Actualización:** 2026-10-29
+
+## 2026-10-29 — Migración del hosting anterior cerrada
+
+- **La migración al VPS está cerrada** desde el 2026-10-28, por decisión de Deiby. Portal, formulario y correo ya no
+  dependen del hosting anterior.
+- **Correo, dos proveedores distintos:** el formulario de cotización envía por **Resend** (solo envío automático, sin
+  buzones) y llega a `contacto@`. El correo de las personas (buzones, MX, IMAP y SMTP desde Outlook, Mail o el
+  webmail) está en **Migadu**. El SMTP de MicroNuba no es Resend: Resend es solo el del formulario.
+- **Páginas legales para Meta publicadas** (2026-10-28): `terminos.php` y la `privacidad.php` ampliada (WhatsApp,
+  ancla `#eliminacion-de-datos`), con la razón social y el NIT en todos los pies. La app de Meta ya está renombrada
+  y en revisión. Mientras Meta revisa, **no se tocan `privacidad.php`, `terminos.php` ni los pies sin coordinarlo**
+  con la sesión del conector de WhatsApp.
+- **La limpieza del hosting anterior (DNS, correo, baja de la cuenta) es de Deiby, no de este repo.** No se lista
+  como pendiente aquí.
+- **Único pendiente del portal:** retirar `build_release.sh` y `release/` cuando Deiby confirme la baja de la
+  cuenta. Hasta entonces son la vía de reversión.
 
 ## 2026-10-27 — Cierre de sesión: formulario por Resend y Turnos retirado
 
@@ -17,14 +33,10 @@
 - **Monitor externo** del portal activo y gestionado desde `micronuba-infra`.
 
 ### Pendientes al cerrar
-- **Páginas legales para el conector de WhatsApp (Meta Tech Provider):** la rama local
-  `borrador/paginas-legales-whatsapp` tiene `terminos.php` y la `privacidad.php` ampliada. **No se publica todavía:**
-  faltan los marcadores `{{DIAS_CONTENIDO}}`, `{{MESES_REGISTROS}}` y `{{FECHA_PUBLICACION}}` (este último en las dos
-  páginas). Al fusionarla hay que quitar también el menú «Herramientas», que la rama todavía tiene, y agregar el
-  enlace a Términos en el footer de PLAGIE.
+- ~~Páginas legales para el conector de WhatsApp~~: publicadas el 2026-10-28.
 - Opcional: desactivar `session.upload_progress` en `docker/php/portal.ini`. Lo recomienda el proveedor del VPS;
   el portal no usa sesiones ni subida de archivos.
-- Fase 4, después del apagado del hosting anterior: retirar `build_release.sh` y `release/`.
+- Retirar `build_release.sh` y `release/` cuando Deiby confirme la baja de la cuenta del hosting anterior.
 
 ## ✅ 2026-10-23 — El portal ya se sirve desde el VPS
 
@@ -35,8 +47,8 @@
 - **El origen solo atiende a Cloudflare** (middleware `portal-cloudflare-solo`): llamar directo al servidor da 403.
 - **Desplegar desde ahora:** en el servidor, `git pull --ff-only && docker compose -f docker-compose.prod.yml up -d --build`.
   No editar archivos versionados allí; solo el `.env`.
-- **Pendiente:** el SMTP del `.env` del servidor sigue en el correo del hosting anterior, que se apaga el 28/10. Se cambia
-  cuando esté el correo nuevo. Después del apagado se retiran `build_release.sh` y `release/`.
+- ~~Pendiente: el SMTP del `.env` del servidor sigue en el correo del hosting anterior~~: resuelto el 2026-10-27. El
+  formulario envía por Resend; el correo de las personas (buzones, IMAP y SMTP) está en Migadu.
 
 ## Logros de la Sesión (2026-10-22) — Portal listo para el VPS
 
@@ -126,7 +138,6 @@ El portal tiene **dos páginas de producto completas** (`plagie.php` y `appits.p
 
 ## Pendientes (To-Do)
 - Resolver el bloqueo de **Amazonbot** en Cloudflare (sección "Seguridad" dentro de "AI Crawl Control").
-- Corregir el "soft 404" del hosting (fuera del repo — config Apache/Neolo).
 - Integrar el resto del pitch deck de PLAGIE al sitio (siguen sin usarse 12 de 16 imágenes).
 - Punto 8 del acta: mostrar cobros automatizados (Wompi/PSE) en `plagie.php` — sin material aún.
 - Punto 2 del acta: mascota/asistente para el chatbot — requiere diseño de personaje nuevo.
@@ -134,9 +145,9 @@ El portal tiene **dos páginas de producto completas** (`plagie.php` y `appits.p
 - Si se retoma Agendamiento de Citas como funcionalidad "real" en el portal, verificar si ya avanzó de fase de diseño a código en el repo de Talleres.
 
 ## Estado Técnico
-- **Producción:** hasta el corte, hosting compartido cPanel (despliegue por FTPS con `build_release.sh`). **En migración al VPS** de la empresa con `docker-compose.prod.yml` (ver la sesión del 2026-10-22). Los datos del servidor no se escriben en este repo, que es público.
+- **Producción:** el VPS de la empresa con `docker-compose.prod.yml`, detrás de Traefik y Cloudflare, desde el 2026-10-23. Se despliega con `git pull` (ver la sesión del 2026-10-23). Los datos del servidor no se escriben en este repo, que es público.
 - **Docker local:** funcional, integrado al gateway `micronuba-infra` bajo `portal.micronuba.local:8090` (vía `docker-compose.local.yml`) cuando el gateway está disponible; también puede correr standalone en `:8080` si hay conflicto de IP en la red compartida con otro proyecto.
-- PHP: 8.2 (`php:8.2-apache`).
+- PHP: 8.3.36, versión exacta en el `Dockerfile`.
 - Cloudflare: proxy activo delante de `micronuba.net`; gestiona caché, bots/AI Crawl Control y robots.txt de forma independiente al origen.
   - **`styles.css` ya NO necesita purga manual** (cache-busting automático por `?v=filemtime`, ver arriba).
   - **Imágenes y otros assets estáticos SÍ siguen necesitando purga manual de Cloudflare** ("Purge Everything") tras cada despliegue que los toque.
